@@ -31,10 +31,8 @@
    ───────────────────────────────────────────────────────────────────────── */
 
 :root {
-  /* Surfaces (light) — Derasu: fundo mais separado das superfícies (era
-     #faf9f6, quase idêntico ao branco dos cards; agora os cards se destacam
-     de verdade do fundo da página, nos dois temas). */
-  --color-bg: #f2efe7;
+  /* Surfaces (light) */
+  --color-bg: #faf9f6;
   --color-surface: #ffffff;
   --color-surface-elevated: #f5f3ee;
   --color-overlay: rgba(28, 26, 22, 0.42);
@@ -108,13 +106,12 @@
   --space-24: 96px;
   --space-32: 128px;
 
-  /* Radius — Derasu: cantos mais generosos (era 4/8/12/16), para um ar mais
-     premium/macio em botões, inputs, cards e modais. */
+  /* Radius */
   --radius-none: 0px;
-  --radius-sm: 10px;
-  --radius-md: 14px;
-  --radius-lg: 22px;
-  --radius-xl: 28px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
   --radius-full: 9999px;
 
   /* Shadows — desaturated, neutral-based */
@@ -266,8 +263,7 @@
    (lib/branding/css.ts), que só ganha consumidor com a tela de marca.
    ───────────────────────────────────────────────────────────────────────── */
 [data-theme="light"] {
-  /* Derasu: acompanha o valor do :root acima (mesmo racional). */
-  --color-bg: #f2efe7;
+  --color-bg: #faf9f6;
   --color-surface: #ffffff;
   --color-surface-elevated: #f5f3ee;
   --color-overlay: rgba(28, 26, 22, 0.42);
@@ -344,9 +340,8 @@
 }
 
 [data-theme="dark"] {
-  /* Surfaces (dark — drawn) — Derasu: fundo mais próximo do preto, pra abrir
-     distância das superfícies (que continuam nos tons originais). */
-  --color-bg: #121109;
+  /* Surfaces (dark — drawn) */
+  --color-bg: #161510;
   --color-surface: #1d1c17;
   --color-surface-elevated: #272620;
   --color-overlay: rgba(0, 0, 0, 0.55);
@@ -1333,251 +1328,6 @@
 }
 .ds-painel[data-state="closed"] {
   animation: ds-painel-sai var(--duration-fast) var(--ease-out) both;
-}
-
-/* ═══════════════════════════════════════════════════════════════════════
-   Derasu — PROFUNDIDADE E VIDRO
-   ═══════════════════════════════════════════════════════════════════════
-
-   Vidro sobre um fundo liso não aparece: o desfoque de uma cor chapada é a
-   mesma cor chapada. Por isso o material vem em três camadas, e cada uma
-   depende da anterior:
-
-   1. AMBIENTE — o fundo da página ganha três luzes difusas na cor da marca e
-      um grão finíssimo. É o que dá ao vidro alguma coisa para desfocar.
-   2. MATERIAL — cartão (`.ds-cartao`, o `<Card>`), painel flutuante e modal:
-      fundo translúcido, desfoque com saturação, um brilho especular no topo
-      (a "quina" que pega luz) e sombra em camadas (contato + ambiente).
-   3. RESPOSTA — cartão que é link sobe 2px no hover, ganha um aro na cor da
-      marca e uma sombra mais longa; botão sólido tem relevo e halo.
-
-   Cores derivadas da marca são escritas DENTRO das regras, nunca guardadas
-   numa variável do `:root`: a cor da organização é aplicada no `<body>`
-   (lib/branding/css.ts), e uma variável resolvida no `:root` congelaria a
-   cor da instalação para todo mundo.
-
-   E só a partir de `--color-accent`/`--color-accent-hover`, nunca de um grau
-   numerado (`--color-accent-300`): `extrairRegua` (lib/branding/contraste.ts)
-   trata toda referência direta a grau como COMPONENTE que precisa de 3:1
-   contra as superfícies — certo para borda e anel de foco, errado para uma
-   luz difusa a 20% de opacidade. Os tons claros/escuros saem de `color-mix`
-   com branco/preto, que é decoração e não papel. */
-
-/* ---- 1. Ambiente ------------------------------------------------------ */
-:root {
-  --ambiente-grao: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .075 0 0 0 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
-}
-
-[data-theme="dark"] {
-  --ambiente-grao: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 .06 0 0 0 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
-}
-
-body {
-  background-image:
-    var(--ambiente-grao),
-    radial-gradient(
-      50vw 45vh at 28% 0%,
-      color-mix(in oklab, color-mix(in oklab, var(--color-accent) 45%, white) 30%, transparent),
-      transparent 72%
-    ),
-    radial-gradient(
-      40vw 50vh at 100% 35%,
-      color-mix(in oklab, color-mix(in oklab, var(--color-accent) 25%, white) 45%, transparent),
-      transparent 72%
-    ),
-    radial-gradient(
-      60vw 50vh at 55% 105%,
-      color-mix(in oklab, color-mix(in oklab, var(--color-accent) 70%, white) 20%, transparent),
-      transparent 72%
-    );
-  background-repeat: repeat, no-repeat, no-repeat, no-repeat;
-  background-size:
-    180px 180px,
-    auto,
-    auto,
-    auto;
-  background-attachment: fixed;
-}
-
-[data-theme="dark"] body {
-  background-image:
-    var(--ambiente-grao),
-    radial-gradient(
-      50vw 45vh at 28% 0%,
-      color-mix(in oklab, color-mix(in oklab, var(--color-accent) 85%, black) 30%, transparent),
-      transparent 72%
-    ),
-    radial-gradient(
-      40vw 50vh at 100% 35%,
-      color-mix(in oklab, color-mix(in oklab, var(--color-accent) 72%, black) 46%, transparent),
-      transparent 72%
-    ),
-    radial-gradient(
-      60vw 50vh at 55% 105%,
-      color-mix(in oklab, color-mix(in oklab, var(--color-accent) 78%, black) 28%, transparent),
-      transparent 72%
-    );
-}
-
-/* ---- 2. Material --------------------------------------------------------
-   Em `@layer components` de propósito: utilitário vence componente, então
-   quem escreve `<Card className="bg-warning-bg shadow-none">` continua
-   mandando — o vidro é o padrão, não uma imposição. Por isso o `<Card>` não
-   traz mais `bg-surface`/`shadow-xs`: elas venceriam o vidro sempre.
-
-   O DESFOQUE mora num `::before` atrás do cartão, e não no cartão. Um
-   `backdrop-filter` no próprio elemento o transformaria em contexto de
-   empilhamento — e todo autocomplete que abre DENTRO de um cartão
-   (proposta, agenda) ficaria preso debaixo do cartão seguinte. Com o
-   pseudo-elemento em `z-index: -1`, o cartão continua sem contexto próprio. */
-@layer components {
-  .ds-cartao {
-    position: relative;
-    border-color: color-mix(in oklab, var(--color-border) 70%, transparent);
-    background-color: color-mix(in oklab, var(--color-surface) 64%, transparent);
-    background-image: linear-gradient(
-      180deg,
-      rgb(255 255 255 / 0.55) 0%,
-      rgb(255 255 255 / 0.12) 38%,
-      rgb(255 255 255 / 0) 62%
-    );
-    box-shadow:
-      inset 0 1px 0 0 rgb(255 255 255 / 0.9),
-      0 1px 2px rgb(20 18 14 / 0.04),
-      0 4px 10px -2px rgb(20 18 14 / 0.05),
-      0 16px 32px -16px rgb(20 18 14 / 0.14);
-  }
-
-  .ds-cartao::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    border-radius: inherit;
-    pointer-events: none;
-    backdrop-filter: blur(18px) saturate(170%);
-    -webkit-backdrop-filter: blur(18px) saturate(170%);
-  }
-
-  [data-theme="dark"] .ds-cartao {
-    border-color: rgb(255 255 255 / 0.07);
-    background-color: color-mix(in oklab, var(--color-surface) 58%, transparent);
-    background-image: linear-gradient(
-      180deg,
-      rgb(255 255 255 / 0.09) 0%,
-      rgb(255 255 255 / 0.02) 40%,
-      rgb(255 255 255 / 0) 62%
-    );
-    box-shadow:
-      inset 0 1px 0 0 rgb(255 255 255 / 0.08),
-      0 1px 2px rgb(0 0 0 / 0.35),
-      0 18px 40px -18px rgb(0 0 0 / 0.7);
-  }
-
-  /* Botão sólido: relevo (luz em cima, sombra embaixo) + halo da própria cor. */
-  .ds-botao-primario,
-  .ds-botao-perigo {
-    background-image: linear-gradient(180deg, rgb(255 255 255 / 0.2), rgb(255 255 255 / 0) 60%);
-    box-shadow:
-      inset 0 1px 0 0 rgb(255 255 255 / 0.28),
-      inset 0 -1px 0 0 rgb(0 0 0 / 0.12),
-      0 1px 2px rgb(0 0 0 / 0.12),
-      0 6px 16px -6px color-mix(in oklab, var(--color-accent) 60%, transparent);
-  }
-  .ds-botao-perigo {
-    box-shadow:
-      inset 0 1px 0 0 rgb(255 255 255 / 0.28),
-      inset 0 -1px 0 0 rgb(0 0 0 / 0.12),
-      0 1px 2px rgb(0 0 0 / 0.12),
-      0 6px 16px -6px color-mix(in oklab, var(--color-error) 55%, transparent);
-  }
-  .ds-botao-primario:hover {
-    box-shadow:
-      inset 0 1px 0 0 rgb(255 255 255 / 0.32),
-      inset 0 -1px 0 0 rgb(0 0 0 / 0.12),
-      0 1px 2px rgb(0 0 0 / 0.12),
-      0 10px 24px -8px color-mix(in oklab, var(--color-accent) 70%, transparent);
-  }
-
-  /* Botão secundário: uma lâmina de vidro (a translucidez vem do utilitário). */
-  .ds-botao-vidro {
-    background-image: linear-gradient(180deg, rgb(255 255 255 / 0.45), rgb(255 255 255 / 0) 70%);
-    box-shadow:
-      inset 0 1px 0 0 rgb(255 255 255 / 0.8),
-      0 1px 2px rgb(20 18 14 / 0.06);
-  }
-  [data-theme="dark"] .ds-botao-vidro {
-    background-image: linear-gradient(180deg, rgb(255 255 255 / 0.06), rgb(255 255 255 / 0) 70%);
-    box-shadow:
-      inset 0 1px 0 0 rgb(255 255 255 / 0.07),
-      0 1px 2px rgb(0 0 0 / 0.35);
-  }
-}
-
-/* Painel flutuante e modal: o mesmo material, mais denso (ficam POR CIMA de
-   conteúdo com texto, então pedem mais fundo para não embaralhar a leitura).
-   Fora de layer, de propósito: vencem o `bg-popover`/`bg-background` e a
-   `shadow-*` que os componentes do shadcn trazem. */
-.ds-modal,
-.ds-painel {
-  background-color: rgb(255 255 255 / 0.74);
-  background-image: linear-gradient(180deg, rgb(255 255 255 / 0.6), rgb(255 255 255 / 0) 45%);
-  border-color: rgb(255 255 255 / 0.7);
-  box-shadow:
-    inset 0 1px 0 0 rgb(255 255 255 / 0.9),
-    0 2px 6px rgb(20 18 14 / 0.06),
-    0 24px 56px -16px rgb(20 18 14 / 0.24);
-  backdrop-filter: blur(28px) saturate(180%);
-  -webkit-backdrop-filter: blur(28px) saturate(180%);
-}
-
-[data-theme="dark"] .ds-modal,
-[data-theme="dark"] .ds-painel {
-  background-color: rgb(29 28 23 / 0.72);
-  background-image: linear-gradient(180deg, rgb(255 255 255 / 0.07), rgb(255 255 255 / 0) 45%);
-  border-color: rgb(255 255 255 / 0.09);
-  box-shadow:
-    inset 0 1px 0 0 rgb(255 255 255 / 0.08),
-    0 2px 6px rgb(0 0 0 / 0.4),
-    0 28px 64px -16px rgb(0 0 0 / 0.75);
-}
-
-/* ---- 3. Resposta --------------------------------------------------------
-   Só o cartão que é LINK (a grade dos hubs, atalhos) responde ao cursor:
-   cartão que é só moldura de formulário não deveria fingir ser clicável.
-   Fora de layer porque precisa vencer o `transition-colors` que os hubs
-   escrevem no próprio cartão — sem isso a subida aconteceria aos saltos. */
-.ds-cartao {
-  transition-property: color, background-color, border-color, box-shadow, translate;
-  transition-duration: var(--duration-base);
-  transition-timing-function: var(--ease-out);
-}
-
-a:hover > .ds-cartao,
-a:focus-visible > .ds-cartao {
-  translate: 0 -2px;
-  box-shadow:
-    inset 0 1px 0 0 rgb(255 255 255 / 0.95),
-    0 0 0 1px color-mix(in oklab, var(--color-accent) 22%, transparent),
-    0 2px 4px rgb(20 18 14 / 0.05),
-    0 24px 44px -18px color-mix(in oklab, var(--color-accent-hover) 34%, rgb(20 18 14 / 0.2));
-}
-
-[data-theme="dark"] a:hover > .ds-cartao,
-[data-theme="dark"] a:focus-visible > .ds-cartao {
-  box-shadow:
-    inset 0 1px 0 0 rgb(255 255 255 / 0.1),
-    0 0 0 1px color-mix(in oklab, var(--color-accent) 35%, transparent),
-    0 2px 4px rgb(0 0 0 / 0.4),
-    0 24px 52px -18px
-      color-mix(in oklab, color-mix(in oklab, var(--color-accent) 80%, black) 40%, rgb(0 0 0 / 0.6));
-}
-
-@media (prefers-reduced-motion: reduce) {
-  a:hover > .ds-cartao,
-  a:focus-visible > .ds-cartao {
-    translate: none;
-  }
 }
 
 /* ---- Peça que surge da borda (painéis de chamada) ----------------------
