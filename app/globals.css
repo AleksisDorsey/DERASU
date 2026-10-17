@@ -31,8 +31,10 @@
    ───────────────────────────────────────────────────────────────────────── */
 
 :root {
-  /* Surfaces (light) */
-  --color-bg: #faf9f6;
+  /* Surfaces (light) — Derasu: fundo mais separado das superfícies (era
+     #faf9f6, quase idêntico ao branco dos cards; agora os cards se destacam
+     de verdade do fundo da página, nos dois temas). */
+  --color-bg: #f2efe7;
   --color-surface: #ffffff;
   --color-surface-elevated: #f5f3ee;
   --color-overlay: rgba(28, 26, 22, 0.42);
@@ -106,12 +108,13 @@
   --space-24: 96px;
   --space-32: 128px;
 
-  /* Radius */
+  /* Radius — Derasu: cantos mais generosos (era 4/8/12/16), para um ar mais
+     premium/macio em botões, inputs, cards e modais. */
   --radius-none: 0px;
-  --radius-sm: 4px;
-  --radius-md: 8px;
-  --radius-lg: 12px;
-  --radius-xl: 16px;
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-xl: 28px;
   --radius-full: 9999px;
 
   /* Shadows — desaturated, neutral-based */
@@ -263,7 +266,8 @@
    (lib/branding/css.ts), que só ganha consumidor com a tela de marca.
    ───────────────────────────────────────────────────────────────────────── */
 [data-theme="light"] {
-  --color-bg: #faf9f6;
+  /* Derasu: acompanha o valor do :root acima (mesmo racional). */
+  --color-bg: #f2efe7;
   --color-surface: #ffffff;
   --color-surface-elevated: #f5f3ee;
   --color-overlay: rgba(28, 26, 22, 0.42);
@@ -340,8 +344,9 @@
 }
 
 [data-theme="dark"] {
-  /* Surfaces (dark — drawn) */
-  --color-bg: #161510;
+  /* Surfaces (dark — drawn) — Derasu: fundo mais próximo do preto, pra abrir
+     distância das superfícies (que continuam nos tons originais). */
+  --color-bg: #121109;
   --color-surface: #1d1c17;
   --color-surface-elevated: #272620;
   --color-overlay: rgba(0, 0, 0, 0.55);
@@ -1328,6 +1333,25 @@
 }
 .ds-painel[data-state="closed"] {
   animation: ds-painel-sai var(--duration-fast) var(--ease-out) both;
+}
+
+/* ---- Derasu: vidro de verdade em modal e painel flutuante ----------------
+   Fundo translúcido + desfoque do que está atrás. Escopo deliberadamente
+   restrito a .ds-modal/.ds-painel (overlays que flutuam sobre conteúdo) — os
+   cards comuns (.bg-surface) continuam sólidos, porque translucidez ampla
+   custaria legibilidade em telas com muito texto (inbox, kanban, listas).
+   Os dois valores por tema (claro/escuro) é algo que o CSS personalizado do
+   admin nunca permitiu fazer — aqui, por ser CSS de verdade, é natural. */
+.ds-modal,
+.ds-painel {
+  background-color: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+}
+
+[data-theme="dark"] .ds-modal,
+[data-theme="dark"] .ds-painel {
+  background-color: rgba(23, 22, 18, 0.72);
 }
 
 /* ---- Peça que surge da borda (painéis de chamada) ----------------------
