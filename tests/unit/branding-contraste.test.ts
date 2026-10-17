@@ -119,8 +119,10 @@ describe("extrairRegua — os pares saem do globals.css, nunca de lista à mão"
     const razao = (papel: string, superficie: string) =>
       pares.find((p) => p.papel === papel && p.superficie === superficie)?.razao ?? 0;
 
-    expect(razao("--color-accent", "--color-bg")).toBeCloseTo(5.51, 2);
-    expect(razao(":focus-visible/outline", "--color-bg")).toBeCloseTo(3.79, 2);
+    // Derasu: os dois contra `--color-bg` remedidos com o fundo do fork (#f2efe7;
+    // eram 5,51 e 3,79 sobre #faf9f6). Os dois seguem acima dos pisos (4,5 e 3).
+    expect(razao("--color-accent", "--color-bg")).toBeCloseTo(5.05, 2);
+    expect(razao(":focus-visible/outline", "--color-bg")).toBeCloseTo(3.48, 2);
     expect(razao(":focus-visible/outline", "--color-surface-elevated")).toBeCloseTo(3.6, 2);
   });
 

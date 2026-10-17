@@ -1354,7 +1354,14 @@
    Cores derivadas da marca são escritas DENTRO das regras, nunca guardadas
    numa variável do `:root`: a cor da organização é aplicada no `<body>`
    (lib/branding/css.ts), e uma variável resolvida no `:root` congelaria a
-   cor da instalação para todo mundo. */
+   cor da instalação para todo mundo.
+
+   E só a partir de `--color-accent`/`--color-accent-hover`, nunca de um grau
+   numerado (`--color-accent-300`): `extrairRegua` (lib/branding/contraste.ts)
+   trata toda referência direta a grau como COMPONENTE que precisa de 3:1
+   contra as superfícies — certo para borda e anel de foco, errado para uma
+   luz difusa a 20% de opacidade. Os tons claros/escuros saem de `color-mix`
+   com branco/preto, que é decoração e não papel. */
 
 /* ---- 1. Ambiente ------------------------------------------------------ */
 :root {
@@ -1370,17 +1377,17 @@ body {
     var(--ambiente-grao),
     radial-gradient(
       50vw 45vh at 28% 0%,
-      color-mix(in oklab, var(--color-accent-300) 30%, transparent),
+      color-mix(in oklab, color-mix(in oklab, var(--color-accent) 45%, white) 30%, transparent),
       transparent 72%
     ),
     radial-gradient(
       40vw 50vh at 100% 35%,
-      color-mix(in oklab, var(--color-accent-200) 45%, transparent),
+      color-mix(in oklab, color-mix(in oklab, var(--color-accent) 25%, white) 45%, transparent),
       transparent 72%
     ),
     radial-gradient(
       60vw 50vh at 55% 105%,
-      color-mix(in oklab, var(--color-accent-400) 20%, transparent),
+      color-mix(in oklab, color-mix(in oklab, var(--color-accent) 70%, white) 20%, transparent),
       transparent 72%
     );
   background-repeat: repeat, no-repeat, no-repeat, no-repeat;
@@ -1397,17 +1404,17 @@ body {
     var(--ambiente-grao),
     radial-gradient(
       50vw 45vh at 28% 0%,
-      color-mix(in oklab, var(--color-accent-500) 26%, transparent),
+      color-mix(in oklab, color-mix(in oklab, var(--color-accent) 85%, black) 30%, transparent),
       transparent 72%
     ),
     radial-gradient(
       40vw 50vh at 100% 35%,
-      color-mix(in oklab, var(--color-accent-700) 38%, transparent),
+      color-mix(in oklab, color-mix(in oklab, var(--color-accent) 72%, black) 46%, transparent),
       transparent 72%
     ),
     radial-gradient(
       60vw 50vh at 55% 105%,
-      color-mix(in oklab, var(--color-accent-600) 22%, transparent),
+      color-mix(in oklab, color-mix(in oklab, var(--color-accent) 78%, black) 28%, transparent),
       transparent 72%
     );
 }
@@ -1553,7 +1560,7 @@ a:focus-visible > .ds-cartao {
     inset 0 1px 0 0 rgb(255 255 255 / 0.95),
     0 0 0 1px color-mix(in oklab, var(--color-accent) 22%, transparent),
     0 2px 4px rgb(20 18 14 / 0.05),
-    0 24px 44px -18px color-mix(in oklab, var(--color-accent-700) 34%, rgb(20 18 14 / 0.2));
+    0 24px 44px -18px color-mix(in oklab, var(--color-accent-hover) 34%, rgb(20 18 14 / 0.2));
 }
 
 [data-theme="dark"] a:hover > .ds-cartao,
@@ -1562,7 +1569,8 @@ a:focus-visible > .ds-cartao {
     inset 0 1px 0 0 rgb(255 255 255 / 0.1),
     0 0 0 1px color-mix(in oklab, var(--color-accent) 35%, transparent),
     0 2px 4px rgb(0 0 0 / 0.4),
-    0 24px 52px -18px color-mix(in oklab, var(--color-accent-500) 40%, rgb(0 0 0 / 0.6));
+    0 24px 52px -18px
+      color-mix(in oklab, color-mix(in oklab, var(--color-accent) 80%, black) 40%, rgb(0 0 0 / 0.6));
 }
 
 @media (prefers-reduced-motion: reduce) {
