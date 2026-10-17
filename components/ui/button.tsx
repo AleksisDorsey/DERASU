@@ -41,14 +41,17 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        primary: "bg-accent text-accent-foreground hover:bg-accent-hover shadow-xs",
-        default: "bg-accent text-accent-foreground hover:bg-accent-hover shadow-xs",
+        // `ds-botao-*` (app/globals.css, "PROFUNDIDADE E VIDRO") dá o relevo e
+        // o halo; substitui o `shadow-xs`, que como utilitário venceria a
+        // sombra do componente.
+        primary: "ds-botao-primario bg-accent text-accent-foreground hover:bg-accent-hover",
+        default: "ds-botao-primario bg-accent text-accent-foreground hover:bg-accent-hover",
         secondary:
-          "bg-surface-elevated text-text border border-border hover:border-accent hover:text-accent",
+          "ds-botao-vidro bg-surface-elevated/70 backdrop-blur-md text-text border border-border hover:border-accent hover:text-accent",
         outline:
           "bg-transparent text-text border border-border hover:border-accent hover:text-accent",
         ghost: "bg-transparent text-text hover:bg-accent-soft hover:text-accent",
-        destructive: "bg-error text-white hover:brightness-95 shadow-xs",
+        destructive: "ds-botao-perigo bg-error text-white hover:brightness-95",
         link: "bg-transparent text-accent underline underline-offset-4 decoration-1 hover:decoration-2 h-auto p-0",
       },
       // Alturas de toque: abaixo de `lg` (mesmo corte que o resto da casca

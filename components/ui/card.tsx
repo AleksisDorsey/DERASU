@@ -9,7 +9,11 @@ const Card = React.forwardRef<
   <div
     ref={ref}
     className={cn(
-      "rounded-lg border border-border bg-surface text-text shadow-xs",
+      // `ds-cartao` traz fundo, borda, sombra e desfoque (o vidro — ver
+      // "PROFUNDIDADE E VIDRO" em app/globals.css). Ele mora em
+      // `@layer components`, então um `bg-*`/`shadow-*` passado aqui continua
+      // vencendo; por isso `bg-surface`/`shadow-xs` saíram desta lista.
+      "ds-cartao rounded-lg border text-text",
       className,
     )}
     {...props}
