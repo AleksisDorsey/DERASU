@@ -1431,10 +1431,15 @@ body {
    (proposta, agenda) ficaria preso debaixo do cartão seguinte. Com o
    pseudo-elemento em `z-index: -1`, o cartão continua sem contexto próprio. */
 @layer components {
+  /* Fundo e borda em `rgba()` LITERAL, e não `color-mix()`: o navegador
+     devolve `color-mix` no `getComputedStyle` como `oklab(...)`, e as provas
+     de tela (tests/e2e) leem a cor de fundo como `rgb(...)` para calcular
+     contraste — com `oklab` elas leem números errados e reprovam. Os valores
+     são `--color-surface` (#ffffff / #1d1c17) e `--color-border` (#e7e3da). */
   .ds-cartao {
     position: relative;
-    border-color: color-mix(in oklab, var(--color-border) 70%, transparent);
-    background-color: color-mix(in oklab, var(--color-surface) 64%, transparent);
+    border-color: rgba(231, 227, 218, 0.7);
+    background-color: rgba(255, 255, 255, 0.64);
     background-image: linear-gradient(
       180deg,
       rgb(255 255 255 / 0.55) 0%,
@@ -1460,8 +1465,8 @@ body {
   }
 
   [data-theme="dark"] .ds-cartao {
-    border-color: rgb(255 255 255 / 0.07);
-    background-color: color-mix(in oklab, var(--color-surface) 58%, transparent);
+    border-color: rgba(255, 255, 255, 0.07);
+    background-color: rgba(29, 28, 23, 0.58);
     background-image: linear-gradient(
       180deg,
       rgb(255 255 255 / 0.09) 0%,
@@ -1472,6 +1477,15 @@ body {
       inset 0 1px 0 0 rgb(255 255 255 / 0.08),
       0 1px 2px rgb(0 0 0 / 0.35),
       0 18px 40px -18px rgb(0 0 0 / 0.7);
+  }
+
+  /* Barra lateral: vidro sobre o ambiente (mesmo motivo do `rgba()` literal
+     do cartão). O desfoque vem dos utilitários no próprio componente. */
+  .ds-barra-lateral {
+    background-color: rgba(255, 255, 255, 0.7);
+  }
+  [data-theme="dark"] .ds-barra-lateral {
+    background-color: rgba(29, 28, 23, 0.7);
   }
 
   /* Botão sólido: relevo (luz em cima, sombra embaixo) + halo da própria cor. */
@@ -1499,7 +1513,9 @@ body {
       0 10px 24px -8px color-mix(in oklab, var(--color-accent) 70%, transparent);
   }
 
-  /* Botão secundário: uma lâmina de vidro (a translucidez vem do utilitário). */
+  /* Botão secundário: o brilho de uma lâmina de vidro sobre o fundo sólido
+     dele (fundo translúcido em botão sai em `oklab` no getComputedStyle — ver
+     o comentário do cartão). */
   .ds-botao-vidro {
     background-image: linear-gradient(180deg, rgb(255 255 255 / 0.45), rgb(255 255 255 / 0) 70%);
     box-shadow:

@@ -47,7 +47,7 @@ const buttonVariants = cva(
         primary: "ds-botao-primario bg-accent text-accent-foreground hover:bg-accent-hover",
         default: "ds-botao-primario bg-accent text-accent-foreground hover:bg-accent-hover",
         secondary:
-          "ds-botao-vidro bg-surface-elevated/70 backdrop-blur-md text-text border border-border hover:border-accent hover:text-accent",
+          "ds-botao-vidro bg-surface-elevated text-text border border-border hover:border-accent hover:text-accent",
         outline:
           "bg-transparent text-text border border-border hover:border-accent hover:text-accent",
         ghost: "bg-transparent text-text hover:bg-accent-soft hover:text-accent",
