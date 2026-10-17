@@ -9,11 +9,17 @@ const Card = React.forwardRef<
   <div
     ref={ref}
     className={cn(
-      // `ds-cartao` traz fundo, borda, sombra e desfoque (o vidro — ver
+      // `ds-cartao` traz fundo, sombra e desfoque (o vidro — ver
       // "PROFUNDIDADE E VIDRO" em app/globals.css). Ele mora em
       // `@layer components`, então um `bg-*`/`shadow-*` passado aqui continua
       // vencendo; por isso `bg-surface`/`shadow-xs` saíram desta lista.
-      "ds-cartao rounded-lg border text-text",
+      //
+      // `border-border` FICA, e não por estética: as provas de tela localizam
+      // "o card do design system" por essa classe (xpath em
+      // tests/e2e/automacao-diz-a-verdade.spec.ts e irmãos). Tirá-la reprovou
+      // 4 das 6 partes do e2e. A borda translúcida do vidro entra por
+      // `.ds-cartao.border-border` em `@layer utilities`.
+      "ds-cartao rounded-lg border border-border text-text",
       className,
     )}
     {...props}
