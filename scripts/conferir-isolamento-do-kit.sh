@@ -54,6 +54,7 @@
 # anônima tem teto de 60 consultas/hora por IP, e o executor próprio é um IP só);
 # senão `ultima_release_estavel` do próprio kit (`/releases/latest`). Nunca a maior
 # tag: tag não é release publicada (ver o cabeçalho dessa função em _common.sh).
+# Fork sem release própria (o `gh` vê o pai): release e tags vêm do repositório pai.
 # Sem resposta, REPROVA — gate que pula em silêncio não é gate.
 set -euo pipefail
 
@@ -63,8 +64,15 @@ ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 KIT="$ROOT/hostgator-setup-kit"
 
 release="${CONFERENCIA_KIT_RELEASE:-}"
+pai=""  # owner/nome do repositório pai, só quando o checkout é fork SEM release própria
 if [ -z "$release" ] && [ -n "${GH_TOKEN:-}" ] && command -v gh >/dev/null 2>&1; then
   release="$(cd "$ROOT" && gh release view --json tagName -q .tagName 2>/dev/null || true)"
+  # Fork que não publica release (nem tags): o kit que roda na VPS é o do pai,
+  # então a release e as tags conferidas vêm de lá.
+  if [ -z "$release" ]; then
+    pai="$(cd "$ROOT" && gh repo view --json parent -q '.parent | select(.) | .owner.login + "/" + .name' 2>/dev/null || true)"
+    [ -n "$pai" ] && release="$(gh release view --repo "$pai" --json tagName -q .tagName 2>/dev/null || true)"
+  fi
 fi
 if [ -z "$release" ]; then
   release="$(cd "$ROOT" && bash -c 'source "$1/_common.sh" >/dev/null 2>&1; ultima_release_estavel' _ "$KIT" || true)"
@@ -86,7 +94,7 @@ update_sh_da() {  # update_sh_da <tag> — caminho de uma cópia do update.sh da
   if ! git -C "$ROOT" rev-parse -q --verify "refs/tags/$1^{commit}" >/dev/null; then
     local profundidade=""
     [ "$(git -C "$ROOT" rev-parse --is-shallow-repository)" = true ] && profundidade="--depth=1"
-    git -C "$ROOT" fetch -q --no-tags $profundidade origin "+refs/tags/$1:refs/tags/$1"
+    git -C "$ROOT" fetch -q --no-tags $profundidade "${pai:+https://github.com/}${pai:-origin}" "+refs/tags/$1:refs/tags/$1"
   fi
   git -C "$ROOT" show "$1:hostgator-setup-kit/update.sh" > "$TMP/$1"
   printf '%s' "$TMP/$1"
