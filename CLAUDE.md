@@ -782,3 +782,9 @@ Antes de declarar uma task pronta:
     extensão não autoriza remover nem desligar o que já foi distribuído.
 
 Um staff engineer aprovaria? Se não, itera.
+
+---
+
+## Fork Derasu
+
+@derasu/CLAUDE.md
