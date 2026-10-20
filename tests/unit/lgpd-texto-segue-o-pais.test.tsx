@@ -29,6 +29,11 @@
  * a citação, o prazo, os links e a estrutura continuam os mesmos, e as
  * comparações seguem byte a byte contra o fixture regravado.
  *
+ * Exceção da fork Derasu, regravando fixture: os neutros do produto viraram
+ * frios (derasu/docs/adr/0001), e `NEUTROS_DE_SAIDA` lê a régua — o texto do
+ * e-mail passa de #1c1a16 a #1a1a1c e o suave de #7d786c a #78787b. Só esses
+ * dois hex mudam nos três `.json`; o resto segue byte a byte.
+ *
  * Quinta exceção: o rodapé do PDF virou UMA string no JSX (o rótulo vem do
  * perfil, e não mais de texto estático ao lado da interpolação). O `join` por
  * filho de texto perdeu separadores (`\u0001`) que eram detalhe do parser — o
