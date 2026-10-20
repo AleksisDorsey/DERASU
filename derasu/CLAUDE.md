@@ -17,6 +17,12 @@ na interface — telas, botões, animações — **sem quebrar nada do que já f
 No código e nos commits o produto continua se chamando Deskcomm; "Derasu" nomeia a fork, a
 camada visual e a instalação.
 
+**A fork contradiz de propósito o design system do oficial** (vidro, gradiente de luz, paleta,
+fonte): ver [ADR 0001](docs/adr/0001-liquid-glass-revoga-anti-padroes.md) antes de "consertar"
+qualquer coisa por `docs/design-system/09-anti-patterns.md`. **Vidro só na camada de controle;
+conteúdo é superfície** ([ADR 0002](docs/adr/0002-vidro-so-na-camada-de-controle.md)).
+**Movimento só em CSS** ([ADR 0003](docs/adr/0003-movimento-so-em-css.md)).
+
 ## Repositórios e branches
 
 | Remote | Repo | Papel |
@@ -89,6 +95,19 @@ a prova pela tela da doutrina (screenshots claro/escuro, desktop/celular, em
 Este clone (`Desktop\Projeto Nova Interface`) é onde se desenvolve e se vê a interface. Node,
 pnpm e Docker estão instalados; o caminho de "Como rodar local" do `CLAUDE.md` oficial foi
 escrito para Ubuntu. O que funcionar ou exigir ajuste no Windows fica registrado aqui.
+
+- **Não edite os scripts de `scripts/`** para fazê-los funcionar no Windows (conflito a cada
+  atualização). Ajuste de Windows mora em `derasu/scripts/`.
+- Caminho escolhido: Supabase local no Docker Desktop (CLI fixado na versão do CI, pg15,
+  `baseline.sql` + `bootstrap-owner.ts`) e o app rodando **direto no Windows** (`pnpm dev`; para
+  prova de tela, `next build` + `next start`). App fora de contêiner é o que faz `127.0.0.1`
+  funcionar — o `pnpm local:up` grava `127.0.0.1` no `.env.local`, que dentro do contêiner aponta
+  para ele mesmo. WAHA e Redis ficam de fora do trabalho visual.
+- Node 22 via `fnm` (lê o `.nvmrc`), igual ao CI.
+- Git Bash converte caminhos POSIX em argumentos de `docker run -v`/`psql -f`: use
+  `MSYS_NO_PATHCONV=1`.
+- `/design` (vitrine do design system) exige login: não está em `lib/auth/public-paths.ts`,
+  embora o `app/design/README.md` diga que é pública.
 
 ## Produção: cereme.derasu.com.br
 
