@@ -1791,6 +1791,7 @@ a:focus-visible > .ds-cartao {
   .ds-gaveta,
   .ds-painel:not(.bg-primary) {
     background-color: var(--color-surface);
+    border-color: var(--color-border);
     -webkit-backdrop-filter: none;
     backdrop-filter: none;
   }
@@ -1817,6 +1818,7 @@ a:focus-visible > .ds-cartao {
   .ds-gaveta,
   .ds-painel:not(.bg-primary) {
     background-color: var(--color-surface);
+    border-color: var(--color-border);
   }
 }
 
