@@ -9,20 +9,28 @@
 //
 // Uso (app de pé em http://localhost:3000, dono em .env.local):
 //   node derasu/scripts/prova-de-tela.mjs <entrega> [rota ...]
-// Saída: evidence/derasu-<entrega>/ (screenshots + medidas.json).
+//   node derasu/scripts/prova-de-tela.mjs <entrega> --so-readme   (só refaz o README)
+// Saída: evidence/derasu-<entrega>/ (screenshots + medidas.json + README.md).
+//
+// O README cita cada imagem: `tests/unit/evidencia-citada.test.ts` reprova
+// imagem versionada que nenhum documento cita.
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { chromium } from "@playwright/test";
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
-const entrega = process.argv[2] ?? "fundacao";
-const rotas = process.argv.slice(3).length ? process.argv.slice(3) : ["/app/crm", "/app/inbox"];
+const soReadme = process.argv.includes("--so-readme");
+const args = process.argv.slice(2).filter((a) => a !== "--so-readme");
+const entrega = args[0] ?? "fundacao";
+const rotas = args.slice(1).length ? args.slice(1) : ["/app/crm", "/app/inbox"];
 const BASE = process.env.BASE_URL ?? "http://localhost:3000";
 const SAIDA = path.join(RAIZ, "evidence", `derasu-${entrega}`);
 fs.mkdirSync(SAIDA, { recursive: true });
 
-const env = Object.fromEntries(
+const env = soReadme
+  ? {}
+  : Object.fromEntries(
   fs
     .readFileSync(path.join(RAIZ, ".env.local"), "utf8")
     .split("\n")
@@ -62,6 +70,7 @@ async function medir(page) {
   });
 }
 
+if (!soReadme) {
 const browser = await chromium.launch();
 const medidas = [];
 for (const [nomeVp, vp] of Object.entries(VIEWPORTS)) {
@@ -127,3 +136,32 @@ for (const [nomeVp, vp] of Object.entries(VIEWPORTS)) {
 await browser.close();
 fs.writeFileSync(path.join(SAIDA, "medidas.json"), JSON.stringify(medidas, null, 2) + "\n");
 process.stdout.write(`medidas em ${path.relative(RAIZ, SAIDA)}/medidas.json\n`);
+}
+
+// ---- README: cita cada captura e resume o que foi medido ------------------
+const lidas = JSON.parse(fs.readFileSync(path.join(SAIDA, "medidas.json"), "utf8"));
+const codigo = (v) => "`" + v + "`";
+const secao = (m) => {
+  const partes = [
+    `tema ${codigo(m.tema)}`,
+    `transparência reduzida: ${m.transparenciaReduzida ? "sim" : "não"}`,
+    `fonte ${m.fonte}`,
+    m.cartao ? `cartão ${codigo(m.cartao.fundo)}` : "sem cartão",
+    m.barraLateral
+      ? `barra lateral ${codigo(m.barraLateral.fundo)} / ${codigo(m.barraLateral.desfoque)}`
+      : "sem barra lateral",
+  ];
+  if (m.painel) partes.push(`menu ${codigo(m.painel.fundo)} / ${codigo(m.painel.desfoque)}`);
+  return `### ${m.caso}\n\n${partes.join("; ")}.\n\n![${m.caso}](${m.caso}.png)\n`;
+};
+fs.writeFileSync(
+  path.join(SAIDA, "README.md"),
+  [
+    `# Prova de tela — derasu-${entrega}\n`,
+    "Gerado por `derasu/scripts/prova-de-tela.mjs`: claro/escuro × desktop/celular ×",
+    "transparência ligada/desligada (emulada pelo protocolo do Chrome). Valores lidos por",
+    "`getComputedStyle`; o detalhe completo está em `medidas.json`.\n",
+    ...lidas.map(secao),
+  ].join("\n"),
+);
+process.stdout.write(`README em ${path.relative(RAIZ, SAIDA)}/README.md\n`);
