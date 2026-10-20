@@ -32,21 +32,21 @@
 
 :root {
   /* Surfaces (light) — Derasu: fundo mais separado das superfícies (era
-     #faf9f6, quase idêntico ao branco dos cards; agora os cards se destacam
+     #f9f9fc, quase idêntico ao branco dos cards; agora os cards se destacam
      de verdade do fundo da página, nos dois temas). */
-  --color-bg: #f2efe7;
+  --color-bg: #efeff4;
   --color-surface: #ffffff;
-  --color-surface-elevated: #f5f3ee;
-  --color-overlay: rgba(28, 26, 22, 0.42);
+  --color-surface-elevated: #f3f3f8;
+  --color-overlay: rgba(18, 18, 24, 0.42);
 
   /* Text (light) */
-  --color-text: #1c1a16;
-  --color-text-muted: #5d594f;
-  --color-text-subtle: #7d786c;
+  --color-text: #1a1a1c;
+  --color-text-muted: #59595c;
+  --color-text-subtle: #78787b;
 
   /* Borders (light) */
-  --color-border: #e7e3da;
-  --color-border-strong: #d2cdbf;
+  --color-border: #e3e3e8;
+  --color-border-strong: #cdcdd2;
 
   /* Accent — Sage (11 stops) */
   --color-accent-50: #f3f6f1;
@@ -66,17 +66,17 @@
   --color-accent-hover: var(--color-accent-700);
 
   /* Neutrals — greige (11 stops, light) */
-  --color-neutral-50: #faf9f6;
-  --color-neutral-100: #f3f1ec;
-  --color-neutral-200: #e7e3da;
-  --color-neutral-300: #d2cdbf;
-  --color-neutral-400: #a9a395;
-  --color-neutral-500: #7d786c;
-  --color-neutral-600: #5d594f;
-  --color-neutral-700: #46433b;
-  --color-neutral-800: #2e2c26;
-  --color-neutral-900: #1c1a16;
-  --color-neutral-950: #0e0d0a;
+  --color-neutral-50: #f9f9fc;
+  --color-neutral-100: #f1f1f6;
+  --color-neutral-200: #e3e3e8;
+  --color-neutral-300: #cdcdd2;
+  --color-neutral-400: #a3a3a8;
+  --color-neutral-500: #78787b;
+  --color-neutral-600: #59595c;
+  --color-neutral-700: #434346;
+  --color-neutral-800: #2c2c2e;
+  --color-neutral-900: #1a1a1c;
+  --color-neutral-950: #0d0d0f;
 
   /* States (light) */
   --color-success: #5a8a5f;
@@ -118,11 +118,11 @@
   --radius-full: 9999px;
 
   /* Shadows — desaturated, neutral-based */
-  --shadow-xs: 0 1px 2px 0 rgba(20, 18, 14, 0.04);
-  --shadow-sm: 0 1px 2px 0 rgba(20, 18, 14, 0.05), 0 1px 1px 0 rgba(20, 18, 14, 0.03);
-  --shadow-md: 0 4px 12px -2px rgba(20, 18, 14, 0.06), 0 2px 4px -1px rgba(20, 18, 14, 0.04);
-  --shadow-lg: 0 12px 32px -6px rgba(20, 18, 14, 0.1), 0 4px 12px -2px rgba(20, 18, 14, 0.06);
-  --shadow-xl: 0 24px 48px -12px rgba(20, 18, 14, 0.16), 0 8px 16px -4px rgba(20, 18, 14, 0.08);
+  --shadow-xs: 0 1px 2px 0 rgba(16, 17, 24, 0.04);
+  --shadow-sm: 0 1px 2px 0 rgba(16, 17, 24, 0.05), 0 1px 1px 0 rgba(16, 17, 24, 0.03);
+  --shadow-md: 0 4px 12px -2px rgba(16, 17, 24, 0.06), 0 2px 4px -1px rgba(16, 17, 24, 0.04);
+  --shadow-lg: 0 12px 32px -6px rgba(16, 17, 24, 0.1), 0 4px 12px -2px rgba(16, 17, 24, 0.06);
+  --shadow-xl: 0 24px 48px -12px rgba(16, 17, 24, 0.16), 0 8px 16px -4px rgba(16, 17, 24, 0.08);
 
   /* Density — Aerada */
   --density-row: 56px;
@@ -267,30 +267,30 @@
    ───────────────────────────────────────────────────────────────────────── */
 [data-theme="light"] {
   /* Derasu: acompanha o valor do :root acima (mesmo racional). */
-  --color-bg: #f2efe7;
+  --color-bg: #efeff4;
   --color-surface: #ffffff;
-  --color-surface-elevated: #f5f3ee;
-  --color-overlay: rgba(28, 26, 22, 0.42);
-  --color-text: #1c1a16;
-  --color-text-muted: #5d594f;
-  --color-text-subtle: #7d786c;
-  --color-border: #e7e3da;
-  --color-border-strong: #d2cdbf;
+  --color-surface-elevated: #f3f3f8;
+  --color-overlay: rgba(18, 18, 24, 0.42);
+  --color-text: #1a1a1c;
+  --color-text-muted: #59595c;
+  --color-text-subtle: #78787b;
+  --color-border: #e3e3e8;
+  --color-border-strong: #cdcdd2;
   --color-accent: var(--color-accent-600);
   --color-accent-fg: #ffffff;
   --color-accent-soft: var(--color-accent-100);
   --color-accent-hover: var(--color-accent-700);
-  --color-neutral-50: #faf9f6;
-  --color-neutral-100: #f3f1ec;
-  --color-neutral-200: #e7e3da;
-  --color-neutral-300: #d2cdbf;
-  --color-neutral-400: #a9a395;
-  --color-neutral-500: #7d786c;
-  --color-neutral-600: #5d594f;
-  --color-neutral-700: #46433b;
-  --color-neutral-800: #2e2c26;
-  --color-neutral-900: #1c1a16;
-  --color-neutral-950: #0e0d0a;
+  --color-neutral-50: #f9f9fc;
+  --color-neutral-100: #f1f1f6;
+  --color-neutral-200: #e3e3e8;
+  --color-neutral-300: #cdcdd2;
+  --color-neutral-400: #a3a3a8;
+  --color-neutral-500: #78787b;
+  --color-neutral-600: #59595c;
+  --color-neutral-700: #434346;
+  --color-neutral-800: #2c2c2e;
+  --color-neutral-900: #1a1a1c;
+  --color-neutral-950: #0d0d0f;
   --color-success: #5a8a5f;
   --color-success-bg: rgba(90, 138, 95, 0.12);
   --color-success-fg: #41673f;
@@ -303,11 +303,11 @@
   --color-info: #4a7a93;
   --color-info-bg: rgba(74, 122, 147, 0.12);
   --color-info-fg: #355d72;
-  --shadow-xs: 0 1px 2px 0 rgba(20, 18, 14, 0.04);
-  --shadow-sm: 0 1px 2px 0 rgba(20, 18, 14, 0.05), 0 1px 1px 0 rgba(20, 18, 14, 0.03);
-  --shadow-md: 0 4px 12px -2px rgba(20, 18, 14, 0.06), 0 2px 4px -1px rgba(20, 18, 14, 0.04);
-  --shadow-lg: 0 12px 32px -6px rgba(20, 18, 14, 0.1), 0 4px 12px -2px rgba(20, 18, 14, 0.06);
-  --shadow-xl: 0 24px 48px -12px rgba(20, 18, 14, 0.16), 0 8px 16px -4px rgba(20, 18, 14, 0.08);
+  --shadow-xs: 0 1px 2px 0 rgba(16, 17, 24, 0.04);
+  --shadow-sm: 0 1px 2px 0 rgba(16, 17, 24, 0.05), 0 1px 1px 0 rgba(16, 17, 24, 0.03);
+  --shadow-md: 0 4px 12px -2px rgba(16, 17, 24, 0.06), 0 2px 4px -1px rgba(16, 17, 24, 0.04);
+  --shadow-lg: 0 12px 32px -6px rgba(16, 17, 24, 0.1), 0 4px 12px -2px rgba(16, 17, 24, 0.06);
+  --shadow-xl: 0 24px 48px -12px rgba(16, 17, 24, 0.16), 0 8px 16px -4px rgba(16, 17, 24, 0.08);
   --background: var(--color-bg);
   --foreground: var(--color-text);
   --card: var(--color-surface);
@@ -346,19 +346,19 @@
 [data-theme="dark"] {
   /* Surfaces (dark — drawn) — Derasu: fundo mais próximo do preto, pra abrir
      distância das superfícies (que continuam nos tons originais). */
-  --color-bg: #121109;
-  --color-surface: #1d1c17;
-  --color-surface-elevated: #272620;
+  --color-bg: #101014;
+  --color-surface: #1c1c1f;
+  --color-surface-elevated: #262629;
   --color-overlay: rgba(0, 0, 0, 0.55);
 
   /* Text (dark) */
-  --color-text: #f5f4ef;
-  --color-text-muted: #8e8b7f;
-  --color-text-subtle: #605e54;
+  --color-text: #f3f3f8;
+  --color-text-muted: #8b8b8e;
+  --color-text-subtle: #5e5e61;
 
   /* Borders (dark) */
-  --color-border: #33312a;
-  --color-border-strong: #444239;
+  --color-border: #313133;
+  --color-border-strong: #424245;
 
   /* Accent stays same hex stops; default shifts up for dark contrast */
   --color-accent-50: #f3f6f1;
@@ -373,22 +373,22 @@
   --color-accent-900: #2f3c2b;
   --color-accent-950: #171f15;
   --color-accent: var(--color-accent-400);
-  --color-accent-fg: #161510;
+  --color-accent-fg: #151517;
   --color-accent-soft: rgba(130, 160, 119, 0.16);
   --color-accent-hover: var(--color-accent-300);
 
   /* Neutrals — greige (11 stops, dark) */
-  --color-neutral-50: #f5f4ef;
-  --color-neutral-100: #e6e4dc;
-  --color-neutral-200: #bbb8ac;
-  --color-neutral-300: #8e8b7f;
-  --color-neutral-400: #605e54;
-  --color-neutral-500: #444239;
-  --color-neutral-600: #33312a;
-  --color-neutral-700: #272620;
-  --color-neutral-800: #1d1c17;
-  --color-neutral-900: #161510;
-  --color-neutral-950: #0c0b08;
+  --color-neutral-50: #f3f3f8;
+  --color-neutral-100: #e3e3e8;
+  --color-neutral-200: #b7b7bc;
+  --color-neutral-300: #8b8b8e;
+  --color-neutral-400: #5e5e61;
+  --color-neutral-500: #424245;
+  --color-neutral-600: #313133;
+  --color-neutral-700: #262629;
+  --color-neutral-800: #1c1c1f;
+  --color-neutral-900: #151517;
+  --color-neutral-950: #0b0b0d;
 
   /* States (dark) */
   --color-success: #82a077;
@@ -431,7 +431,7 @@
   --input: var(--color-border);
   --ring: var(--color-accent-400);
   /* ---- Agenda · cor de pessoa (tema escuro) ----------------------------
-   * Mais claras e menos saturadas que as do claro: sobre `#161510` a versão
+   * Mais claras e menos saturadas que as do claro: sobre `#151517` a versão
    * escura de cada matiz sumiria. Mesma ordem, mesmos nomes.
    */
   --agenda-pessoa-1: #f89080;
@@ -551,7 +551,8 @@
 
   /* Tipografia */
   --font-sans:
-    var(--font-atkinson), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    "Inter Derasu", var(--font-atkinson), ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, sans-serif;
   --font-mono: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 
   /* Espaçamento. Os valores são px LITERAIS (`--space-6` = 24px), não rem — e
@@ -1336,42 +1337,256 @@
 }
 
 /* ═══════════════════════════════════════════════════════════════════════
-   Derasu — PROFUNDIDADE E VIDRO
+   Derasu — LIQUID GLASS: ambiente, materiais e molas
    ═══════════════════════════════════════════════════════════════════════
 
-   Vidro sobre um fundo liso não aparece: o desfoque de uma cor chapada é a
-   mesma cor chapada. Por isso o material vem em três camadas, e cada uma
-   depende da anterior:
+   Vocabulário em `derasu/GLOSSARY.md`; decisões em `derasu/docs/adr/`. A fork
+   contradiz de propósito `docs/design-system/09-anti-patterns.md` §3 e §5
+   (ADR 0001) — não "conserte" este bloco por aquele documento.
 
-   1. AMBIENTE — o fundo da página ganha três luzes difusas na cor da marca e
-      um grão finíssimo. É o que dá ao vidro alguma coisa para desfocar.
-   2. MATERIAL — cartão (`.ds-cartao`, o `<Card>`), painel flutuante e modal:
-      fundo translúcido, desfoque com saturação, um brilho especular no topo
-      (a "quina" que pega luz) e sombra em camadas (contato + ambiente).
-   3. RESPOSTA — cartão que é link sobe 2px no hover, ganha um aro na cor da
-      marca e uma sombra mais longa; botão sólido tem relevo e halo.
+   A regra que organiza tudo (ADR 0002): VIDRO só na CAMADA DE CONTROLE —
+   barra lateral, topo, menus, popovers, modais, gavetas. A CAMADA DE CONTEÚDO
+   (o `<Card>`, tabelas, balões) é SUPERFÍCIE: opaca, com elevação e aresta
+   especular. Vidro sobre vidro embaralha a leitura e custa GPU por cartão.
 
-   Cores derivadas da marca são escritas DENTRO das regras, nunca guardadas
-   numa variável do `:root`: a cor da organização é aplicada no `<body>`
-   (lib/branding/css.ts), e uma variável resolvida no `:root` congelaria a
-   cor da instalação para todo mundo.
+   1. AMBIENTE — luzes difusas na cor da marca + grão. É o que o vidro desfoca.
+   2. MATERIAIS — tokens de vidro e superfície; as peças só os consomem.
+   3. RESPOSTA — elevação que sobe em mola no cartão que é link.
+   4. RECUOS — reduzir transparência, aumentar contraste e navegador sem
+      `backdrop-filter`: o vidro vira superfície. Translucidez nunca compra
+      leitura.
 
-   E só a partir de `--color-accent`/`--color-accent-hover`, nunca de um grau
-   numerado (`--color-accent-300`): `extrairRegua` (lib/branding/contraste.ts)
-   trata toda referência direta a grau como COMPONENTE que precisa de 3:1
-   contra as superfícies — certo para borda e anel de foco, errado para uma
-   luz difusa a 20% de opacidade. Os tons claros/escuros saem de `color-mix`
-   com branco/preto, que é decoração e não papel. */
+   Três restrições herdadas, que valem para todo valor daqui:
 
-/* ---- 1. Ambiente ------------------------------------------------------ */
-:root {
+   - Fundo e borda em `rgb()` LITERAL (dentro ou fora de variável), nunca
+     `color-mix()`: o navegador devolve `color-mix` no `getComputedStyle` como
+     `oklab(...)`, e as provas de tela (tests/e2e) leem a cor de fundo como
+     `rgb(...)` para calcular contraste. Variável com `rgb()` literal resolve
+     para `rgba(...)` e serve.
+   - Cor derivada da MARCA é escrita dentro da regra e só a partir de
+     `--color-accent`/`--color-accent-hover`, nunca de um grau numerado: a cor
+     da organização é aplicada no `<body>` (lib/branding/css.ts) — uma variável
+     resolvida no `:root` congelaria a cor da instalação — e `extrairRegua`
+     (lib/branding/contraste.ts) trata referência a grau como COMPONENTE que
+     precisa de 3:1.
+   - Os blocos `:root` e `[data-theme="dark"]` daqui não declaram `--color-*`:
+     a régua acha os blocos de token pelo PRIMEIRO `:root` e pelo escuro que
+     declara `--color-bg`, e estes não podem ser confundidos com aqueles. */
+
+/* ---- Fonte ---------------------------------------------------------------
+   Inter Variable (eixos `wght` 100–900 e `opsz`), OFL — ver
+   `app/fonts/inter-OFL.txt`. A hierarquia do Liquid Glass vive de pesos
+   intermediários (500/600) que a Atkinson (400/700) não tem; ADR 0001. A
+   Atkinson fica como fallback, carregada pelo `app/layout.tsx` do oficial. */
+@font-face {
+  font-family: "Inter Derasu";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("./fonts/inter-variable-opsz-wght-latin.woff2") format("woff2");
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329,
+    U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Inter Derasu";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("./fonts/inter-variable-opsz-wght-latin-ext.woff2") format("woff2");
+  unicode-range:
+    U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329,
+    U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F,
+    U+A720-A7FF;
+}
+
+@layer base {
+  body {
+    font-family:
+      "Inter Derasu",
+      var(--font-atkinson),
+      ui-sans-serif,
+      system-ui,
+      -apple-system,
+      "Segoe UI",
+      Roboto,
+      sans-serif;
+    /* `cv05` (l com cauda) e `cv08` (I com serifa): separam I/l/1 em e-mail,
+       código e telefone — a razão de legibilidade que trouxe a Atkinson. O
+       `ss01` do oficial (dígitos abertos) sai: na Inter ele troca o desenho
+       dos números, que aqui ficam os padrão. */
+    font-feature-settings:
+      "rlig" 1,
+      "calt" 1,
+      "cv05" 1,
+      "cv08" 1;
+    font-optical-sizing: auto;
+    /* Tracking por tamanho, como a SF faz: o texto corrido (14–16px) aperta
+       de leve; títulos apertam mais (abaixo). */
+    letter-spacing: -0.006em;
+  }
+
+  h1,
+  .text-2xl,
+  .text-3xl,
+  .text-4xl {
+    letter-spacing: -0.021em;
+  }
+  h2,
+  h3,
+  .text-xl,
+  .text-lg {
+    letter-spacing: -0.015em;
+  }
+  .text-xs {
+    letter-spacing: 0;
+  }
+}
+
+/* ---- Tokens: molas e materiais ------------------------------------------
+   MOLAS — `linear()` amostrado de uma mola amortecida e normalizado para
+   assentar no fim da duração (gerador: `derasu/scripts/molas.mjs`). A curva
+   faz o trabalho visível nos primeiros ~60% e assenta no resto, por isso as
+   durações são mais longas que as dos `cubic-bezier`.
+
+     suave — amortecimento crítico, sem passar do destino: entradas, cor.
+     viva  — passa 3,8% e volta: o que o usuário provocou (abrir, subir).
+     firme — passa 0,5%: pressionar, alternar, coisas pequenas e rápidas.
+
+   Navegador sem `linear()` (Safari < 17.2) cai no `--ease-out-slow` pelo
+   par de declarações em quem consome. */
+/* `:where()` e não `:root, [data-theme="light"]`: a lista quebraria a régua
+   (`extrairRegua` acha o bloco claro por igualdade exata com `:root`; vigiado
+   em tests/unit/branding-tema-claro-escopavel.test.ts). Especificidade zero
+   não atrapalha: o `[data-theme="dark"]` abaixo vence no `<html>` escuro, e
+   na subárvore clara a declaração própria vence a herança. */
+:where(:root, [data-theme="light"]) {
+  --mola-suave: linear(
+    0,
+    0.016 2.1%,
+    0.057 4.2%,
+    0.114 6.3%,
+    0.179 8.3%,
+    0.388 14.6%,
+    0.453 16.7%,
+    0.514 18.8%,
+    0.571 20.8%,
+    0.623 22.9%,
+    0.669 25%,
+    0.711 27.1%,
+    0.748 29.2%,
+    0.811 33.3%,
+    0.859 37.5%,
+    0.895 41.7%,
+    0.934 47.9%,
+    0.965 56.3%,
+    1
+  );
+  --mola-suave-duracao: 500ms;
+  --mola-viva: linear(
+    0,
+    0.018 2.1%,
+    0.066 4.2%,
+    0.134 6.3%,
+    0.215 8.3%,
+    0.481 14.6%,
+    0.565 16.7%,
+    0.644 18.8%,
+    0.715 20.8%,
+    0.778 22.9%,
+    0.833 25%,
+    0.88 27.1%,
+    0.919 29.2%,
+    0.952 31.3%,
+    0.978 33.3%,
+    0.998 35.4%,
+    1.013 37.5%,
+    1.032 41.7%,
+    1.038 45.8%,
+    0.999 97.9%,
+    1
+  );
+  --mola-viva-duracao: 600ms;
+  --mola-firme: linear(
+    0,
+    0.013 2.1%,
+    0.046 4.2%,
+    0.095 6.3%,
+    0.153 8.3%,
+    0.482 18.8%,
+    0.543 20.8%,
+    0.599 22.9%,
+    0.652 25%,
+    0.699 27.1%,
+    0.742 29.2%,
+    0.78 31.3%,
+    0.815 33.3%,
+    0.871 37.5%,
+    0.914 41.7%,
+    0.945 45.8%,
+    0.976 52.1%,
+    0.999 62.5%,
+    1.002 97.9%,
+    1
+  );
+  --mola-firme-duracao: 340ms;
+
   --ambiente-grao: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .075 0 0 0 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
+
+  /* VIDRO (claro). Matiz clara e fria; o `-denso` é para o que fica POR CIMA
+     de texto (menus, modais), que pede mais matiz para não embaralhar. */
+  --vidro-matiz: rgb(250 250 253 / 0.6);
+  --vidro-matiz-denso: rgb(250 250 253 / 0.78);
+  --vidro-desfoque: blur(22px) saturate(190%);
+  --vidro-desfoque-denso: blur(32px) saturate(190%);
+  --vidro-borda: rgb(255 255 255 / 0.62);
+  /* Aresta especular: a linha que pega luz em cima, um reflexo mais fraco
+     embaixo (a espessura da lâmina) e um fio de 0,5px em volta. */
+  --vidro-aresta:
+    inset 0 1px 0 0 rgb(255 255 255 / 0.95), inset 0 -1px 0 0 rgb(255 255 255 / 0.3),
+    inset 0 0 0 0.5px rgb(255 255 255 / 0.35);
+  --vidro-sombra: 0 1px 2px rgb(16 17 24 / 0.05), 0 10px 30px -10px rgb(16 17 24 / 0.16);
+  --vidro-sombra-flutuante:
+    0 2px 6px rgb(16 17 24 / 0.06), 0 12px 24px -8px rgb(16 17 24 / 0.1),
+    0 32px 64px -24px rgb(16 17 24 / 0.24);
+
+  /* SUPERFÍCIE (claro). A borda de 0,5px desenhada por sombra separa o cartão
+     branco do fundo claro sem a linha dura de 1px. */
+  --superficie-aresta: inset 0 1px 0 0 rgb(255 255 255 / 1);
+  --elevacao-1:
+    0 0 0 0.5px rgb(16 17 24 / 0.04), 0 1px 2px rgb(16 17 24 / 0.04),
+    0 4px 12px -4px rgb(16 17 24 / 0.06);
+  --elevacao-2:
+    0 0 0 0.5px rgb(16 17 24 / 0.05), 0 2px 4px rgb(16 17 24 / 0.05),
+    0 18px 36px -14px rgb(16 17 24 / 0.16);
 }
 
 [data-theme="dark"] {
   --ambiente-grao: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 .06 0 0 0 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
+
+  /* VIDRO (escuro). Matiz escura e fria; a aresta é mais fraca porque, no
+     escuro, uma linha de luz forte vira contorno de desenho. */
+  --vidro-matiz: rgb(30 30 36 / 0.56);
+  --vidro-matiz-denso: rgb(28 28 33 / 0.8);
+  --vidro-borda: rgb(255 255 255 / 0.1);
+  --vidro-aresta:
+    inset 0 1px 0 0 rgb(255 255 255 / 0.14), inset 0 -1px 0 0 rgb(255 255 255 / 0.04),
+    inset 0 0 0 0.5px rgb(255 255 255 / 0.06);
+  --vidro-sombra: 0 1px 2px rgb(0 0 0 / 0.35), 0 12px 32px -10px rgb(0 0 0 / 0.55);
+  --vidro-sombra-flutuante:
+    0 2px 6px rgb(0 0 0 / 0.4), 0 12px 24px -8px rgb(0 0 0 / 0.35),
+    0 32px 64px -20px rgb(0 0 0 / 0.7);
+
+  --superficie-aresta: inset 0 1px 0 0 rgb(255 255 255 / 0.06);
+  --elevacao-1:
+    0 0 0 0.5px rgb(255 255 255 / 0.06), 0 1px 2px rgb(0 0 0 / 0.4),
+    0 6px 16px -6px rgb(0 0 0 / 0.5);
+  --elevacao-2:
+    0 0 0 0.5px rgb(255 255 255 / 0.08), 0 2px 4px rgb(0 0 0 / 0.45),
+    0 22px 44px -16px rgb(0 0 0 / 0.75);
 }
 
+/* ---- 1. Ambiente ------------------------------------------------------ */
 body {
   background-image:
     var(--ambiente-grao),
@@ -1419,71 +1634,19 @@ body {
     );
 }
 
-/* ---- 2. Material --------------------------------------------------------
-   Em `@layer components` de propósito: utilitário vence componente, então
-   quem escreve `<Card className="bg-warning-bg shadow-none">` continua
-   mandando — o vidro é o padrão, não uma imposição. Por isso o `<Card>` não
-   traz mais `bg-surface`/`shadow-xs`: elas venceriam o vidro sempre.
-
-   O DESFOQUE mora num `::before` atrás do cartão, e não no cartão. Um
-   `backdrop-filter` no próprio elemento o transformaria em contexto de
-   empilhamento — e todo autocomplete que abre DENTRO de um cartão
-   (proposta, agenda) ficaria preso debaixo do cartão seguinte. Com o
-   pseudo-elemento em `z-index: -1`, o cartão continua sem contexto próprio. */
+/* ---- 2. Materiais ---------------------------------------------------------
+   SUPERFÍCIE — o `<Card>` (`.ds-cartao`). Em `@layer components` de propósito:
+   utilitário vence componente, então quem escreve
+   `<Card className="bg-warning-bg shadow-none">` continua mandando — a
+   superfície é o padrão, não uma imposição. Sem `backdrop-filter`: o cartão é
+   conteúdo (ADR 0002), e um `backdrop-filter` aqui também o tornaria contexto
+   de empilhamento, prendendo debaixo do cartão seguinte todo autocomplete que
+   abre dentro dele. */
 @layer components {
-  /* Fundo e borda em `rgba()` LITERAL, e não `color-mix()`: o navegador
-     devolve `color-mix` no `getComputedStyle` como `oklab(...)`, e as provas
-     de tela (tests/e2e) leem a cor de fundo como `rgb(...)` para calcular
-     contraste — com `oklab` elas leem números errados e reprovam. Os valores
-     são `--color-surface` (#ffffff / #1d1c17) e `--color-border` (#e7e3da). */
   .ds-cartao {
     position: relative;
-    background-color: rgba(255, 255, 255, 0.64);
-    background-image: linear-gradient(
-      180deg,
-      rgb(255 255 255 / 0.55) 0%,
-      rgb(255 255 255 / 0.12) 38%,
-      rgb(255 255 255 / 0) 62%
-    );
-    box-shadow:
-      inset 0 1px 0 0 rgb(255 255 255 / 0.9),
-      0 1px 2px rgb(20 18 14 / 0.04),
-      0 4px 10px -2px rgb(20 18 14 / 0.05),
-      0 16px 32px -16px rgb(20 18 14 / 0.14);
-  }
-
-  .ds-cartao::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    border-radius: inherit;
-    pointer-events: none;
-    backdrop-filter: blur(18px) saturate(170%);
-    -webkit-backdrop-filter: blur(18px) saturate(170%);
-  }
-
-  [data-theme="dark"] .ds-cartao {
-    background-color: rgba(29, 28, 23, 0.58);
-    background-image: linear-gradient(
-      180deg,
-      rgb(255 255 255 / 0.09) 0%,
-      rgb(255 255 255 / 0.02) 40%,
-      rgb(255 255 255 / 0) 62%
-    );
-    box-shadow:
-      inset 0 1px 0 0 rgb(255 255 255 / 0.08),
-      0 1px 2px rgb(0 0 0 / 0.35),
-      0 18px 40px -18px rgb(0 0 0 / 0.7);
-  }
-
-  /* Barra lateral: vidro sobre o ambiente (mesmo motivo do `rgba()` literal
-     do cartão). O desfoque vem dos utilitários no próprio componente. */
-  .ds-barra-lateral {
-    background-color: rgba(255, 255, 255, 0.7);
-  }
-  [data-theme="dark"] .ds-barra-lateral {
-    background-color: rgba(29, 28, 23, 0.7);
+    background-color: var(--color-surface);
+    box-shadow: var(--superficie-aresta), var(--elevacao-1);
   }
 
   /* Botão sólido: relevo (luz em cima, sombra embaixo) + halo da própria cor. */
@@ -1511,14 +1674,13 @@ body {
       0 10px 24px -8px color-mix(in oklab, var(--color-accent) 70%, transparent);
   }
 
-  /* Botão secundário: o brilho de uma lâmina de vidro sobre o fundo sólido
-     dele (fundo translúcido em botão sai em `oklab` no getComputedStyle — ver
-     o comentário do cartão). */
+  /* Botão secundário: fundo sólido (as provas de tela leem a cor dele) com o
+     brilho de uma lâmina de vidro por cima. */
   .ds-botao-vidro {
     background-image: linear-gradient(180deg, rgb(255 255 255 / 0.45), rgb(255 255 255 / 0) 70%);
     box-shadow:
       inset 0 1px 0 0 rgb(255 255 255 / 0.8),
-      0 1px 2px rgb(20 18 14 / 0.06);
+      0 1px 2px rgb(16 17 24 / 0.06);
   }
   [data-theme="dark"] .ds-botao-vidro {
     background-image: linear-gradient(180deg, rgb(255 255 255 / 0.06), rgb(255 255 255 / 0) 70%);
@@ -1528,76 +1690,80 @@ body {
   }
 }
 
-/* Painel flutuante e modal: o mesmo material, mais denso (ficam POR CIMA de
-   conteúdo com texto, então pedem mais fundo para não embaralhar a leitura).
-   Fora de layer, de propósito: vencem o `bg-popover`/`bg-background` e a
-   `shadow-*` que os componentes do shadcn trazem. */
+/* VIDRO — a camada de controle. Fora de layer, de propósito: vence o
+   `bg-popover`/`bg-background`/`shadow-*` que os componentes do shadcn trazem e
+   o `backdrop-blur-*` que a barra lateral escreve no próprio JSX.
+
+   ORDEM DO PAR `backdrop-filter`: o prefixado vem ANTES. Com valor `var()`, o
+   Lightning CSS do Tailwind 4 funde os dois e mantém só o ÚLTIMO — e com o
+   `-webkit-` por último o Chrome (que só lê o padrão) ficava sem desfoque
+   nenhum. Medido no CSS servido, não deduzido.
+
+   O tooltip (`.ds-painel.bg-primary`) fica de fora: o texto dele é
+   `text-primary-foreground` (branco), e sobre vidro claro sumiria. Ele vira
+   vidro quando o primitivo trocar a cor do texto (entrega 2 do plano). */
+.ds-barra-lateral {
+  background-color: var(--vidro-matiz);
+  border-color: var(--vidro-borda);
+  box-shadow: var(--vidro-aresta);
+  -webkit-backdrop-filter: var(--vidro-desfoque);
+  backdrop-filter: var(--vidro-desfoque);
+}
+
 .ds-modal,
-.ds-painel {
-  background-color: rgb(255 255 255 / 0.74);
-  background-image: linear-gradient(180deg, rgb(255 255 255 / 0.6), rgb(255 255 255 / 0) 45%);
-  border-color: rgb(255 255 255 / 0.7);
-  box-shadow:
-    inset 0 1px 0 0 rgb(255 255 255 / 0.9),
-    0 2px 6px rgb(20 18 14 / 0.06),
-    0 24px 56px -16px rgb(20 18 14 / 0.24);
-  backdrop-filter: blur(28px) saturate(180%);
-  -webkit-backdrop-filter: blur(28px) saturate(180%);
+.ds-gaveta,
+.ds-painel:not(.bg-primary) {
+  background-color: var(--vidro-matiz-denso);
+  border-color: var(--vidro-borda);
+  box-shadow: var(--vidro-aresta), var(--vidro-sombra-flutuante);
+  -webkit-backdrop-filter: var(--vidro-desfoque-denso);
+  backdrop-filter: var(--vidro-desfoque-denso);
 }
 
-[data-theme="dark"] .ds-modal,
-[data-theme="dark"] .ds-painel {
-  background-color: rgb(29 28 23 / 0.72);
-  background-image: linear-gradient(180deg, rgb(255 255 255 / 0.07), rgb(255 255 255 / 0) 45%);
-  border-color: rgb(255 255 255 / 0.09);
-  box-shadow:
-    inset 0 1px 0 0 rgb(255 255 255 / 0.08),
-    0 2px 6px rgb(0 0 0 / 0.4),
-    0 28px 64px -16px rgb(0 0 0 / 0.75);
-}
-
-/* Borda translúcida do cartão. O `<Card>` mantém a classe `border-border`
-   (as provas de tela localizam o card por ela), e um utilitário venceria
-   qualquer regra de `@layer components`. Esta regra fica no MESMO layer dos
-   utilitários com um ponto a mais de especificidade (0,2,0 contra 0,1,0).
-   Quem passa outra cor de borda ao `<Card>` (`border-warning/40`) continua
-   mandando: o `twMerge` do `cn()` tira o `border-border`, e o seletor deixa
-   de casar. */
+/* Borda do cartão. O `<Card>` mantém a classe `border-border` (as provas de
+   tela localizam o card por ela), e um utilitário venceria qualquer regra de
+   `@layer components`. Esta regra fica no MESMO layer dos utilitários com um
+   ponto a mais de especificidade (0,2,0 contra 0,1,0). A borda de 1px some
+   (transparente): quem desenha o contorno da superfície é o fio de 0,5px da
+   `--elevacao-*`, mais fino e sem a linha dura. Quem passa outra cor de borda
+   ao `<Card>` (`border-warning/40`) continua mandando: o `twMerge` do `cn()`
+   tira o `border-border`, e o seletor deixa de casar. */
 @layer utilities {
   .ds-cartao.border-border {
-    border-color: rgba(231, 227, 218, 0.7);
-  }
-  [data-theme="dark"] .ds-cartao.border-border {
-    border-color: rgba(255, 255, 255, 0.07);
+    border-color: transparent;
   }
 }
 
 /* ---- 3. Resposta --------------------------------------------------------
    Só o cartão que é LINK (a grade dos hubs, atalhos) responde ao cursor:
-   cartão que é só moldura de formulário não deveria fingir ser clicável.
-   Fora de layer porque precisa vencer o `transition-colors` que os hubs
-   escrevem no próprio cartão — sem isso a subida aconteceria aos saltos. */
+   cartão que é só moldura de formulário não deveria fingir ser clicável. Sobe
+   em mola viva e ganha o aro da marca. Fora de layer porque precisa vencer o
+   `transition-colors` que os hubs escrevem no próprio cartão. */
 .ds-cartao {
   transition-property: color, background-color, border-color, box-shadow, translate;
-  transition-duration: var(--duration-base);
-  transition-timing-function: var(--ease-out);
+  transition-duration:
+    var(--duration-base), var(--duration-base), var(--duration-base), var(--mola-viva-duracao),
+    var(--mola-viva-duracao);
+  transition-timing-function: var(--ease-out-slow);
+  transition-timing-function:
+    var(--ease-out), var(--ease-out), var(--ease-out), var(--mola-viva), var(--mola-viva);
 }
 
 a:hover > .ds-cartao,
 a:focus-visible > .ds-cartao {
   translate: 0 -2px;
   box-shadow:
-    inset 0 1px 0 0 rgb(255 255 255 / 0.95),
-    0 0 0 1px color-mix(in oklab, var(--color-accent) 22%, transparent),
-    0 2px 4px rgb(20 18 14 / 0.05),
-    0 24px 44px -18px color-mix(in oklab, var(--color-accent-hover) 34%, rgb(20 18 14 / 0.2));
+    var(--superficie-aresta),
+    0 0 0 1px color-mix(in oklab, var(--color-accent) 24%, transparent),
+    0 2px 4px rgb(16 17 24 / 0.05),
+    0 24px 44px -18px color-mix(in oklab, var(--color-accent-hover) 34%, rgb(16 17 24 / 0.2));
 }
 
 [data-theme="dark"] a:hover > .ds-cartao,
 [data-theme="dark"] a:focus-visible > .ds-cartao {
   box-shadow:
-    inset 0 1px 0 0 rgb(255 255 255 / 0.1),
-    0 0 0 1px color-mix(in oklab, var(--color-accent) 35%, transparent),
+    var(--superficie-aresta),
+    0 0 0 1px color-mix(in oklab, var(--color-accent) 38%, transparent),
     0 2px 4px rgb(0 0 0 / 0.4),
     0 24px 52px -18px
       color-mix(in oklab, color-mix(in oklab, var(--color-accent) 80%, black) 40%, rgb(0 0 0 / 0.6));
@@ -1607,6 +1773,50 @@ a:focus-visible > .ds-cartao {
   a:hover > .ds-cartao,
   a:focus-visible > .ds-cartao {
     translate: none;
+  }
+}
+
+/* ---- 4. Recuos -------------------------------------------------------------
+   Três situações em que o vidro vira superfície, e as três pelo mesmo motivo:
+   quem pediu (ou o navegador que não sustenta) prefere ler a ver o fundo.
+
+   - `prefers-reduced-transparency` — "Reduzir transparência" do sistema
+     (macOS, iOS, Windows "Efeitos de transparência" desligado).
+   - `prefers-contrast: more` — além de opaco, a borda vira `border-strong`.
+   - sem `backdrop-filter` — a matiz translúcida sozinha, sem desfoque, deixa
+     o texto de trás aparecer nítido por baixo; opaco é o certo. */
+@media (prefers-reduced-transparency: reduce) {
+  .ds-barra-lateral,
+  .ds-modal,
+  .ds-gaveta,
+  .ds-painel:not(.bg-primary) {
+    background-color: var(--color-surface);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+}
+
+@media (prefers-contrast: more) {
+  .ds-barra-lateral,
+  .ds-modal,
+  .ds-gaveta,
+  .ds-painel:not(.bg-primary) {
+    background-color: var(--color-surface);
+    border-color: var(--color-border-strong);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+  .ds-cartao.border-border {
+    border-color: var(--color-border-strong);
+  }
+}
+
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .ds-barra-lateral,
+  .ds-modal,
+  .ds-gaveta,
+  .ds-painel:not(.bg-primary) {
+    background-color: var(--color-surface);
   }
 }
 

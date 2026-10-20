@@ -45,9 +45,11 @@ conteúdo é superfície** ([ADR 0002](docs/adr/0002-vidro-so-na-camada-de-contr
 Cada arquivo do oficial que a fork altera vira conflito potencial em toda atualização.
 
 1. **Prefira CSS a JSX.** A camada visual mora em `app/globals.css`, na seção
-   "PROFUNDIDADE E VIDRO", com classes `ds-*` (`ds-cartao`, `ds-painel`, `ds-barra-lateral`,
-   `ds-botao-primario`, `ds-botao-vidro`, `ds-botao-perigo`). Mudar o visual por ali e por
-   tokens alcança o app inteiro tocando um arquivo só.
+   "LIQUID GLASS", com tokens de material (`--vidro-*`, `--superficie-aresta`, `--elevacao-*`),
+   de mola (`--mola-suave|viva|firme` e `-duracao`) e classes `ds-*` (`ds-cartao`, `ds-painel`,
+   `ds-modal`, `ds-barra-lateral`, `ds-botao-primario`, `ds-botao-vidro`, `ds-botao-perigo`).
+   Peça nova consome os tokens; não inventa valor de vidro ou sombra. Mudar o visual por ali
+   alcança o app inteiro tocando um arquivo só.
 2. **Depois, os primitivos** de `components/ui/` (shadcn). Mexer numa tela específica
    (`app/**`, `components/<área>/**`) é o último recurso e precisa de motivo escrito no PR.
 3. **Arquivo novo é melhor que arquivo alterado.** Componente, hook ou CSS exclusivo do Derasu

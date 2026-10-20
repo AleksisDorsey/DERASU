@@ -60,7 +60,7 @@ describe("extrairRegua — os pares saem do globals.css, nunca de lista à mão"
     expect(REGUA.rampaDoProduto).toHaveLength(11);
     expect(REGUA.rampaDoProduto[6]).toBe("#506d48");
     expect(REGUA.claro.neutros).toHaveLength(11);
-    expect(REGUA.escuro.neutros[9]).toBe("#161510");
+    expect(REGUA.escuro.neutros[9]).toBe("#151517");
     expect(REGUA.claro.base.map((b) => b.chave)).toEqual([
       "--color-bg",
       "--color-surface",
@@ -119,11 +119,11 @@ describe("extrairRegua — os pares saem do globals.css, nunca de lista à mão"
     const razao = (papel: string, superficie: string) =>
       pares.find((p) => p.papel === papel && p.superficie === superficie)?.razao ?? 0;
 
-    // Derasu: os dois contra `--color-bg` remedidos com o fundo do fork (#f2efe7;
-    // eram 5,51 e 3,79 sobre #faf9f6). Os dois seguem acima dos pisos (4,5 e 3).
-    expect(razao("--color-accent", "--color-bg")).toBeCloseTo(5.05, 2);
-    expect(razao(":focus-visible/outline", "--color-bg")).toBeCloseTo(3.48, 2);
-    expect(razao(":focus-visible/outline", "--color-surface-elevated")).toBeCloseTo(3.6, 2);
+    // Derasu: os dois contra `--color-bg` remedidos com o fundo do fork (#efeff4,
+    // neutro frio; eram 5,51 e 3,79 sobre #faf9f6). Seguem acima dos pisos (4,5 e 3).
+    expect(razao("--color-accent", "--color-bg")).toBeCloseTo(5.06, 2);
+    expect(razao(":focus-visible/outline", "--color-bg")).toBeCloseTo(3.49, 2);
+    expect(razao(":focus-visible/outline", "--color-surface-elevated")).toBeCloseTo(3.61, 2);
   });
 
   it("a Sage inteira, como está no CSS, cabe nos pisos", () => {
@@ -409,12 +409,14 @@ describe("marca acromática — o accent do produto permanece", () => {
         separacaoDoNeutro(regua, tema.grauDoAccent, tema.accent),
       ).toBeGreaterThanOrEqual(PISO_DE_SEPARACAO_DO_NEUTRO);
     }
-    // Os números exatos, fixados: 0,0681 no claro (accent-600 × neutral-600) e 0,1994 no
+    // Derasu: remedidos com os neutros frios (eram 0,0681 e 0,1994 com o greige; o
+    // neutro frio se afasta do verde Sage, e a separação sobe).
+    // Os números exatos, fixados: 0,0794 no claro (accent-600 × neutral-600) e 0,2021 no
     // escuro (accent-400 × neutral-400). São eles que mostram por que o piso do briefing
     // (8, na convenção ×100 — ou seja 0,08 aqui) não podia ser aceito sem medir: ele
     // reprovaria o controle positivo do próprio produto no tema claro.
-    expect(separacaoDoNeutro(REGUA.claro, marca.claro.grauDoAccent, marca.claro.accent)).toBeCloseTo(0.0681, 4);
-    expect(separacaoDoNeutro(REGUA.escuro, marca.escuro.grauDoAccent, marca.escuro.accent)).toBeCloseTo(0.1994, 4);
+    expect(separacaoDoNeutro(REGUA.claro, marca.claro.grauDoAccent, marca.claro.accent)).toBeCloseTo(0.0794, 4);
+    expect(separacaoDoNeutro(REGUA.escuro, marca.escuro.grauDoAccent, marca.escuro.accent)).toBeCloseTo(0.2021, 4);
     expect(separacaoDoNeutro(REGUA.claro, marca.claro.grauDoAccent, marca.claro.accent)).toBeLessThan(0.08);
 
     // Controle negativo: um accent cinza reprovaria as duas guardas. Sem esta linha, os

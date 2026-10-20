@@ -9,15 +9,16 @@ const Card = React.forwardRef<
   <div
     ref={ref}
     className={cn(
-      // `ds-cartao` traz fundo, sombra e desfoque (o vidro — ver
-      // "PROFUNDIDADE E VIDRO" em app/globals.css). Ele mora em
+      // `ds-cartao` traz o material SUPERFÍCIE — fundo opaco, aresta e
+      // elevação (ver "LIQUID GLASS" em app/globals.css; o cartão é conteúdo,
+      // e conteúdo não é vidro: derasu/docs/adr/0002). Ele mora em
       // `@layer components`, então um `bg-*`/`shadow-*` passado aqui continua
-      // vencendo; por isso `bg-surface`/`shadow-xs` saíram desta lista.
+      // vencendo; por isso `bg-surface`/`shadow-xs` não estão nesta lista.
       //
       // `border-border` FICA, e não por estética: as provas de tela localizam
       // "o card do design system" por essa classe (xpath em
       // tests/e2e/automacao-diz-a-verdade.spec.ts e irmãos). Tirá-la reprovou
-      // 4 das 6 partes do e2e. A borda translúcida do vidro entra por
+      // 4 das 6 partes do e2e. O contorno da superfície entra por
       // `.ds-cartao.border-border` em `@layer utilities`.
       "ds-cartao rounded-lg border border-border text-text",
       className,

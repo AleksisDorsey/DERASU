@@ -346,24 +346,25 @@ describe("controle positivo — o produto sem marca não pode se mexer", () => {
     expect(cor.derivada?.escuro.deslocamento).toBe(0);
 
     const p = pintadosDaSemente("#506d48");
-    // Derasu: os pares contra `--color-bg` foram remedidos com o fundo do fork
-    // (#f2efe7 claro, #121109 escuro; eram #faf9f6/#161510). Os contra
-    // `--color-surface-elevated` e `-soft` não mudam — essas superfícies ficaram.
+    // Derasu: todos remedidos com os neutros frios do fork (fundo #efeff4 claro,
+    // #101014 escuro; superfícies #f3f3f8/#262629), que preservam a luminância do
+    // greige — por isso os números mexem só na segunda casa. Os números citados
+    // nos comentários abaixo são os do oficial.
     // Claro: os dois números que `contraste.ts` documenta como medidos à mão.
-    expect(foco(p.claro, "--color-bg")).toBeCloseTo(3.48, 2);
-    expect(foco(p.claro, "--color-surface-elevated")).toBeCloseTo(3.6, 2);
+    expect(foco(p.claro, "--color-bg")).toBeCloseTo(3.49, 2);
+    expect(foco(p.claro, "--color-surface-elevated")).toBeCloseTo(3.61, 2);
     // Escuro: 6,30 e 5,22 na rampa DERIVADA da semente; os literais do
     // `globals.css` (`#82a077`) dão 6,31 e 5,23 — a rampa reproduz a Sage com
     // Δ ≤ 2/255 por canal, e a diferença de 0,01 é esse arredondamento.
-    expect(foco(p.escuro, "--color-bg")).toBeCloseTo(6.52, 2);
-    expect(foco(p.escuro, "--color-surface-elevated")).toBeCloseTo(5.22, 2);
+    expect(foco(p.escuro, "--color-bg")).toBeCloseTo(6.54, 2);
+    expect(foco(p.escuro, "--color-surface-elevated")).toBeCloseTo(5.2, 2);
     // No escuro o anel NÃO fica apertado contra as bases: quem aperta é o
     // `-soft` COMPOSTO. 4,58 aqui — é este o par que a prova em tela reportou
     // como "4,58 no escuro", e não `foco × --color-bg` (6,30). Nos literais do
     // `globals.css` o mesmo par dá 4,59, e `superficiesDoTema` documenta o trio
     // 4,99 · 4,59 · 4,02.
-    expect(foco(p.escuro, "--color-accent-soft@--color-surface")).toBeCloseTo(4.58, 2);
-    expect(foco(p.escuro, "--color-accent-soft@--color-surface-elevated")).toBeCloseTo(4.03, 2);
+    expect(foco(p.escuro, "--color-accent-soft@--color-surface")).toBeCloseTo(4.57, 2);
+    expect(foco(p.escuro, "--color-accent-soft@--color-surface-elevated")).toBeCloseTo(4.0, 2);
   });
 
   it("sem marca configurada nada é injetado, e a tela fica como está", () => {
@@ -382,10 +383,10 @@ describe("a navy #0f172a — o defeito que a prova em tela achou", () => {
     const p = pintadosDaSemente("#0f172a");
     // Derasu: os dois contra `--color-bg` remedidos com o fundo do fork (eram
     // 10,77 e 5,28 sobre #faf9f6/#161510). Os dois do escuro seguem acima do piso.
-    expect(foco(p.claro, "--color-bg")).toBeCloseTo(9.86, 2);
-    expect(foco(p.claro, "--color-surface-elevated")).toBeCloseTo(10.22, 2);
-    expect(foco(p.escuro, "--color-bg")).toBeCloseTo(5.47, 2);
-    expect(foco(p.escuro, "--color-surface-elevated")).toBeCloseTo(4.39, 2);
+    expect(foco(p.claro, "--color-bg")).toBeCloseTo(9.89, 2);
+    expect(foco(p.claro, "--color-surface-elevated")).toBeCloseTo(10.25, 2);
+    expect(foco(p.escuro, "--color-bg")).toBeCloseTo(5.49, 2);
+    expect(foco(p.escuro, "--color-surface-elevated")).toBeCloseTo(4.36, 2);
     for (const superficie of ["--color-bg", "--color-surface-elevated"] as const) {
       expect(foco(p.escuro, superficie), superficie).toBeGreaterThanOrEqual(PISOS.componente);
     }
