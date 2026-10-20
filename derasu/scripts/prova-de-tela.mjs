@@ -30,6 +30,10 @@ const env = Object.fromEntries(
     .map((l) => [l.slice(0, l.indexOf("=")), l.slice(l.indexOf("=") + 1).trim()]),
 );
 
+// JPEG, e não PNG: com o ambiente à mostra o grão fino ocupa a tela toda, e o
+// PNG não o comprime — a prova da entrega 2 tinha 62 MB em PNG e 4 MB assim.
+const JPEG = { type: "jpeg", quality: 82 };
+
 const VIEWPORTS = {
   desktop: { width: 1440, height: 900, isMobile: false },
   celular: { width: 390, height: 844, isMobile: true },
@@ -49,6 +53,23 @@ async function medir(page) {
         raio: s.borderTopLeftRadius,
       };
     };
+    const caixa = (sel) => {
+      const el = document.querySelector(sel);
+      if (!el) return null;
+      const r = el.getBoundingClientRect();
+      if (!r.width) return null;
+      return {
+        x: Math.round(r.x),
+        y: Math.round(r.y),
+        largura: Math.round(r.width),
+        altura: Math.round(r.height),
+        folgaAteOFundo: Math.round(innerHeight - r.bottom),
+      };
+    };
+    const gotaEl = document.querySelector("nav[data-barra-inferior] > ul");
+    const gota = gotaEl ? getComputedStyle(gotaEl, "::before") : null;
+    const topo = document.querySelector(".ds-topo");
+    const efeito = topo ? getComputedStyle(topo, "::before") : null;
     return {
       tema: document.documentElement.dataset.theme,
       transparenciaReduzida: matchMedia("(prefers-reduced-transparency: reduce)").matches,
@@ -57,12 +78,48 @@ async function medir(page) {
       fundoDaPagina: getComputedStyle(document.body).backgroundColor,
       cartao: cs(".ds-cartao"),
       barraLateral: cs(".ds-barra-lateral"),
-      painel: cs(".ds-painel:not(.bg-primary)"),
+      painel: cs(".ds-painel"),
+      modal: cs(".ds-modal"),
+      // Entrega 2 — camada de controle.
+      topo: topo
+        ? {
+            fundo: getComputedStyle(topo).backgroundColor,
+            linhaDeBaixo: getComputedStyle(topo).borderBottomWidth,
+            efeitoDeBorda: efeito && {
+              desfoque: efeito.backdropFilter,
+              mascara: efeito.maskImage.slice(0, 80),
+              altura: efeito.height,
+            },
+          }
+        : null,
+      capsulaAgrupada: cs(".ds-capsula"),
+      capsulaSolta: cs(".ds-capsulas-soltas > :is(button, a)"),
+      caixaDaBarraLateral: caixa(".ds-barra-lateral"),
+      barraDeAbas: cs("nav[data-barra-inferior] > ul"),
+      caixaDaNavDeAbas: caixa("nav[data-barra-inferior]"),
+      caixaDaCapsulaDeAbas: caixa("nav[data-barra-inferior] > ul"),
+      gota: gota && {
+        opacidade: gota.opacity,
+        translate: gota.translate,
+        largura: gota.width,
+        fundo: gota.backgroundColor,
+      },
+      rodapeDescontado: (() => {
+        const m = document.querySelector("main");
+        return m ? getComputedStyle(m).paddingBottom : null;
+      })(),
     };
   });
 }
 
-const browser = await chromium.launch();
+// GPU, e não o compositor por software padrão do headless: com ele o
+// `backdrop-filter` falha de forma intermitente — a mesma lâmina desfoca
+// sobre um trecho e deixa o texto nítido sobre outro —, e a prova mostrava
+// vidro sem desfoque que o navegador de verdade desfoca. Medido lado a lado
+// em 20/10/2026 (entrega 2), com lâminas de teste na mesma página.
+const browser = await chromium.launch({
+  args: ["--enable-gpu", "--use-angle=d3d11", "--ignore-gpu-blocklist"],
+});
 const medidas = [];
 for (const [nomeVp, vp] of Object.entries(VIEWPORTS)) {
   for (const tema of ["light", "dark"]) {
@@ -102,18 +159,67 @@ for (const [nomeVp, vp] of Object.entries(VIEWPORTS)) {
         await page.addStyleTag({ content: "nextjs-portal{display:none!important}" });
         await page.waitForTimeout(600);
         const nome = `${rota.replace(/\W+/g, "-").replace(/^-|-$/g, "")}_${nomeVp}_${tema === "light" ? "claro" : "escuro"}_${transparencia === "reduce" ? "sem-transparencia" : "vidro"}`;
-        await page.screenshot({ path: path.join(SAIDA, `${nome}.png`) });
+        await page.screenshot({ path: path.join(SAIDA, `${nome}.jpg`), ...JPEG });
         medidas.push({ caso: nome, ...(await medir(page)) });
         process.stdout.write(`ok ${nome}\n`);
+
+        // Conteúdo rolado: o efeito de borda do topo sobre o que passa por baixo.
+        const rolou = await page.evaluate(() => {
+          scrollTo(0, 320);
+          return scrollY > 0;
+        });
+        if (rolou) {
+          await page.waitForTimeout(400);
+          await page.screenshot({ path: path.join(SAIDA, `${nome}_rolado.jpg`), ...JPEG });
+          process.stdout.write(`ok ${nome}_rolado\n`);
+          await page.evaluate(() => scrollTo(0, 0));
+        }
+
+        // Dica (tooltip): nenhuma tela de prova tem uma à mão sem dado (a única
+        // na inbox é a de mensagem com erro), então o balão é montado com a
+        // MESMA classe base do primitivo e o estado que o Radix emite. Prova o
+        // material, não o gatilho.
+        if (!vp.isMobile && rota === rotas[0]) {
+          await page.evaluate(() => {
+            const d = document.createElement("div");
+            d.id = "prova-dica";
+            d.dataset.state = "delayed-open";
+            d.className =
+              "ds-painel z-50 max-w-xs overflow-hidden rounded-md border bg-popover px-3 py-1.5 text-xs break-words text-popover-foreground";
+            d.style.cssText = "position:fixed;top:120px;left:420px";
+            d.textContent = "Mensagem não entregue: o número não tem WhatsApp.";
+            document.body.appendChild(d);
+          });
+          await page.waitForTimeout(300);
+          await page.screenshot({
+            path: path.join(SAIDA, `${nome}_dica.jpg`),
+            ...JPEG,
+            clip: { x: 380, y: 90, width: 460, height: 110 },
+          });
+          const dica = await page.evaluate(() => {
+            const s = getComputedStyle(document.getElementById("prova-dica"));
+            return {
+              fundo: s.backgroundColor,
+              texto: s.color,
+              desfoque: s.backdropFilter,
+              raio: s.borderTopLeftRadius,
+            };
+          });
+          medidas.push({ caso: `${nome}_dica`, dica });
+          await page.evaluate(() => document.getElementById("prova-dica")?.remove());
+          process.stdout.write(`ok ${nome}_dica\n`);
+        }
 
         // Menu aberto (vidro denso sobre conteúdo): o seletor de organização do topo.
         if (!vp.isMobile && rota === rotas[0]) {
           const gatilho = page.locator("header button").filter({ hasText: /\S/ }).first();
           if (await gatilho.isVisible().catch(() => false)) {
             await gatilho.click();
-            await page.waitForSelector(".ds-painel[data-state='open']", { timeout: 10_000 }).catch(() => {});
+            await page
+              .waitForSelector(".ds-painel[data-state='open']", { timeout: 10_000 })
+              .catch(() => {});
             await page.waitForTimeout(700);
-            await page.screenshot({ path: path.join(SAIDA, `${nome}_menu.png`) });
+            await page.screenshot({ path: path.join(SAIDA, `${nome}_menu.jpg`), ...JPEG });
             medidas.push({ caso: `${nome}_menu`, ...(await medir(page)) });
             process.stdout.write(`ok ${nome}_menu\n`);
             await page.keyboard.press("Escape");
