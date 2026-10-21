@@ -2104,9 +2104,13 @@ button[role="switch"][data-state="checked"]:active:not(:disabled) > span {
 }
 
 /* ABAS SEGMENTADAS — `.ds-abas` (a lista) e `.ds-aba` (cada aba), classes do
-   primitivo `components/ui/tabs.tsx`. O gancho é classe, e não
-   `role="tablist"`: há listas de abas próprias no app (a inbox, por exemplo)
-   com outra estrutura, que não devem mudar de cara.
+   primitivo `components/ui/tabs.tsx`.
+
+   SÓ NA LISTA QUE NÃO DESLIGOU O FUNDO. O mesmo primitivo serve às abas de
+   SUBLINHADO — a inbox escreve `bg-transparent rounded-none p-0` na lista e
+   `border-b-2` na aba. Com o trilho e a gota por cima, aquilo virava uma
+   bolha branca torta atrás de "Fila 1" (medido na prova da entrega 4). Lista
+   com `bg-transparent` escolheu outro desenho, e fica como era.
 
    Concêntricas de verdade: a lista tem 36px de altura e raio de 18px (é uma
    cápsula); com 3px de folga, a aba tem raio de 15px — 18 menos 3 —, e com
@@ -2119,7 +2123,7 @@ button[role="switch"][data-state="checked"]:active:not(:disabled) > span {
    largura do próprio texto, e saber onde está a próxima pede medir em JS —
    fora do ADR 0003. Ancoragem de CSS (`anchor()`) foi medida e não
    transiciona quando a âncora troca de aba. */
-.ds-abas {
+.ds-abas:not(.bg-transparent) {
   border-radius: 1.125rem;
   padding: 0.1875rem;
   background-color: var(--trilho);
@@ -2129,7 +2133,7 @@ button[role="switch"][data-state="checked"]:active:not(:disabled) > span {
    /app/ai/followups): com o fundo quase igual ao da página ninguém via; com o
    trilho, virava uma faixa cinza da largura da tela com as abas no meio. Quem
    pede largura total escreve `w-full` (a grade de duas abas), e é respeitado. */
-.ds-abas:not(.w-full) {
+.ds-abas:not(.bg-transparent):not(.w-full) {
   align-self: flex-start;
   justify-self: start;
 }
@@ -2137,17 +2141,17 @@ button[role="switch"][data-state="checked"]:active:not(:disabled) > span {
    está escolhida é a gota. O `text-muted-foreground` do primitivo sobre o
    trilho dava 4,3:1 no escuro (#8b8b8e sobre o trilho composto em #101014),
    abaixo dos 4,5 de texto — medido, e é também o que a Apple faz. */
-.ds-aba {
+.ds-abas:not(.bg-transparent) > .ds-aba {
   position: relative;
   isolation: isolate;
   border-radius: calc(1.125rem - 0.1875rem);
   color: var(--color-text);
 }
-.ds-aba[data-state="active"] {
+.ds-abas:not(.bg-transparent) > .ds-aba[data-state="active"] {
   background-color: transparent;
   box-shadow: none;
 }
-.ds-aba::before {
+.ds-abas:not(.bg-transparent) > .ds-aba::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -2163,7 +2167,7 @@ button[role="switch"][data-state="checked"]:active:not(:disabled) > span {
   transition-timing-function: var(--ease-out-slow);
   transition-timing-function: var(--ease-out), var(--mola-viva);
 }
-.ds-aba[data-state="active"]::before {
+.ds-abas:not(.bg-transparent) > .ds-aba[data-state="active"]::before {
   opacity: 1;
   scale: 1;
 }
@@ -2229,11 +2233,11 @@ button[role="switch"][data-state="checked"]:active:not(:disabled) > span {
     border-color: var(--color-border-strong);
   }
   /* Trilho e gota são diferença de tom; com mais contraste, ganham contorno. */
-  .ds-abas,
+  .ds-abas:not(.bg-transparent),
   button[role="switch"][data-state="unchecked"] {
     box-shadow: inset 0 0 0 1px var(--color-border-strong);
   }
-  .ds-aba::before {
+  .ds-abas:not(.bg-transparent) > .ds-aba::before {
     box-shadow: inset 0 0 0 1px var(--color-border-strong);
   }
 }
