@@ -135,6 +135,7 @@ Depois de qualquer retorno: `/` → 200 e `/app` → 307.
   as imagens oficiais: o Derasu sai do ar, e no lugar entra o oficial.
 - **Cada atualização futura é este roteiro de novo:** a fork sincroniza com a nova tag (Fase 0),
   a VPS passa por `update.sh --to <tag>` (Fase 1) e as imagens voltam a ser as da fork (Fase 2).
-- **Sincronizar a fork pela tag de release, e não pela `main` do oficial.** Assim a fork fica
-  sempre "dentro" de uma release, pronta para a Fase 1. A sincronização de 21/10 foi pela `main`,
-  e é por isso que a Fase 0 hoje precisa esperar.
+- **A fork sincroniza pela tag de release, e não pela `main` do oficial** (decisão do dono,
+  21/10/2026, registrada no `derasu/CLAUDE.md`). Assim a fork fica sempre "dentro" de uma
+  release, pronta para a Fase 1. A sincronização de 21/10 foi pela `main`, e é por isso que a
+  Fase 0 hoje precisa esperar.
