@@ -46,7 +46,10 @@ export function OwnerBadge({
     // Mesma geometria dos outros dois estados (disco de 24px + rótulo), para o
     // rodapé do card não mudar de altura conforme o lead tem dono ou não.
     return (
-      <div className="flex items-center gap-1.5" aria-label={t("Sem responsável")}>
+      // `min-w-0` em toda raiz: sem ele o item flex não encolhe abaixo do
+      // conteúdo, o `truncate` do rótulo nunca age e o texto passa por baixo
+      // do vizinho no rodapé do card.
+      <div className="flex min-w-0 items-center gap-1.5" aria-label={t("Sem responsável")}>
         <span
           className={`${compacto ? "h-4 w-4" : "h-6 w-6"} shrink-0 rounded-full border border-dashed border-border-strong`}
           aria-hidden
@@ -65,7 +68,7 @@ export function OwnerBadge({
 
   return (
     <div
-      className="flex items-center gap-1.5"
+      className="flex min-w-0 items-center gap-1.5"
       aria-label={`${t("Responsável")}: ${fullLabel}`}
       title={fullLabel}
     >
