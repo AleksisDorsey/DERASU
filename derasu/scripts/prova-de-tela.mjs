@@ -116,6 +116,36 @@ async function medir(page) {
         const m = document.querySelector("main");
         return m ? getComputedStyle(m).paddingBottom : null;
       })(),
+      // Entrega 3 — controles.
+      botao: cs("main [class*='ds-botao-']"),
+      campo: cs("main input:not([type=hidden]):not([type=checkbox]):not([type=radio])"),
+      interruptor: (() => {
+        const t = document.querySelector("main button[role=switch]");
+        if (!t) return null;
+        const p = t.querySelector("span");
+        return {
+          estado: t.dataset.state,
+          trilho: getComputedStyle(t).backgroundColor,
+          puxador: p && getComputedStyle(p).backgroundColor,
+          sombraDoPuxador: p && getComputedStyle(p).boxShadow.slice(0, 80),
+          caixa: `${Math.round(t.getBoundingClientRect().width)}x${Math.round(t.getBoundingClientRect().height)}`,
+        };
+      })(),
+      abas: (() => {
+        const l = document.querySelector("main .ds-abas");
+        if (!l) return null;
+        const ativa = l.querySelector(".ds-aba[data-state=active]");
+        const inativa = l.querySelector(".ds-aba[data-state=inactive]");
+        const g = ativa && getComputedStyle(ativa, "::before");
+        return {
+          trilho: getComputedStyle(l).backgroundColor,
+          raioDaLista: getComputedStyle(l).borderTopLeftRadius,
+          raioDaAba: ativa && getComputedStyle(ativa).borderTopLeftRadius,
+          gota: g && { fundo: g.backgroundColor, opacidade: g.opacity, escala: g.scale },
+          textoAtivo: ativa && getComputedStyle(ativa).color,
+          textoInativo: inativa && getComputedStyle(inativa).color,
+        };
+      })(),
     };
   });
 }
@@ -171,6 +201,29 @@ if (!soReadme) {
           await page.screenshot({ path: path.join(SAIDA, `${nome}.jpg`), ...JPEG });
           medidas.push({ caso: nome, ...(await medir(page)) });
           process.stdout.write(`ok ${nome}\n`);
+
+          // Interruptor pressionado: o puxador estica enquanto o botão está
+          // seguro. Recorte só do controle, com o mouse ainda apertado.
+          const interruptor = page.locator("main button[role=switch]").first();
+          if (!vp.isMobile && (await interruptor.isVisible().catch(() => false))) {
+            await interruptor.scrollIntoViewIfNeeded();
+            const c = await interruptor.boundingBox();
+            if (c) {
+              const recorte = { x: c.x - 12, y: c.y - 10, width: c.width + 24, height: c.height + 20 };
+              await page.screenshot({ path: path.join(SAIDA, `${nome}_interruptor.jpg`), clip: recorte, ...JPEG });
+              await page.mouse.move(c.x + c.width / 2, c.y + c.height / 2);
+              await page.mouse.down();
+              await page.waitForTimeout(450);
+              await page.screenshot({ path: path.join(SAIDA, `${nome}_interruptor-pressionado.jpg`), clip: recorte, ...JPEG });
+              const largura = await interruptor.evaluate((t) => t.querySelector("span")?.getBoundingClientRect().width ?? null);
+              // Solta fora do controle: pressionar não pode virar clique.
+              await page.mouse.move(c.x - 200, c.y - 200);
+              await page.mouse.up();
+              medidas.push({ caso: `${nome}_interruptor-pressionado`, larguraDoPuxadorPressionado: largura });
+              process.stdout.write(`ok ${nome}_interruptor\n`);
+              await page.evaluate(() => scrollTo(0, 0));
+            }
+          }
 
           // Conteúdo rolado: o efeito de borda do topo sobre o que passa por baixo.
           const rolou = await page.evaluate(() => {
@@ -299,6 +352,23 @@ const secao = (m) => {
     );
   }
   if (m.painel) partes.push(`menu ${codigo(m.painel.fundo)} / ${codigo(m.painel.desfoque)}`);
+  if (m.botao) partes.push(`botão com raio ${codigo(m.botao.raio)}`);
+  if (m.campo) partes.push(`campo com raio ${codigo(m.campo.raio)}`);
+  if (m.interruptor) {
+    const i = m.interruptor;
+    partes.push(
+      `interruptor ${i.caixa} ${i.estado}: trilho ${codigo(i.trilho)}, puxador ${codigo(i.puxador)}`,
+    );
+  }
+  if (m.abas) {
+    const a = m.abas;
+    partes.push(
+      `abas: trilho ${codigo(a.trilho)}, raios ${codigo(a.raioDaLista)}/${codigo(a.raioDaAba)}, ` +
+        `gota ${codigo(a.gota?.fundo)} (opacidade ${a.gota?.opacidade}, escala ${a.gota?.escala})`,
+    );
+  }
+  if (m.larguraDoPuxadorPressionado)
+    partes.push(`puxador pressionado com ${m.larguraDoPuxadorPressionado}px de largura`);
   const rolado = arquivoDe(`${m.caso}_rolado`)
     ? `${NL}Conteúdo rolado por baixo do topo:${NL}${imagem(`${m.caso}_rolado`)}`
     : "";

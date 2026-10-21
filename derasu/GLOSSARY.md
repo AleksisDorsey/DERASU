@@ -61,9 +61,19 @@ da camada de controle. Substitui a linha divisória.
 _Avoid_: fade, sombra de rolagem, divisor
 
 **Gota**:
-A peça de vidro que marca o item ativo dentro de um grupo de controle (a aba selecionada) e
-desliza, em morfose, até o item escolhido.
+A peça que marca o item ativo dentro de um grupo de controle (a aba selecionada). É vidro na
+camada de controle e superfície no conteúdo, e chega ao item escolhido em morfose: desliza quando
+os itens têm a mesma largura, assenta no lugar quando não têm.
 _Avoid_: indicador, pílula, highlight
+
+**Trilho**:
+O fundo rebaixado de um controle, onde a gota ou o puxador corre: a lista de abas segmentadas, o
+interruptor desligado.
+_Avoid_: track, fundo do controle, calha
+
+**Puxador**:
+A peça que alterna dentro de um trilho — a do interruptor. Estica ao ser pressionada.
+_Avoid_: knob, thumb, bolinha
 
 **Concentricidade**:
 A regra de que uma peça aninhada tem o raio do contêiner menos o espaço entre eles, para que as

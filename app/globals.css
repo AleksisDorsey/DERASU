@@ -1561,6 +1561,19 @@
   --elevacao-2:
     0 0 0 0.5px rgb(16 17 24 / 0.05), 0 2px 4px rgb(16 17 24 / 0.05),
     0 18px 36px -14px rgb(16 17 24 / 0.16);
+
+  /* CONTROLES (claro). TRILHO é o fundo rebaixado onde a gota e o puxador
+     correm; o `-forte` é o do interruptor desligado, que sozinho precisa
+     dizer "isto é um controle". A gota é superfície (o controle mora no
+     conteúdo, ADR 0002) e o puxador é branco nos dois temas, como na Apple. */
+  --raio-campo: 0.75rem;
+  --trilho: rgb(118 118 128 / 0.14);
+  --trilho-forte: rgb(118 118 128 / 0.3);
+  --gota-fundo: rgb(255 255 255);
+  --gota-sombra:
+    0 0 0 0.5px rgb(16 17 24 / 0.06), 0 2px 6px rgb(16 17 24 / 0.1), 0 1px 1px rgb(16 17 24 / 0.04);
+  --puxador-sombra:
+    0 0 0 0.5px rgb(0 0 0 / 0.04), 0 3px 8px rgb(0 0 0 / 0.15), 0 3px 1px rgb(0 0 0 / 0.06);
 }
 
 [data-theme="dark"] {
@@ -1586,6 +1599,15 @@
   --elevacao-2:
     0 0 0 0.5px rgb(255 255 255 / 0.08), 0 2px 4px rgb(0 0 0 / 0.45),
     0 22px 44px -16px rgb(0 0 0 / 0.75);
+
+  /* CONTROLES (escuro). A gota sobe para um cinza mais claro que o trilho —
+     no escuro, "selecionado" é o que acende, não o que afunda. */
+  --trilho: rgb(118 118 128 / 0.24);
+  --trilho-forte: rgb(120 120 128 / 0.42);
+  --gota-fundo: rgb(99 99 102 / 0.78);
+  --gota-sombra: 0 0 0 0.5px rgb(0 0 0 / 0.25), 0 2px 6px rgb(0 0 0 / 0.35);
+  --puxador-sombra:
+    0 0 0 0.5px rgb(0 0 0 / 0.2), 0 3px 8px rgb(0 0 0 / 0.35), 0 3px 1px rgb(0 0 0 / 0.15);
 }
 
 /* ---- 1. Ambiente ------------------------------------------------------ */
@@ -2037,6 +2059,115 @@ nav[data-barra-inferior] > ul:has(> li:nth-child(4) > [aria-current="page"]) {
   border-radius: 0 0 1.375rem 1.375rem;
 }
 
+/* ---- 4b. Controles ---------------------------------------------------------
+   Botão, interruptor, abas e campo. Moram no CONTEÚDO, então não são vidro
+   (ADR 0002): o selecionado é uma GOTA de superfície sobre um TRILHO
+   rebaixado, e o movimento é mola.
+
+   BOTÕES: cápsula. O raio mora no primitivo (`rounded-full` em
+   `components/ui/button.tsx`) porque um utilitário ali venceria qualquer
+   regra daqui; o relevo e o halo seguem nas `.ds-botao-*` da seção 2.
+
+   CAMPOS: `--raio-campo` (12px) em `input`, `textarea` e no gatilho do
+   `select`. CONCENTRICIDADE é raio de fora menos a folga — e nos contêineres
+   onde os campos moram (cartão, modal, popover: 22px de raio com 16–24px de
+   folga) a conta dá zero ou menos. Nesse caso a regra da Apple é o raio
+   padrão do controle, e é esse o `--raio-campo`. Onde a folga é menor que o
+   raio a conta vale de fato: itens de menu (seção 4), abas e interruptor
+   (abaixo) — cápsula dentro de cápsula. */
+
+/* INTERRUPTOR — o gancho é o `role="switch"` que o Radix já emite; o tamanho
+   (36×20) fica o do primitivo, para não mexer em 49 telas. O puxador é
+   branco com sombra nos dois temas e corre em mola firme. Pressionado, ele
+   ESTICA (fica mais largo e mantém a ponta do lado em que está), que é o que
+   diz "estou segurando" antes de soltar. */
+button[role="switch"] {
+  box-shadow: none;
+  transition: background-color var(--duration-base) var(--ease-out);
+}
+button[role="switch"][data-state="unchecked"] {
+  background-color: var(--trilho-forte);
+}
+button[role="switch"] > span {
+  background-color: rgb(255 255 255);
+  box-shadow: var(--puxador-sombra);
+  transition-property: translate, width;
+  transition-duration: var(--mola-firme-duracao);
+  transition-timing-function: var(--ease-out-slow);
+  transition-timing-function: var(--mola-firme);
+}
+button[role="switch"]:active:not(:disabled) > span {
+  width: 1.25rem;
+}
+button[role="switch"][data-state="checked"]:active:not(:disabled) > span {
+  translate: 0.75rem 0;
+}
+
+/* ABAS SEGMENTADAS — `.ds-abas` (a lista) e `.ds-aba` (cada aba), classes do
+   primitivo `components/ui/tabs.tsx`. O gancho é classe, e não
+   `role="tablist"`: há listas de abas próprias no app (a inbox, por exemplo)
+   com outra estrutura, que não devem mudar de cara.
+
+   Concêntricas de verdade: a lista tem 36px de altura e raio de 18px (é uma
+   cápsula); com 3px de folga, a aba tem raio de 15px — 18 menos 3 —, e com
+   30px de altura também é cápsula. Lista que quebra em duas linhas mantém os
+   18px de canto em vez de virar uma pílula torta.
+
+   A GOTA assenta na aba escolhida em mola viva (cresce de 70% e aparece). Ela
+   não DESLIZA de uma aba à outra, como a da barra de abas do celular: lá as
+   abas têm a mesma largura e a posição sai de `:has()`; aqui cada aba tem a
+   largura do próprio texto, e saber onde está a próxima pede medir em JS —
+   fora do ADR 0003. Ancoragem de CSS (`anchor()`) foi medida e não
+   transiciona quando a âncora troca de aba. */
+.ds-abas {
+  border-radius: 1.125rem;
+  padding: 0.1875rem;
+  background-color: var(--trilho);
+}
+/* Largura do conteúdo, como o controle segmentado da Apple. Dentro de pai
+   flex-col ou grid a lista ESTICAVA até a borda (medido em
+   /app/ai/followups): com o fundo quase igual ao da página ninguém via; com o
+   trilho, virava uma faixa cinza da largura da tela com as abas no meio. Quem
+   pede largura total escreve `w-full` (a grade de duas abas), e é respeitado. */
+.ds-abas:not(.w-full) {
+  align-self: flex-start;
+  justify-self: start;
+}
+/* Rótulo na cor de texto principal nas abas ativa E inativa: quem diz qual
+   está escolhida é a gota. O `text-muted-foreground` do primitivo sobre o
+   trilho dava 4,3:1 no escuro (#8b8b8e sobre o trilho composto em #101014),
+   abaixo dos 4,5 de texto — medido, e é também o que a Apple faz. */
+.ds-aba {
+  position: relative;
+  isolation: isolate;
+  border-radius: calc(1.125rem - 0.1875rem);
+  color: var(--color-text);
+}
+.ds-aba[data-state="active"] {
+  background-color: transparent;
+  box-shadow: none;
+}
+.ds-aba::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background-color: var(--gota-fundo);
+  box-shadow: var(--gota-sombra);
+  opacity: 0;
+  scale: 0.7;
+  pointer-events: none;
+  transition-property: opacity, scale;
+  transition-duration: var(--duration-fast), var(--mola-viva-duracao);
+  transition-timing-function: var(--ease-out-slow);
+  transition-timing-function: var(--ease-out), var(--mola-viva);
+}
+.ds-aba[data-state="active"]::before {
+  opacity: 1;
+  scale: 1;
+}
+
 /* ---- 5. Recuos -------------------------------------------------------------
    Três situações em que o vidro vira superfície, e as três pelo mesmo motivo:
    quem pediu (ou o navegador que não sustenta) prefere ler a ver o fundo.
@@ -2096,6 +2227,14 @@ nav[data-barra-inferior] > ul:has(> li:nth-child(4) > [aria-current="page"]) {
   }
   .ds-cartao.border-border {
     border-color: var(--color-border-strong);
+  }
+  /* Trilho e gota são diferença de tom; com mais contraste, ganham contorno. */
+  .ds-abas,
+  button[role="switch"][data-state="unchecked"] {
+    box-shadow: inset 0 0 0 1px var(--color-border-strong);
+  }
+  .ds-aba::before {
+    box-shadow: inset 0 0 0 1px var(--color-border-strong);
   }
 }
 
