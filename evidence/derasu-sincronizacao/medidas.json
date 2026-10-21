@@ -1,0 +1,1462 @@
+[
+  {
+    "caso": "app-crm_desktop_claro_vidro",
+    "tema": "light",
+    "transparenciaReduzida": false,
+    "fonte": "\"Inter Derasu\"",
+    "interCarregada": true,
+    "fundoDaPagina": "rgb(239, 239, 244)",
+    "cartao": {
+      "fundo": "rgb(255, 255, 255)",
+      "borda": "rgba(0, 0, 0, 0)",
+      "desfoque": "none",
+      "sombra": "rgb(255, 255, 255) 0px 1px 0px 0px inset, rgba(16, 17, 24, 0.04) 0px 0px 0px 0.5px, rgba(16, 17, 24, 0.04) 0px 1px 2px 0",
+      "raio": "22px"
+    },
+    "barraLateral": {
+      "fundo": "rgba(250, 250, 253, 0.6)",
+      "borda": "rgba(255, 255, 255, 0.62)",
+      "desfoque": "blur(22px) saturate(1.9)",
+      "sombra": "rgba(255, 255, 255, 0.95) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.3) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0.",
+      "raio": "22px"
+    },
+    "painel": null,
+    "modal": null,
+    "topo": {
+      "fundo": "rgba(0, 0, 0, 0)",
+      "linhaDeBaixo": "0px",
+      "efeitoDeBorda": {
+        "desfoque": "blur(10px)",
+        "mascara": "linear-gradient(rgb(0, 0, 0) 45%, rgba(0, 0, 0, 0))",
+        "altura": "72px"
+      }
+    },
+    "capsulaAgrupada": {
+      "fundo": "rgba(250, 250, 253, 0.6)",
+      "borda": "rgba(255, 255, 255, 0.62)",
+      "desfoque": "blur(22px) saturate(1.9)",
+      "sombra": "rgba(255, 255, 255, 0.95) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.3) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0.",
+      "raio": "9999px"
+    },
+    "capsulaSolta": {
+      "fundo": "rgba(250, 250, 253, 0.6)",
+      "borda": "rgba(255, 255, 255, 0.62)",
+      "desfoque": "blur(22px) saturate(1.9)",
+      "sombra": "rgba(255, 255, 255, 0.95) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.3) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0.",
+      "raio": "9999px"
+    },
+    "caixaDaBarraLateral": {
+      "x": 8,
+      "y": 8,
+      "largura": 240,
+      "altura": 884,
+      "folgaAteOFundo": 8
+    },
+    "barraDeAbas": {
+      "fundo": "rgba(250, 250, 253, 0.6)",
+      "borda": "rgba(255, 255, 255, 0.62)",
+      "desfoque": "blur(22px) saturate(1.9)",
+      "sombra": "rgba(255, 255, 255, 0.95) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.3) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0.",
+      "raio": "9999px"
+    },
+    "caixaDaNavDeAbas": null,
+    "caixaDaCapsulaDeAbas": null,
+    "gota": {
+      "opacidade": "0",
+      "translate": "0%",
+      "largura": "calc(20% - 1.6px)",
+      "fundo": "oklab(0.50153 -0.0500825 0.0435521 / 0.14)"
+    },
+    "rodapeDescontado": "24px"
+  },
+  {
+    "caso": "app-crm_desktop_claro_vidro_dica",
+    "dica": {
+      "fundo": "rgba(250, 250, 253, 0.78)",
+      "texto": "rgb(26, 26, 28)",
+      "desfoque": "blur(32px) saturate(1.9)",
+      "raio": "10px"
+    }
+  },
+  {
+    "caso": "app-crm_desktop_claro_vidro_menu",
+    "tema": "light",
+    "transparenciaReduzida": false,
+    "fonte": "\"Inter Derasu\"",
+    "interCarregada": true,
+    "fundoDaPagina": "rgb(239, 239, 244)",
+    "cartao": {
+      "fundo": "rgb(255, 255, 255)",
+      "borda": "rgba(0, 0, 0, 0)",
+      "desfoque": "none",
+      "sombra": "rgb(255, 255, 255) 0px 1px 0px 0px inset, rgba(16, 17, 24, 0.04) 0px 0px 0px 0.5px, rgba(16, 17, 24, 0.04) 0px 1px 2px 0",
+      "raio": "22px"
+    },
+    "barraLateral": {
+      "fundo": "rgba(250, 250, 253, 0.6)",
+      "borda": "rgba(255, 255, 255, 0.62)",
+      "desfoque": "blur(22px) saturate(1.9)",
+      "sombra": "rgba(255, 255, 255, 0.95) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.3) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0.",
+      "raio": "22px"
+    },
+    "painel": {
+      "fundo": "rgba(250, 250, 253, 0.78)",
+      "borda": "rgba(255, 255, 255, 0.62)",
+      "desfoque": "blur(32px) saturate(1.9)",
+      "sombra": "rgba(255, 255, 255, 0.95) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.3) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0.",
+      "raio": "14px"
+    },
+    "modal": null,
+    "topo": {
+      "fundo": "rgba(0, 0, 0, 0)",
+      "linhaDeBaixo": "0px",
+      "efeitoDeBorda": {
+        "desfoque": "blur(10px)",
+        "mascara": "linear-gradient(rgb(0, 0, 0) 45%, rgba(0, 0, 0, 0))",
+        "altura": "72px"
+      }
+    },
+    "capsulaAgrupada": {
+      "fundo": "rgba(250, 250, 253, 0.6)",
+      "borda": "rgba(255, 255, 255, 0.62)",
+      "desfoque": "blur(22px) saturate(1.9)",
+      "sombra": "rgba(255, 255, 255, 0.95) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.3) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0.",
+      "raio": "9999px"
+    },
+    "capsulaSolta": {
+      "fundo": "rgba(250, 250, 253, 0.6)",
+      "borda": "rgba(255, 255, 255, 0.62)",
+      "desfoque": "blur(22px) saturate(1.9)",
+      "sombra": "rgba(255, 255, 255, 0.95) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.3) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0.",
+      "raio": "9999px"
+    },
+    "caixaDaBarraLateral": {
+      "x": 8,
+      "y": 8,
+      "largura": 240,
+      "altura": 884,
+      "folgaAteOFundo": 8
+    },
+    "barraDeAbas": {
+      "fundo": "rgba(250, 250, 253, 0.6)",
+      "borda": "rgba(255, 255, 255, 0.62)",
+      "desfoque": "blur(22px) saturate(1.9)",
+      "sombra": "rgba(255, 255, 255, 0.95) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.3) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0.",
+      "raio": "9999px"
+    },
+    "caixaDaNavDeAbas": null,
+    "caixaDaCapsulaDeAbas": null,
+    "gota": {
+      "opacidade": "0",
+      "translate": "0%",
+      "largura": "calc(20% - 1.6px)",
+      "fundo": "oklab(0.50153 -0.0500825 0.0435521 / 0.14)"
+    },
+    "rodapeDescontado": "24px"
+  },
+  {
+    "caso": "app-inbox_desktop_claro_vidro",
+    "tema": "light",
+    "transparenciaReduzida": false,
+    "fonte": "\"Inter Derasu\"",
+    "interCarregada": true,
+    "fundoDaPagina": "rgb(239, 239, 244)",
+    "cartao": null,
+    "barraLateral": {
+      "fundo": "rgba(250, 250, 253, 0.6)",
+      "borda": "rgba(255, 255, 255, 0.62)",
+      "desfoque": "blur(22px) saturate(1.9)",
+      "sombra": "rgba(255, 255, 255, 0.95) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.3) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0.",
+      "raio": "22px"
+    },
+    "painel": null,
+    "modal": null,
+    "topo": {
+      "fundo": "rgba(0, 0, 0, 0)",
+      "linhaDeBaixo": "0px",
+      "efeitoDeBorda": {
+        "desfoque": "blur(10px)",
+        "mascara": "linear-gradient(rgb(0, 0, 0) 45%, rgba(0, 0, 0, 0))",
+        "altura": "72px"
+      }
+    },
+    "capsulaAgrupada": {
+      "fundo": "rgba(250, 250, 253, 0.6)",
+      "borda": "rgba(255, 255, 255, 0.62)",
+      "desfoque": "blur(22px) saturate(1.9)",
+      "sombra": "rgba(255, 255, 255, 0.95) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.3) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0.",
+      "raio": "9999px"
+    },
+    "capsulaSolta": {
+      "fundo": "rgba(250, 250, 253, 0.6)",
+      "borda": "rgba(255, 255, 255, 0.62)",
+      "desfoque": "blur(22px) saturate(1.9)",
+      "sombra": "rgba(255, 255, 255, 0.95) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.3) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0.",
+      "raio": "9999px"
+    },
+    "caixaDaBarraLateral": {
+      "x": 8,
+      "y": 8,
+      "largura": 240,
+      "altura": 884,
+      "folgaAteOFundo": 8
+    },
+    "barraDeAbas": {
+      "fundo": "rgba(250, 250, 253, 0.6)",
+      "borda": "rgba(255, 255, 255, 0.62)",
+      "desfoque": "blur(22px) saturate(1.9)",
+      "sombra": "rgba(255, 255, 255, 0.95) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.3) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0.",
+      "raio": "9999px"
+    },
+    "caixaDaNavDeAbas": null,
+    "caixaDaCapsulaDeAbas": null,
+    "gota": {
+      "opacidade": "1",
+      "translate": "0%",
+      "largura": "calc(20% - 1.6px)",
+      "fundo": "oklab(0.50153 -0.0500825 0.0435521 / 0.14)"
+    },
+    "rodapeDescontado": "24px"
+  },
+  {
+    "caso": "app-crm_desktop_claro_sem-transparencia",
+    "tema": "light",
+    "transparenciaReduzida": true,
+    "fonte": "\"Inter Derasu\"",
+    "interCarregada": true,
+    "fundoDaPagina": "rgb(239, 239, 244)",
+    "cartao": {
+      "fundo": "rgb(255, 255, 255)",
+      "borda": "rgba(0, 0, 0, 0)",
+      "desfoque": "none",
+      "sombra": "rgb(255, 255, 255) 0px 1px 0px 0px inset, rgba(16, 17, 24, 0.04) 0px 0px 0px 0.5px, rgba(16, 17, 24, 0.04) 0px 1px 2px 0",
+      "raio": "22px"
+    },
+    "barraLateral": {
+      "fundo": "rgb(255, 255, 255)",
+      "borda": "rgb(227, 227, 232)",
+      "desfoque": "none",
+      "sombra": "rgba(255, 255, 255, 0.95) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.3) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0.",
+      "raio": "22px"
+    },
+    "painel": null,
+    "modal": null,
+    "topo": {
+      "fundo": "rgba(0, 0, 0, 0)",
+      "linhaDeBaixo": "0px",
+      "efeitoDeBorda": {
+        "desfoque": "none",
+        "mascara": "linear-gradient(rgb(0, 0, 0) 45%, rgba(0, 0, 0, 0))",
+        "altura": "72px"
+      }
+    },
+    "capsulaAgrupada": {
+      "fundo": "rgb(255, 255, 255)",
+      "borda": "rgb(227, 227, 232)",
+      "desfoque": "none",
+      "sombra": "rgba(255, 255, 255, 0.95) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.3) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0.",
+      "raio": "9999px"
+    },
+    "capsulaSolta": {
+      "fundo": "rgb(255, 255, 255)",
+      "borda": "rgb(227, 227, 232)",
+      "desfoque": "none",
+      "sombra": "rgba(255, 255, 255, 0.95) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.3) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0.",
+      "raio": "9999px"
+    },
+    "caixaDaBarraLateral": {
+      "x": 8,
+      "y": 8,
+      "largura": 240,
+      "altura": 884,
+      "folgaAteOFundo": 8
+    },
+    "barraDeAbas": {
+      "fundo": "rgb(255, 255, 255)",
+      "borda": "rgb(227, 227, 232)",
+      "desfoque": "none",
+      "sombra": "rgba(255, 255, 255, 0.95) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.3) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0.",
+      "raio": "9999px"
+    },
+    "caixaDaNavDeAbas": null,
+    "caixaDaCapsulaDeAbas": null,
+    "gota": {
+      "opacidade": "0",
+      "translate": "0%",
+      "largura": "calc(20% - 1.6px)",
+      "fundo": "oklab(0.50153 -0.0500825 0.0435521 / 0.14)"
+    },
+    "rodapeDescontado": "24px"
+  },
+  {
+    "caso": "app-crm_desktop_claro_sem-transparencia_dica",
+    "dica": {
+      "fundo": "rgb(255, 255, 255)",
+      "texto": "rgb(26, 26, 28)",
+      "desfoque": "none",
+      "raio": "10px"
+    }
+  },
+  {
+    "caso": "app-crm_desktop_claro_sem-transparencia_menu",
+    "tema": "light",
+    "transparenciaReduzida": true,
+    "fonte": "\"Inter Derasu\"",
+    "interCarregada": true,
+    "fundoDaPagina": "rgb(239, 239, 244)",
+    "cartao": {
+      "fundo": "rgb(255, 255, 255)",
+      "borda": "rgba(0, 0, 0, 0)",
+      "desfoque": "none",
+      "sombra": "rgb(255, 255, 255) 0px 1px 0px 0px inset, rgba(16, 17, 24, 0.04) 0px 0px 0px 0.5px, rgba(16, 17, 24, 0.04) 0px 1px 2px 0",
+      "raio": "22px"
+    },
+    "barraLateral": {
+      "fundo": "rgb(255, 255, 255)",
+      "borda": "rgb(227, 227, 232)",
+      "desfoque": "none",
+      "sombra": "rgba(255, 255, 255, 0.95) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.3) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0.",
+      "raio": "22px"
+    },
+    "painel": {
+      "fundo": "rgb(255, 255, 255)",
+      "borda": "rgb(227, 227, 232)",
+      "desfoque": "none",
+      "sombra": "rgba(255, 255, 255, 0.95) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.3) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0.",
+      "raio": "14px"
+    },
+    "modal": null,
+    "topo": {
+      "fundo": "rgba(0, 0, 0, 0)",
+      "linhaDeBaixo": "0px",
+      "efeitoDeBorda": {
+        "desfoque": "none",
+        "mascara": "linear-gradient(rgb(0, 0, 0) 45%, rgba(0, 0, 0, 0))",
+        "altura": "72px"
+      }
+    },
+    "capsulaAgrupada": {
+      "fundo": "rgb(255, 255, 255)",
+      "borda": "rgb(227, 227, 232)",
+      "desfoque": "none",
+      "sombra": "rgba(255, 255, 255, 0.95) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.3) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0.",
+      "raio": "9999px"
+    },
+    "capsulaSolta": {
+      "fundo": "rgb(255, 255, 255)",
+      "borda": "rgb(227, 227, 232)",
+      "desfoque": "none",
+      "sombra": "rgba(255, 255, 255, 0.95) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.3) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0.",
+      "raio": "9999px"
+    },
+    "caixaDaBarraLateral": {
+      "x": 8,
+      "y": 8,
+      "largura": 240,
+      "altura": 884,
+      "folgaAteOFundo": 8
+    },
+    "barraDeAbas": {
+      "fundo": "rgb(255, 255, 255)",
+      "borda": "rgb(227, 227, 232)",
+      "desfoque": "none",
+      "sombra": "rgba(255, 255, 255, 0.95) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.3) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0.",
+      "raio": "9999px"
+    },
+    "caixaDaNavDeAbas": null,
+    "caixaDaCapsulaDeAbas": null,
+    "gota": {
+      "opacidade": "0",
+      "translate": "0%",
+      "largura": "calc(20% - 1.6px)",
+      "fundo": "oklab(0.50153 -0.0500825 0.0435521 / 0.14)"
+    },
+    "rodapeDescontado": "24px"
+  },
+  {
+    "caso": "app-inbox_desktop_claro_sem-transparencia",
+    "tema": "light",
+    "transparenciaReduzida": true,
+    "fonte": "\"Inter Derasu\"",
+    "interCarregada": true,
+    "fundoDaPagina": "rgb(239, 239, 244)",
+    "cartao": null,
+    "barraLateral": {
+      "fundo": "rgb(255, 255, 255)",
+      "borda": "rgb(227, 227, 232)",
+      "desfoque": "none",
+      "sombra": "rgba(255, 255, 255, 0.95) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.3) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0.",
+      "raio": "22px"
+    },
+    "painel": null,
+    "modal": null,
+    "topo": {
+      "fundo": "rgba(0, 0, 0, 0)",
+      "linhaDeBaixo": "0px",
+      "efeitoDeBorda": {
+        "desfoque": "none",
+        "mascara": "linear-gradient(rgb(0, 0, 0) 45%, rgba(0, 0, 0, 0))",
+        "altura": "72px"
+      }
+    },
+    "capsulaAgrupada": {
+      "fundo": "rgb(255, 255, 255)",
+      "borda": "rgb(227, 227, 232)",
+      "desfoque": "none",
+      "sombra": "rgba(255, 255, 255, 0.95) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.3) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0.",
+      "raio": "9999px"
+    },
+    "capsulaSolta": {
+      "fundo": "rgb(255, 255, 255)",
+      "borda": "rgb(227, 227, 232)",
+      "desfoque": "none",
+      "sombra": "rgba(255, 255, 255, 0.95) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.3) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0.",
+      "raio": "9999px"
+    },
+    "caixaDaBarraLateral": {
+      "x": 8,
+      "y": 8,
+      "largura": 240,
+      "altura": 884,
+      "folgaAteOFundo": 8
+    },
+    "barraDeAbas": {
+      "fundo": "rgb(255, 255, 255)",
+      "borda": "rgb(227, 227, 232)",
+      "desfoque": "none",
+      "sombra": "rgba(255, 255, 255, 0.95) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.3) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0.",
+      "raio": "9999px"
+    },
+    "caixaDaNavDeAbas": null,
+    "caixaDaCapsulaDeAbas": null,
+    "gota": {
+      "opacidade": "1",
+      "translate": "0%",
+      "largura": "calc(20% - 1.6px)",
+      "fundo": "oklab(0.50153 -0.0500825 0.0435521 / 0.14)"
+    },
+    "rodapeDescontado": "24px"
+  },
+  {
+    "caso": "app-crm_desktop_escuro_vidro",
+    "tema": "dark",
+    "transparenciaReduzida": false,
+    "fonte": "\"Inter Derasu\"",
+    "interCarregada": true,
+    "fundoDaPagina": "rgb(16, 16, 20)",
+    "cartao": {
+      "fundo": "rgb(28, 28, 31)",
+      "borda": "rgba(0, 0, 0, 0)",
+      "desfoque": "none",
+      "sombra": "rgba(255, 255, 255, 0.06) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.06) 0px 0px 0px 0.5px, rgba(0, 0, 0, 0.4) 0px 1px",
+      "raio": "22px"
+    },
+    "barraLateral": {
+      "fundo": "rgba(30, 30, 36, 0.56)",
+      "borda": "rgba(255, 255, 255, 0.1)",
+      "desfoque": "blur(22px) saturate(1.9)",
+      "sombra": "rgba(255, 255, 255, 0.14) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.04) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0",
+      "raio": "22px"
+    },
+    "painel": null,
+    "modal": null,
+    "topo": {
+      "fundo": "rgba(0, 0, 0, 0)",
+      "linhaDeBaixo": "0px",
+      "efeitoDeBorda": {
+        "desfoque": "blur(10px)",
+        "mascara": "linear-gradient(rgb(0, 0, 0) 45%, rgba(0, 0, 0, 0))",
+        "altura": "72px"
+      }
+    },
+    "capsulaAgrupada": {
+      "fundo": "rgba(30, 30, 36, 0.56)",
+      "borda": "rgba(255, 255, 255, 0.1)",
+      "desfoque": "blur(22px) saturate(1.9)",
+      "sombra": "rgba(255, 255, 255, 0.14) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.04) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0",
+      "raio": "9999px"
+    },
+    "capsulaSolta": {
+      "fundo": "rgba(30, 30, 36, 0.56)",
+      "borda": "rgba(255, 255, 255, 0.1)",
+      "desfoque": "blur(22px) saturate(1.9)",
+      "sombra": "rgba(255, 255, 255, 0.14) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.04) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0",
+      "raio": "9999px"
+    },
+    "caixaDaBarraLateral": {
+      "x": 8,
+      "y": 8,
+      "largura": 240,
+      "altura": 884,
+      "folgaAteOFundo": 8
+    },
+    "barraDeAbas": {
+      "fundo": "rgba(30, 30, 36, 0.56)",
+      "borda": "rgba(255, 255, 255, 0.1)",
+      "desfoque": "blur(22px) saturate(1.9)",
+      "sombra": "rgba(255, 255, 255, 0.14) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.04) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0",
+      "raio": "9999px"
+    },
+    "caixaDaNavDeAbas": null,
+    "caixaDaCapsulaDeAbas": null,
+    "gota": {
+      "opacidade": "0",
+      "translate": "0%",
+      "largura": "calc(20% - 1.6px)",
+      "fundo": "oklab(0.67182 -0.0498558 0.0458667 / 0.14)"
+    },
+    "rodapeDescontado": "24px"
+  },
+  {
+    "caso": "app-crm_desktop_escuro_vidro_dica",
+    "dica": {
+      "fundo": "rgba(28, 28, 33, 0.8)",
+      "texto": "rgb(243, 243, 248)",
+      "desfoque": "blur(32px) saturate(1.9)",
+      "raio": "10px"
+    }
+  },
+  {
+    "caso": "app-crm_desktop_escuro_vidro_menu",
+    "tema": "dark",
+    "transparenciaReduzida": false,
+    "fonte": "\"Inter Derasu\"",
+    "interCarregada": true,
+    "fundoDaPagina": "rgb(16, 16, 20)",
+    "cartao": {
+      "fundo": "rgb(28, 28, 31)",
+      "borda": "rgba(0, 0, 0, 0)",
+      "desfoque": "none",
+      "sombra": "rgba(255, 255, 255, 0.06) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.06) 0px 0px 0px 0.5px, rgba(0, 0, 0, 0.4) 0px 1px",
+      "raio": "22px"
+    },
+    "barraLateral": {
+      "fundo": "rgba(30, 30, 36, 0.56)",
+      "borda": "rgba(255, 255, 255, 0.1)",
+      "desfoque": "blur(22px) saturate(1.9)",
+      "sombra": "rgba(255, 255, 255, 0.14) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.04) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0",
+      "raio": "22px"
+    },
+    "painel": {
+      "fundo": "rgba(28, 28, 33, 0.8)",
+      "borda": "rgba(255, 255, 255, 0.1)",
+      "desfoque": "blur(32px) saturate(1.9)",
+      "sombra": "rgba(255, 255, 255, 0.14) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.04) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0",
+      "raio": "14px"
+    },
+    "modal": null,
+    "topo": {
+      "fundo": "rgba(0, 0, 0, 0)",
+      "linhaDeBaixo": "0px",
+      "efeitoDeBorda": {
+        "desfoque": "blur(10px)",
+        "mascara": "linear-gradient(rgb(0, 0, 0) 45%, rgba(0, 0, 0, 0))",
+        "altura": "72px"
+      }
+    },
+    "capsulaAgrupada": {
+      "fundo": "rgba(30, 30, 36, 0.56)",
+      "borda": "rgba(255, 255, 255, 0.1)",
+      "desfoque": "blur(22px) saturate(1.9)",
+      "sombra": "rgba(255, 255, 255, 0.14) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.04) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0",
+      "raio": "9999px"
+    },
+    "capsulaSolta": {
+      "fundo": "rgba(30, 30, 36, 0.56)",
+      "borda": "rgba(255, 255, 255, 0.1)",
+      "desfoque": "blur(22px) saturate(1.9)",
+      "sombra": "rgba(255, 255, 255, 0.14) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.04) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0",
+      "raio": "9999px"
+    },
+    "caixaDaBarraLateral": {
+      "x": 8,
+      "y": 8,
+      "largura": 240,
+      "altura": 884,
+      "folgaAteOFundo": 8
+    },
+    "barraDeAbas": {
+      "fundo": "rgba(30, 30, 36, 0.56)",
+      "borda": "rgba(255, 255, 255, 0.1)",
+      "desfoque": "blur(22px) saturate(1.9)",
+      "sombra": "rgba(255, 255, 255, 0.14) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.04) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0",
+      "raio": "9999px"
+    },
+    "caixaDaNavDeAbas": null,
+    "caixaDaCapsulaDeAbas": null,
+    "gota": {
+      "opacidade": "0",
+      "translate": "0%",
+      "largura": "calc(20% - 1.6px)",
+      "fundo": "oklab(0.67182 -0.0498558 0.0458667 / 0.14)"
+    },
+    "rodapeDescontado": "24px"
+  },
+  {
+    "caso": "app-inbox_desktop_escuro_vidro",
+    "tema": "dark",
+    "transparenciaReduzida": false,
+    "fonte": "\"Inter Derasu\"",
+    "interCarregada": true,
+    "fundoDaPagina": "rgb(16, 16, 20)",
+    "cartao": null,
+    "barraLateral": {
+      "fundo": "rgba(30, 30, 36, 0.56)",
+      "borda": "rgba(255, 255, 255, 0.1)",
+      "desfoque": "blur(22px) saturate(1.9)",
+      "sombra": "rgba(255, 255, 255, 0.14) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.04) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0",
+      "raio": "22px"
+    },
+    "painel": null,
+    "modal": null,
+    "topo": {
+      "fundo": "rgba(0, 0, 0, 0)",
+      "linhaDeBaixo": "0px",
+      "efeitoDeBorda": {
+        "desfoque": "blur(10px)",
+        "mascara": "linear-gradient(rgb(0, 0, 0) 45%, rgba(0, 0, 0, 0))",
+        "altura": "72px"
+      }
+    },
+    "capsulaAgrupada": {
+      "fundo": "rgba(30, 30, 36, 0.56)",
+      "borda": "rgba(255, 255, 255, 0.1)",
+      "desfoque": "blur(22px) saturate(1.9)",
+      "sombra": "rgba(255, 255, 255, 0.14) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.04) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0",
+      "raio": "9999px"
+    },
+    "capsulaSolta": {
+      "fundo": "rgba(30, 30, 36, 0.56)",
+      "borda": "rgba(255, 255, 255, 0.1)",
+      "desfoque": "blur(22px) saturate(1.9)",
+      "sombra": "rgba(255, 255, 255, 0.14) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.04) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0",
+      "raio": "9999px"
+    },
+    "caixaDaBarraLateral": {
+      "x": 8,
+      "y": 8,
+      "largura": 240,
+      "altura": 884,
+      "folgaAteOFundo": 8
+    },
+    "barraDeAbas": {
+      "fundo": "rgba(30, 30, 36, 0.56)",
+      "borda": "rgba(255, 255, 255, 0.1)",
+      "desfoque": "blur(22px) saturate(1.9)",
+      "sombra": "rgba(255, 255, 255, 0.14) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.04) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0",
+      "raio": "9999px"
+    },
+    "caixaDaNavDeAbas": null,
+    "caixaDaCapsulaDeAbas": null,
+    "gota": {
+      "opacidade": "1",
+      "translate": "0%",
+      "largura": "calc(20% - 1.6px)",
+      "fundo": "oklab(0.67182 -0.0498558 0.0458667 / 0.14)"
+    },
+    "rodapeDescontado": "24px"
+  },
+  {
+    "caso": "app-crm_desktop_escuro_sem-transparencia",
+    "tema": "dark",
+    "transparenciaReduzida": true,
+    "fonte": "\"Inter Derasu\"",
+    "interCarregada": true,
+    "fundoDaPagina": "rgb(16, 16, 20)",
+    "cartao": {
+      "fundo": "rgb(28, 28, 31)",
+      "borda": "rgba(0, 0, 0, 0)",
+      "desfoque": "none",
+      "sombra": "rgba(255, 255, 255, 0.06) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.06) 0px 0px 0px 0.5px, rgba(0, 0, 0, 0.4) 0px 1px",
+      "raio": "22px"
+    },
+    "barraLateral": {
+      "fundo": "rgb(28, 28, 31)",
+      "borda": "rgb(49, 49, 51)",
+      "desfoque": "none",
+      "sombra": "rgba(255, 255, 255, 0.14) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.04) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0",
+      "raio": "22px"
+    },
+    "painel": null,
+    "modal": null,
+    "topo": {
+      "fundo": "rgba(0, 0, 0, 0)",
+      "linhaDeBaixo": "0px",
+      "efeitoDeBorda": {
+        "desfoque": "none",
+        "mascara": "linear-gradient(rgb(0, 0, 0) 45%, rgba(0, 0, 0, 0))",
+        "altura": "72px"
+      }
+    },
+    "capsulaAgrupada": {
+      "fundo": "rgb(28, 28, 31)",
+      "borda": "rgb(49, 49, 51)",
+      "desfoque": "none",
+      "sombra": "rgba(255, 255, 255, 0.14) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.04) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0",
+      "raio": "9999px"
+    },
+    "capsulaSolta": {
+      "fundo": "rgb(28, 28, 31)",
+      "borda": "rgb(49, 49, 51)",
+      "desfoque": "none",
+      "sombra": "rgba(255, 255, 255, 0.14) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.04) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0",
+      "raio": "9999px"
+    },
+    "caixaDaBarraLateral": {
+      "x": 8,
+      "y": 8,
+      "largura": 240,
+      "altura": 884,
+      "folgaAteOFundo": 8
+    },
+    "barraDeAbas": {
+      "fundo": "rgb(28, 28, 31)",
+      "borda": "rgb(49, 49, 51)",
+      "desfoque": "none",
+      "sombra": "rgba(255, 255, 255, 0.14) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.04) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0",
+      "raio": "9999px"
+    },
+    "caixaDaNavDeAbas": null,
+    "caixaDaCapsulaDeAbas": null,
+    "gota": {
+      "opacidade": "0",
+      "translate": "0%",
+      "largura": "calc(20% - 1.6px)",
+      "fundo": "oklab(0.67182 -0.0498558 0.0458667 / 0.14)"
+    },
+    "rodapeDescontado": "24px"
+  },
+  {
+    "caso": "app-crm_desktop_escuro_sem-transparencia_dica",
+    "dica": {
+      "fundo": "rgb(28, 28, 31)",
+      "texto": "rgb(243, 243, 248)",
+      "desfoque": "none",
+      "raio": "10px"
+    }
+  },
+  {
+    "caso": "app-crm_desktop_escuro_sem-transparencia_menu",
+    "tema": "dark",
+    "transparenciaReduzida": true,
+    "fonte": "\"Inter Derasu\"",
+    "interCarregada": true,
+    "fundoDaPagina": "rgb(16, 16, 20)",
+    "cartao": {
+      "fundo": "rgb(28, 28, 31)",
+      "borda": "rgba(0, 0, 0, 0)",
+      "desfoque": "none",
+      "sombra": "rgba(255, 255, 255, 0.06) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.06) 0px 0px 0px 0.5px, rgba(0, 0, 0, 0.4) 0px 1px",
+      "raio": "22px"
+    },
+    "barraLateral": {
+      "fundo": "rgb(28, 28, 31)",
+      "borda": "rgb(49, 49, 51)",
+      "desfoque": "none",
+      "sombra": "rgba(255, 255, 255, 0.14) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.04) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0",
+      "raio": "22px"
+    },
+    "painel": {
+      "fundo": "rgb(28, 28, 31)",
+      "borda": "rgb(49, 49, 51)",
+      "desfoque": "none",
+      "sombra": "rgba(255, 255, 255, 0.14) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.04) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0",
+      "raio": "14px"
+    },
+    "modal": null,
+    "topo": {
+      "fundo": "rgba(0, 0, 0, 0)",
+      "linhaDeBaixo": "0px",
+      "efeitoDeBorda": {
+        "desfoque": "none",
+        "mascara": "linear-gradient(rgb(0, 0, 0) 45%, rgba(0, 0, 0, 0))",
+        "altura": "72px"
+      }
+    },
+    "capsulaAgrupada": {
+      "fundo": "rgb(28, 28, 31)",
+      "borda": "rgb(49, 49, 51)",
+      "desfoque": "none",
+      "sombra": "rgba(255, 255, 255, 0.14) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.04) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0",
+      "raio": "9999px"
+    },
+    "capsulaSolta": {
+      "fundo": "rgb(28, 28, 31)",
+      "borda": "rgb(49, 49, 51)",
+      "desfoque": "none",
+      "sombra": "rgba(255, 255, 255, 0.14) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.04) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0",
+      "raio": "9999px"
+    },
+    "caixaDaBarraLateral": {
+      "x": 8,
+      "y": 8,
+      "largura": 240,
+      "altura": 884,
+      "folgaAteOFundo": 8
+    },
+    "barraDeAbas": {
+      "fundo": "rgb(28, 28, 31)",
+      "borda": "rgb(49, 49, 51)",
+      "desfoque": "none",
+      "sombra": "rgba(255, 255, 255, 0.14) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.04) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0",
+      "raio": "9999px"
+    },
+    "caixaDaNavDeAbas": null,
+    "caixaDaCapsulaDeAbas": null,
+    "gota": {
+      "opacidade": "0",
+      "translate": "0%",
+      "largura": "calc(20% - 1.6px)",
+      "fundo": "oklab(0.67182 -0.0498558 0.0458667 / 0.14)"
+    },
+    "rodapeDescontado": "24px"
+  },
+  {
+    "caso": "app-inbox_desktop_escuro_sem-transparencia",
+    "tema": "dark",
+    "transparenciaReduzida": true,
+    "fonte": "\"Inter Derasu\"",
+    "interCarregada": true,
+    "fundoDaPagina": "rgb(16, 16, 20)",
+    "cartao": null,
+    "barraLateral": {
+      "fundo": "rgb(28, 28, 31)",
+      "borda": "rgb(49, 49, 51)",
+      "desfoque": "none",
+      "sombra": "rgba(255, 255, 255, 0.14) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.04) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0",
+      "raio": "22px"
+    },
+    "painel": null,
+    "modal": null,
+    "topo": {
+      "fundo": "rgba(0, 0, 0, 0)",
+      "linhaDeBaixo": "0px",
+      "efeitoDeBorda": {
+        "desfoque": "none",
+        "mascara": "linear-gradient(rgb(0, 0, 0) 45%, rgba(0, 0, 0, 0))",
+        "altura": "72px"
+      }
+    },
+    "capsulaAgrupada": {
+      "fundo": "rgb(28, 28, 31)",
+      "borda": "rgb(49, 49, 51)",
+      "desfoque": "none",
+      "sombra": "rgba(255, 255, 255, 0.14) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.04) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0",
+      "raio": "9999px"
+    },
+    "capsulaSolta": {
+      "fundo": "rgb(28, 28, 31)",
+      "borda": "rgb(49, 49, 51)",
+      "desfoque": "none",
+      "sombra": "rgba(255, 255, 255, 0.14) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.04) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0",
+      "raio": "9999px"
+    },
+    "caixaDaBarraLateral": {
+      "x": 8,
+      "y": 8,
+      "largura": 240,
+      "altura": 884,
+      "folgaAteOFundo": 8
+    },
+    "barraDeAbas": {
+      "fundo": "rgb(28, 28, 31)",
+      "borda": "rgb(49, 49, 51)",
+      "desfoque": "none",
+      "sombra": "rgba(255, 255, 255, 0.14) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.04) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0",
+      "raio": "9999px"
+    },
+    "caixaDaNavDeAbas": null,
+    "caixaDaCapsulaDeAbas": null,
+    "gota": {
+      "opacidade": "1",
+      "translate": "0%",
+      "largura": "calc(20% - 1.6px)",
+      "fundo": "oklab(0.67182 -0.0498558 0.0458667 / 0.14)"
+    },
+    "rodapeDescontado": "24px"
+  },
+  {
+    "caso": "app-crm_celular_claro_vidro",
+    "tema": "light",
+    "transparenciaReduzida": false,
+    "fonte": "\"Inter Derasu\"",
+    "interCarregada": true,
+    "fundoDaPagina": "rgb(239, 239, 244)",
+    "cartao": {
+      "fundo": "rgb(255, 255, 255)",
+      "borda": "rgba(0, 0, 0, 0)",
+      "desfoque": "none",
+      "sombra": "rgb(255, 255, 255) 0px 1px 0px 0px inset, rgba(16, 17, 24, 0.04) 0px 0px 0px 0.5px, rgba(16, 17, 24, 0.04) 0px 1px 2px 0",
+      "raio": "22px"
+    },
+    "barraLateral": {
+      "fundo": "rgba(250, 250, 253, 0.6)",
+      "borda": "rgba(255, 255, 255, 0.62)",
+      "desfoque": "blur(22px) saturate(1.9)",
+      "sombra": "rgba(255, 255, 255, 0.95) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.3) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0.",
+      "raio": "22px"
+    },
+    "painel": null,
+    "modal": null,
+    "topo": {
+      "fundo": "rgba(0, 0, 0, 0)",
+      "linhaDeBaixo": "0px",
+      "efeitoDeBorda": {
+        "desfoque": "blur(10px)",
+        "mascara": "linear-gradient(rgb(0, 0, 0) 45%, rgba(0, 0, 0, 0))",
+        "altura": "72px"
+      }
+    },
+    "capsulaAgrupada": {
+      "fundo": "rgba(250, 250, 253, 0.6)",
+      "borda": "rgba(255, 255, 255, 0.62)",
+      "desfoque": "blur(22px) saturate(1.9)",
+      "sombra": "rgba(255, 255, 255, 0.95) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.3) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0.",
+      "raio": "9999px"
+    },
+    "capsulaSolta": {
+      "fundo": "rgba(250, 250, 253, 0.6)",
+      "borda": "rgba(255, 255, 255, 0.62)",
+      "desfoque": "blur(22px) saturate(1.9)",
+      "sombra": "rgba(255, 255, 255, 0.95) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.3) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0.",
+      "raio": "9999px"
+    },
+    "caixaDaBarraLateral": null,
+    "barraDeAbas": {
+      "fundo": "rgba(250, 250, 253, 0.6)",
+      "borda": "rgba(255, 255, 255, 0.62)",
+      "desfoque": "blur(22px) saturate(1.9)",
+      "sombra": "rgba(255, 255, 255, 0.95) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.3) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0.",
+      "raio": "9999px"
+    },
+    "caixaDaNavDeAbas": {
+      "x": 0,
+      "y": 781,
+      "largura": 390,
+      "altura": 64,
+      "folgaAteOFundo": 0
+    },
+    "caixaDaCapsulaDeAbas": {
+      "x": 12,
+      "y": 782,
+      "largura": 366,
+      "altura": 55,
+      "folgaAteOFundo": 8
+    },
+    "gota": {
+      "opacidade": "0",
+      "translate": "0%",
+      "largura": "71.1875px",
+      "fundo": "oklab(0.50153 -0.0500825 0.0435521 / 0.14)"
+    },
+    "rodapeDescontado": "64px"
+  },
+  {
+    "caso": "app-inbox_celular_claro_vidro",
+    "tema": "light",
+    "transparenciaReduzida": false,
+    "fonte": "\"Inter Derasu\"",
+    "interCarregada": true,
+    "fundoDaPagina": "rgb(239, 239, 244)",
+    "cartao": null,
+    "barraLateral": {
+      "fundo": "rgba(250, 250, 253, 0.6)",
+      "borda": "rgba(255, 255, 255, 0.62)",
+      "desfoque": "blur(22px) saturate(1.9)",
+      "sombra": "rgba(255, 255, 255, 0.95) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.3) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0.",
+      "raio": "22px"
+    },
+    "painel": null,
+    "modal": null,
+    "topo": {
+      "fundo": "rgba(0, 0, 0, 0)",
+      "linhaDeBaixo": "0px",
+      "efeitoDeBorda": {
+        "desfoque": "blur(10px)",
+        "mascara": "linear-gradient(rgb(0, 0, 0) 45%, rgba(0, 0, 0, 0))",
+        "altura": "72px"
+      }
+    },
+    "capsulaAgrupada": {
+      "fundo": "rgba(250, 250, 253, 0.6)",
+      "borda": "rgba(255, 255, 255, 0.62)",
+      "desfoque": "blur(22px) saturate(1.9)",
+      "sombra": "rgba(255, 255, 255, 0.95) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.3) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0.",
+      "raio": "9999px"
+    },
+    "capsulaSolta": {
+      "fundo": "rgba(250, 250, 253, 0.6)",
+      "borda": "rgba(255, 255, 255, 0.62)",
+      "desfoque": "blur(22px) saturate(1.9)",
+      "sombra": "rgba(255, 255, 255, 0.95) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.3) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0.",
+      "raio": "9999px"
+    },
+    "caixaDaBarraLateral": null,
+    "barraDeAbas": {
+      "fundo": "rgba(250, 250, 253, 0.6)",
+      "borda": "rgba(255, 255, 255, 0.62)",
+      "desfoque": "blur(22px) saturate(1.9)",
+      "sombra": "rgba(255, 255, 255, 0.95) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.3) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0.",
+      "raio": "9999px"
+    },
+    "caixaDaNavDeAbas": {
+      "x": 0,
+      "y": 781,
+      "largura": 390,
+      "altura": 64,
+      "folgaAteOFundo": 0
+    },
+    "caixaDaCapsulaDeAbas": {
+      "x": 12,
+      "y": 782,
+      "largura": 366,
+      "altura": 55,
+      "folgaAteOFundo": 8
+    },
+    "gota": {
+      "opacidade": "1",
+      "translate": "0%",
+      "largura": "71.1875px",
+      "fundo": "oklab(0.50153 -0.0500825 0.0435521 / 0.14)"
+    },
+    "rodapeDescontado": "64px"
+  },
+  {
+    "caso": "app-crm_celular_claro_sem-transparencia",
+    "tema": "light",
+    "transparenciaReduzida": true,
+    "fonte": "\"Inter Derasu\"",
+    "interCarregada": true,
+    "fundoDaPagina": "rgb(239, 239, 244)",
+    "cartao": {
+      "fundo": "rgb(255, 255, 255)",
+      "borda": "rgba(0, 0, 0, 0)",
+      "desfoque": "none",
+      "sombra": "rgb(255, 255, 255) 0px 1px 0px 0px inset, rgba(16, 17, 24, 0.04) 0px 0px 0px 0.5px, rgba(16, 17, 24, 0.04) 0px 1px 2px 0",
+      "raio": "22px"
+    },
+    "barraLateral": {
+      "fundo": "rgb(255, 255, 255)",
+      "borda": "rgb(227, 227, 232)",
+      "desfoque": "none",
+      "sombra": "rgba(255, 255, 255, 0.95) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.3) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0.",
+      "raio": "22px"
+    },
+    "painel": null,
+    "modal": null,
+    "topo": {
+      "fundo": "rgba(0, 0, 0, 0)",
+      "linhaDeBaixo": "0px",
+      "efeitoDeBorda": {
+        "desfoque": "none",
+        "mascara": "linear-gradient(rgb(0, 0, 0) 45%, rgba(0, 0, 0, 0))",
+        "altura": "72px"
+      }
+    },
+    "capsulaAgrupada": {
+      "fundo": "rgb(255, 255, 255)",
+      "borda": "rgb(227, 227, 232)",
+      "desfoque": "none",
+      "sombra": "rgba(255, 255, 255, 0.95) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.3) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0.",
+      "raio": "9999px"
+    },
+    "capsulaSolta": {
+      "fundo": "rgb(255, 255, 255)",
+      "borda": "rgb(227, 227, 232)",
+      "desfoque": "none",
+      "sombra": "rgba(255, 255, 255, 0.95) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.3) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0.",
+      "raio": "9999px"
+    },
+    "caixaDaBarraLateral": null,
+    "barraDeAbas": {
+      "fundo": "rgb(255, 255, 255)",
+      "borda": "rgb(227, 227, 232)",
+      "desfoque": "none",
+      "sombra": "rgba(255, 255, 255, 0.95) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.3) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0.",
+      "raio": "9999px"
+    },
+    "caixaDaNavDeAbas": {
+      "x": 0,
+      "y": 781,
+      "largura": 390,
+      "altura": 64,
+      "folgaAteOFundo": 0
+    },
+    "caixaDaCapsulaDeAbas": {
+      "x": 12,
+      "y": 782,
+      "largura": 366,
+      "altura": 55,
+      "folgaAteOFundo": 8
+    },
+    "gota": {
+      "opacidade": "0",
+      "translate": "0%",
+      "largura": "71.1875px",
+      "fundo": "oklab(0.50153 -0.0500825 0.0435521 / 0.14)"
+    },
+    "rodapeDescontado": "64px"
+  },
+  {
+    "caso": "app-inbox_celular_claro_sem-transparencia",
+    "tema": "light",
+    "transparenciaReduzida": true,
+    "fonte": "\"Inter Derasu\"",
+    "interCarregada": true,
+    "fundoDaPagina": "rgb(239, 239, 244)",
+    "cartao": null,
+    "barraLateral": {
+      "fundo": "rgb(255, 255, 255)",
+      "borda": "rgb(227, 227, 232)",
+      "desfoque": "none",
+      "sombra": "rgba(255, 255, 255, 0.95) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.3) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0.",
+      "raio": "22px"
+    },
+    "painel": null,
+    "modal": null,
+    "topo": {
+      "fundo": "rgba(0, 0, 0, 0)",
+      "linhaDeBaixo": "0px",
+      "efeitoDeBorda": {
+        "desfoque": "none",
+        "mascara": "linear-gradient(rgb(0, 0, 0) 45%, rgba(0, 0, 0, 0))",
+        "altura": "72px"
+      }
+    },
+    "capsulaAgrupada": {
+      "fundo": "rgb(255, 255, 255)",
+      "borda": "rgb(227, 227, 232)",
+      "desfoque": "none",
+      "sombra": "rgba(255, 255, 255, 0.95) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.3) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0.",
+      "raio": "9999px"
+    },
+    "capsulaSolta": {
+      "fundo": "rgb(255, 255, 255)",
+      "borda": "rgb(227, 227, 232)",
+      "desfoque": "none",
+      "sombra": "rgba(255, 255, 255, 0.95) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.3) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0.",
+      "raio": "9999px"
+    },
+    "caixaDaBarraLateral": null,
+    "barraDeAbas": {
+      "fundo": "rgb(255, 255, 255)",
+      "borda": "rgb(227, 227, 232)",
+      "desfoque": "none",
+      "sombra": "rgba(255, 255, 255, 0.95) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.3) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0.",
+      "raio": "9999px"
+    },
+    "caixaDaNavDeAbas": {
+      "x": 0,
+      "y": 781,
+      "largura": 390,
+      "altura": 64,
+      "folgaAteOFundo": 0
+    },
+    "caixaDaCapsulaDeAbas": {
+      "x": 12,
+      "y": 782,
+      "largura": 366,
+      "altura": 55,
+      "folgaAteOFundo": 8
+    },
+    "gota": {
+      "opacidade": "1",
+      "translate": "0%",
+      "largura": "71.1875px",
+      "fundo": "oklab(0.50153 -0.0500825 0.0435521 / 0.14)"
+    },
+    "rodapeDescontado": "64px"
+  },
+  {
+    "caso": "app-crm_celular_escuro_vidro",
+    "tema": "dark",
+    "transparenciaReduzida": false,
+    "fonte": "\"Inter Derasu\"",
+    "interCarregada": true,
+    "fundoDaPagina": "rgb(16, 16, 20)",
+    "cartao": {
+      "fundo": "rgb(28, 28, 31)",
+      "borda": "rgba(0, 0, 0, 0)",
+      "desfoque": "none",
+      "sombra": "rgba(255, 255, 255, 0.06) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.06) 0px 0px 0px 0.5px, rgba(0, 0, 0, 0.4) 0px 1px",
+      "raio": "22px"
+    },
+    "barraLateral": {
+      "fundo": "rgba(30, 30, 36, 0.56)",
+      "borda": "rgba(255, 255, 255, 0.1)",
+      "desfoque": "blur(22px) saturate(1.9)",
+      "sombra": "rgba(255, 255, 255, 0.14) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.04) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0",
+      "raio": "22px"
+    },
+    "painel": null,
+    "modal": null,
+    "topo": {
+      "fundo": "rgba(0, 0, 0, 0)",
+      "linhaDeBaixo": "0px",
+      "efeitoDeBorda": {
+        "desfoque": "blur(10px)",
+        "mascara": "linear-gradient(rgb(0, 0, 0) 45%, rgba(0, 0, 0, 0))",
+        "altura": "72px"
+      }
+    },
+    "capsulaAgrupada": {
+      "fundo": "rgba(30, 30, 36, 0.56)",
+      "borda": "rgba(255, 255, 255, 0.1)",
+      "desfoque": "blur(22px) saturate(1.9)",
+      "sombra": "rgba(255, 255, 255, 0.14) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.04) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0",
+      "raio": "9999px"
+    },
+    "capsulaSolta": {
+      "fundo": "rgba(30, 30, 36, 0.56)",
+      "borda": "rgba(255, 255, 255, 0.1)",
+      "desfoque": "blur(22px) saturate(1.9)",
+      "sombra": "rgba(255, 255, 255, 0.14) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.04) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0",
+      "raio": "9999px"
+    },
+    "caixaDaBarraLateral": null,
+    "barraDeAbas": {
+      "fundo": "rgba(30, 30, 36, 0.56)",
+      "borda": "rgba(255, 255, 255, 0.1)",
+      "desfoque": "blur(22px) saturate(1.9)",
+      "sombra": "rgba(255, 255, 255, 0.14) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.04) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0",
+      "raio": "9999px"
+    },
+    "caixaDaNavDeAbas": {
+      "x": 0,
+      "y": 781,
+      "largura": 390,
+      "altura": 64,
+      "folgaAteOFundo": 0
+    },
+    "caixaDaCapsulaDeAbas": {
+      "x": 12,
+      "y": 782,
+      "largura": 366,
+      "altura": 55,
+      "folgaAteOFundo": 8
+    },
+    "gota": {
+      "opacidade": "0",
+      "translate": "0%",
+      "largura": "71.1875px",
+      "fundo": "oklab(0.67182 -0.0498558 0.0458667 / 0.14)"
+    },
+    "rodapeDescontado": "64px"
+  },
+  {
+    "caso": "app-inbox_celular_escuro_vidro",
+    "tema": "dark",
+    "transparenciaReduzida": false,
+    "fonte": "\"Inter Derasu\"",
+    "interCarregada": true,
+    "fundoDaPagina": "rgb(16, 16, 20)",
+    "cartao": null,
+    "barraLateral": {
+      "fundo": "rgba(30, 30, 36, 0.56)",
+      "borda": "rgba(255, 255, 255, 0.1)",
+      "desfoque": "blur(22px) saturate(1.9)",
+      "sombra": "rgba(255, 255, 255, 0.14) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.04) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0",
+      "raio": "22px"
+    },
+    "painel": null,
+    "modal": null,
+    "topo": {
+      "fundo": "rgba(0, 0, 0, 0)",
+      "linhaDeBaixo": "0px",
+      "efeitoDeBorda": {
+        "desfoque": "blur(10px)",
+        "mascara": "linear-gradient(rgb(0, 0, 0) 45%, rgba(0, 0, 0, 0))",
+        "altura": "72px"
+      }
+    },
+    "capsulaAgrupada": {
+      "fundo": "rgba(30, 30, 36, 0.56)",
+      "borda": "rgba(255, 255, 255, 0.1)",
+      "desfoque": "blur(22px) saturate(1.9)",
+      "sombra": "rgba(255, 255, 255, 0.14) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.04) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0",
+      "raio": "9999px"
+    },
+    "capsulaSolta": {
+      "fundo": "rgba(30, 30, 36, 0.56)",
+      "borda": "rgba(255, 255, 255, 0.1)",
+      "desfoque": "blur(22px) saturate(1.9)",
+      "sombra": "rgba(255, 255, 255, 0.14) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.04) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0",
+      "raio": "9999px"
+    },
+    "caixaDaBarraLateral": null,
+    "barraDeAbas": {
+      "fundo": "rgba(30, 30, 36, 0.56)",
+      "borda": "rgba(255, 255, 255, 0.1)",
+      "desfoque": "blur(22px) saturate(1.9)",
+      "sombra": "rgba(255, 255, 255, 0.14) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.04) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0",
+      "raio": "9999px"
+    },
+    "caixaDaNavDeAbas": {
+      "x": 0,
+      "y": 781,
+      "largura": 390,
+      "altura": 64,
+      "folgaAteOFundo": 0
+    },
+    "caixaDaCapsulaDeAbas": {
+      "x": 12,
+      "y": 782,
+      "largura": 366,
+      "altura": 55,
+      "folgaAteOFundo": 8
+    },
+    "gota": {
+      "opacidade": "1",
+      "translate": "0%",
+      "largura": "71.1875px",
+      "fundo": "oklab(0.67182 -0.0498558 0.0458667 / 0.14)"
+    },
+    "rodapeDescontado": "64px"
+  },
+  {
+    "caso": "app-crm_celular_escuro_sem-transparencia",
+    "tema": "dark",
+    "transparenciaReduzida": true,
+    "fonte": "\"Inter Derasu\"",
+    "interCarregada": true,
+    "fundoDaPagina": "rgb(16, 16, 20)",
+    "cartao": {
+      "fundo": "rgb(28, 28, 31)",
+      "borda": "rgba(0, 0, 0, 0)",
+      "desfoque": "none",
+      "sombra": "rgba(255, 255, 255, 0.06) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.06) 0px 0px 0px 0.5px, rgba(0, 0, 0, 0.4) 0px 1px",
+      "raio": "22px"
+    },
+    "barraLateral": {
+      "fundo": "rgb(28, 28, 31)",
+      "borda": "rgb(49, 49, 51)",
+      "desfoque": "none",
+      "sombra": "rgba(255, 255, 255, 0.14) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.04) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0",
+      "raio": "22px"
+    },
+    "painel": null,
+    "modal": null,
+    "topo": {
+      "fundo": "rgba(0, 0, 0, 0)",
+      "linhaDeBaixo": "0px",
+      "efeitoDeBorda": {
+        "desfoque": "none",
+        "mascara": "linear-gradient(rgb(0, 0, 0) 45%, rgba(0, 0, 0, 0))",
+        "altura": "72px"
+      }
+    },
+    "capsulaAgrupada": {
+      "fundo": "rgb(28, 28, 31)",
+      "borda": "rgb(49, 49, 51)",
+      "desfoque": "none",
+      "sombra": "rgba(255, 255, 255, 0.14) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.04) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0",
+      "raio": "9999px"
+    },
+    "capsulaSolta": {
+      "fundo": "rgb(28, 28, 31)",
+      "borda": "rgb(49, 49, 51)",
+      "desfoque": "none",
+      "sombra": "rgba(255, 255, 255, 0.14) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.04) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0",
+      "raio": "9999px"
+    },
+    "caixaDaBarraLateral": null,
+    "barraDeAbas": {
+      "fundo": "rgb(28, 28, 31)",
+      "borda": "rgb(49, 49, 51)",
+      "desfoque": "none",
+      "sombra": "rgba(255, 255, 255, 0.14) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.04) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0",
+      "raio": "9999px"
+    },
+    "caixaDaNavDeAbas": {
+      "x": 0,
+      "y": 781,
+      "largura": 390,
+      "altura": 64,
+      "folgaAteOFundo": 0
+    },
+    "caixaDaCapsulaDeAbas": {
+      "x": 12,
+      "y": 782,
+      "largura": 366,
+      "altura": 55,
+      "folgaAteOFundo": 8
+    },
+    "gota": {
+      "opacidade": "0",
+      "translate": "0%",
+      "largura": "71.1875px",
+      "fundo": "oklab(0.67182 -0.0498558 0.0458667 / 0.14)"
+    },
+    "rodapeDescontado": "64px"
+  },
+  {
+    "caso": "app-inbox_celular_escuro_sem-transparencia",
+    "tema": "dark",
+    "transparenciaReduzida": true,
+    "fonte": "\"Inter Derasu\"",
+    "interCarregada": true,
+    "fundoDaPagina": "rgb(16, 16, 20)",
+    "cartao": null,
+    "barraLateral": {
+      "fundo": "rgb(28, 28, 31)",
+      "borda": "rgb(49, 49, 51)",
+      "desfoque": "none",
+      "sombra": "rgba(255, 255, 255, 0.14) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.04) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0",
+      "raio": "22px"
+    },
+    "painel": null,
+    "modal": null,
+    "topo": {
+      "fundo": "rgba(0, 0, 0, 0)",
+      "linhaDeBaixo": "0px",
+      "efeitoDeBorda": {
+        "desfoque": "none",
+        "mascara": "linear-gradient(rgb(0, 0, 0) 45%, rgba(0, 0, 0, 0))",
+        "altura": "72px"
+      }
+    },
+    "capsulaAgrupada": {
+      "fundo": "rgb(28, 28, 31)",
+      "borda": "rgb(49, 49, 51)",
+      "desfoque": "none",
+      "sombra": "rgba(255, 255, 255, 0.14) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.04) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0",
+      "raio": "9999px"
+    },
+    "capsulaSolta": {
+      "fundo": "rgb(28, 28, 31)",
+      "borda": "rgb(49, 49, 51)",
+      "desfoque": "none",
+      "sombra": "rgba(255, 255, 255, 0.14) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.04) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0",
+      "raio": "9999px"
+    },
+    "caixaDaBarraLateral": null,
+    "barraDeAbas": {
+      "fundo": "rgb(28, 28, 31)",
+      "borda": "rgb(49, 49, 51)",
+      "desfoque": "none",
+      "sombra": "rgba(255, 255, 255, 0.14) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.04) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0",
+      "raio": "9999px"
+    },
+    "caixaDaNavDeAbas": {
+      "x": 0,
+      "y": 781,
+      "largura": 390,
+      "altura": 64,
+      "folgaAteOFundo": 0
+    },
+    "caixaDaCapsulaDeAbas": {
+      "x": 12,
+      "y": 782,
+      "largura": 366,
+      "altura": 55,
+      "folgaAteOFundo": 8
+    },
+    "gota": {
+      "opacidade": "1",
+      "translate": "0%",
+      "largura": "71.1875px",
+      "fundo": "oklab(0.67182 -0.0498558 0.0458667 / 0.14)"
+    },
+    "rodapeDescontado": "64px"
+  }
+]
