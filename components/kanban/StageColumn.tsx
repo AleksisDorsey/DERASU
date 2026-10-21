@@ -150,7 +150,7 @@ export function StageColumn({
         coluna de etapa não vira painel. De `md` para cima volta o `w-80` de
         sempre, onde a graça é justamente ver várias etapas ao mesmo tempo.
       */
-      className="bg-surface-muted/40 flex min-h-full w-[85vw] max-w-80 shrink-0 snap-center flex-col rounded-lg border border-border md:w-80"
+      className="ds-coluna bg-surface-muted/40 flex min-h-full w-[85vw] max-w-80 shrink-0 snap-center flex-col rounded-lg border border-border md:w-80"
       data-etapa-do-quadro={stage.id}
     >
       {/* Cabeçalho e total PRESOS no alto do quadro enquanto os cards rolam: com

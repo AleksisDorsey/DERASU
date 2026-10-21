@@ -243,7 +243,7 @@ export function MessageBubble({
           isBareSticker
             ? "px-0 py-0"
             : cn(
-                "rounded-2xl px-3 py-2 shadow-sm",
+                "ds-balao rounded-2xl px-3 py-2 shadow-sm",
                 temMenu && "pr-8",
                 isOutbound
                   ? "rounded-br-sm bg-primary text-primary-foreground"
