@@ -18,7 +18,7 @@ import { cn } from "@/lib/utils";
 const buttonVariants = cva(
   [
     "inline-flex items-center justify-center gap-2 whitespace-nowrap",
-    "rounded-sm font-medium",
+    "rounded-full font-medium",
     // `transform` SAIU da lista, e `translate` não entrou no lugar.
     //
     // O recuo do toque é `active:translate-y-px`, lá embaixo. No Tailwind 4 essa
@@ -41,7 +41,7 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        // `ds-botao-*` (app/globals.css, "PROFUNDIDADE E VIDRO") dá o relevo e
+        // `ds-botao-*` (app/globals.css, "LIQUID GLASS") dá o relevo e
         // o halo; substitui o `shadow-xs`, que como utilitário venceria a
         // sombra do componente.
         primary: "ds-botao-primario bg-accent text-accent-foreground hover:bg-accent-hover",
