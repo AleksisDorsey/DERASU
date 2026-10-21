@@ -13,9 +13,9 @@ Este arquivo é o roteiro; marque a entrega quando o PR dela entrar na `main` da
 2. [x] **Camada de controle** (PR #10) — barra lateral flutuante (lâmina solta, com margem, no desktop;
    gaveta no celular); topo sem faixa, com controles em cápsulas de vidro e efeito de borda; barra
    de abas do celular em cápsula com gota deslizante; menus, popovers, modais, gavetas e dicas.
-3. [ ] **Controles** — botões em cápsula; interruptor, abas segmentadas com gota, campos e seleção
+3. [x] **Controles** (PR #13) — botões em cápsula; interruptor, abas segmentadas com gota, campos e seleção
    com raio concêntrico ao contêiner.
-4. [ ] **Superfícies de conteúdo** — cartão, tabela, cartão do funil, balões da inbox. Em
+4. [x] **Superfícies de conteúdo** (PR #14) — cartão, tabela, cartão do funil, balões da inbox. Em
    componente de área, só se acrescenta uma classe `ds-*`; nada de reescrever estrutura ou lógica,
    e o motivo vai escrito no PR.
 5. [ ] **Movimento** — pressionar, molas, morfose (View Transitions), e a transição de rota, que
