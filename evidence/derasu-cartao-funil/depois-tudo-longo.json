@@ -1,0 +1,1170 @@
+[
+  {
+    "caso": "depois-tudo-longo_desktop_claro_inter",
+    "fonteEfetiva": "\"Inter Derasu\"",
+    "cartoes": [
+      {
+        "id": "d0000000-0000-4000-8000-000000000201",
+        "titulo": "Kit clareamento — Marina",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Maria Aparecida dos Santos Figueiredo",
+          "esquerda": 340,
+          "direita": 489.4,
+          "truncado": true
+        },
+        "etapa": {
+          "texto": "15h em Aguardando retorno do financeiro",
+          "esquerda": 497.4,
+          "direita": 586,
+          "truncado": true
+        },
+        "intercepta": false,
+        "folga": 8,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "d0000000-0000-4000-8000-000000000202",
+        "titulo": "Pedido #1042 — Rafael",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Maria Aparecida dos Santos Figueiredo",
+          "esquerda": 340,
+          "direita": 489.4,
+          "truncado": true
+        },
+        "etapa": {
+          "texto": "15h em Aguardando retorno do financeiro",
+          "esquerda": 497.4,
+          "direita": 586,
+          "truncado": true
+        },
+        "intercepta": false,
+        "folga": 8,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "d0000000-0000-4000-8000-000000000203",
+        "titulo": "Contrato anual — Sorriso Pleno",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Maria Aparecida dos Santos Figueiredo",
+          "esquerda": 672,
+          "direita": 821.4,
+          "truncado": true
+        },
+        "etapa": {
+          "texto": "15h em Aguardando retorno do financeiro",
+          "esquerda": 829.4,
+          "direita": 918,
+          "truncado": true
+        },
+        "intercepta": false,
+        "folga": 8,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "d0000000-0000-4000-8000-000000000204",
+        "titulo": "Pedido #1039 — Joana",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Maria Aparecida dos Santos Figueiredo",
+          "esquerda": 1004,
+          "direita": 1153.4,
+          "truncado": true
+        },
+        "etapa": {
+          "texto": "15h em Aguardando retorno do financeiro",
+          "esquerda": 1161.4,
+          "direita": 1250,
+          "truncado": true
+        },
+        "intercepta": false,
+        "folga": 8,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "d0000000-0000-4000-8000-000000000205",
+        "titulo": "Reposição — Rafael",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Maria Aparecida dos Santos Figueiredo",
+          "esquerda": 1336,
+          "direita": 1485.4,
+          "truncado": true
+        },
+        "etapa": {
+          "texto": "15h em Aguardando retorno do financeiro",
+          "esquerda": 1493.4,
+          "direita": 1582,
+          "truncado": true
+        },
+        "intercepta": false,
+        "folga": 8,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "c95890b2-ac93-46e8-8727-d62f7affe81b",
+        "titulo": "E2E Ramos VIP 1792557921970",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Maria Aparecida dos Santos Figueiredo",
+          "esquerda": 2996,
+          "direita": 3145.4,
+          "truncado": true
+        },
+        "etapa": {
+          "texto": "14h em Aguardando retorno do financeiro",
+          "esquerda": 3153.4,
+          "direita": 3242,
+          "truncado": true
+        },
+        "intercepta": false,
+        "folga": 8,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "099b4856-b20d-4ea5-b132-c14a74e71807",
+        "titulo": "E2E Ramos Atrasado 1792557921970",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Maria Aparecida dos Santos Figueiredo",
+          "esquerda": 2996,
+          "direita": 3145.4,
+          "truncado": true
+        },
+        "etapa": {
+          "texto": "14h em Aguardando retorno do financeiro",
+          "esquerda": 3153.4,
+          "direita": 3242,
+          "truncado": true
+        },
+        "intercepta": false,
+        "folga": 8,
+        "vazaDoCartao": false
+      }
+    ]
+  },
+  {
+    "caso": "depois-tudo-longo_desktop_claro_atkinson",
+    "fonteEfetiva": "atkinson",
+    "cartoes": [
+      {
+        "id": "d0000000-0000-4000-8000-000000000201",
+        "titulo": "Kit clareamento — Marina",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Maria Aparecida dos Santos Figueiredo",
+          "esquerda": 340,
+          "direita": 489.4,
+          "truncado": true
+        },
+        "etapa": {
+          "texto": "15h em Aguardando retorno do financeiro",
+          "esquerda": 497.4,
+          "direita": 586,
+          "truncado": true
+        },
+        "intercepta": false,
+        "folga": 8,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "d0000000-0000-4000-8000-000000000202",
+        "titulo": "Pedido #1042 — Rafael",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Maria Aparecida dos Santos Figueiredo",
+          "esquerda": 340,
+          "direita": 489.4,
+          "truncado": true
+        },
+        "etapa": {
+          "texto": "15h em Aguardando retorno do financeiro",
+          "esquerda": 497.4,
+          "direita": 586,
+          "truncado": true
+        },
+        "intercepta": false,
+        "folga": 8,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "d0000000-0000-4000-8000-000000000203",
+        "titulo": "Contrato anual — Sorriso Pleno",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Maria Aparecida dos Santos Figueiredo",
+          "esquerda": 672,
+          "direita": 821.4,
+          "truncado": true
+        },
+        "etapa": {
+          "texto": "15h em Aguardando retorno do financeiro",
+          "esquerda": 829.4,
+          "direita": 918,
+          "truncado": true
+        },
+        "intercepta": false,
+        "folga": 8,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "d0000000-0000-4000-8000-000000000204",
+        "titulo": "Pedido #1039 — Joana",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Maria Aparecida dos Santos Figueiredo",
+          "esquerda": 1004,
+          "direita": 1153.4,
+          "truncado": true
+        },
+        "etapa": {
+          "texto": "15h em Aguardando retorno do financeiro",
+          "esquerda": 1161.4,
+          "direita": 1250,
+          "truncado": true
+        },
+        "intercepta": false,
+        "folga": 8,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "d0000000-0000-4000-8000-000000000205",
+        "titulo": "Reposição — Rafael",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Maria Aparecida dos Santos Figueiredo",
+          "esquerda": 1336,
+          "direita": 1485.4,
+          "truncado": true
+        },
+        "etapa": {
+          "texto": "15h em Aguardando retorno do financeiro",
+          "esquerda": 1493.4,
+          "direita": 1582,
+          "truncado": true
+        },
+        "intercepta": false,
+        "folga": 8,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "c95890b2-ac93-46e8-8727-d62f7affe81b",
+        "titulo": "E2E Ramos VIP 1792557921970",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Maria Aparecida dos Santos Figueiredo",
+          "esquerda": 2996,
+          "direita": 3145.4,
+          "truncado": true
+        },
+        "etapa": {
+          "texto": "14h em Aguardando retorno do financeiro",
+          "esquerda": 3153.4,
+          "direita": 3242,
+          "truncado": true
+        },
+        "intercepta": false,
+        "folga": 8,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "099b4856-b20d-4ea5-b132-c14a74e71807",
+        "titulo": "E2E Ramos Atrasado 1792557921970",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Maria Aparecida dos Santos Figueiredo",
+          "esquerda": 2996,
+          "direita": 3145.4,
+          "truncado": true
+        },
+        "etapa": {
+          "texto": "14h em Aguardando retorno do financeiro",
+          "esquerda": 3153.4,
+          "direita": 3242,
+          "truncado": true
+        },
+        "intercepta": false,
+        "folga": 8,
+        "vazaDoCartao": false
+      }
+    ]
+  },
+  {
+    "caso": "depois-tudo-longo_desktop_escuro_inter",
+    "fonteEfetiva": "\"Inter Derasu\"",
+    "cartoes": [
+      {
+        "id": "d0000000-0000-4000-8000-000000000201",
+        "titulo": "Kit clareamento — Marina",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Maria Aparecida dos Santos Figueiredo",
+          "esquerda": 340,
+          "direita": 489.4,
+          "truncado": true
+        },
+        "etapa": {
+          "texto": "15h em Aguardando retorno do financeiro",
+          "esquerda": 497.4,
+          "direita": 586,
+          "truncado": true
+        },
+        "intercepta": false,
+        "folga": 8,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "d0000000-0000-4000-8000-000000000202",
+        "titulo": "Pedido #1042 — Rafael",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Maria Aparecida dos Santos Figueiredo",
+          "esquerda": 340,
+          "direita": 489.4,
+          "truncado": true
+        },
+        "etapa": {
+          "texto": "15h em Aguardando retorno do financeiro",
+          "esquerda": 497.4,
+          "direita": 586,
+          "truncado": true
+        },
+        "intercepta": false,
+        "folga": 8,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "d0000000-0000-4000-8000-000000000203",
+        "titulo": "Contrato anual — Sorriso Pleno",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Maria Aparecida dos Santos Figueiredo",
+          "esquerda": 672,
+          "direita": 821.4,
+          "truncado": true
+        },
+        "etapa": {
+          "texto": "15h em Aguardando retorno do financeiro",
+          "esquerda": 829.4,
+          "direita": 918,
+          "truncado": true
+        },
+        "intercepta": false,
+        "folga": 8,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "d0000000-0000-4000-8000-000000000204",
+        "titulo": "Pedido #1039 — Joana",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Maria Aparecida dos Santos Figueiredo",
+          "esquerda": 1004,
+          "direita": 1153.4,
+          "truncado": true
+        },
+        "etapa": {
+          "texto": "15h em Aguardando retorno do financeiro",
+          "esquerda": 1161.4,
+          "direita": 1250,
+          "truncado": true
+        },
+        "intercepta": false,
+        "folga": 8,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "d0000000-0000-4000-8000-000000000205",
+        "titulo": "Reposição — Rafael",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Maria Aparecida dos Santos Figueiredo",
+          "esquerda": 1336,
+          "direita": 1485.4,
+          "truncado": true
+        },
+        "etapa": {
+          "texto": "15h em Aguardando retorno do financeiro",
+          "esquerda": 1493.4,
+          "direita": 1582,
+          "truncado": true
+        },
+        "intercepta": false,
+        "folga": 8,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "c95890b2-ac93-46e8-8727-d62f7affe81b",
+        "titulo": "E2E Ramos VIP 1792557921970",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Maria Aparecida dos Santos Figueiredo",
+          "esquerda": 2996,
+          "direita": 3145.4,
+          "truncado": true
+        },
+        "etapa": {
+          "texto": "14h em Aguardando retorno do financeiro",
+          "esquerda": 3153.4,
+          "direita": 3242,
+          "truncado": true
+        },
+        "intercepta": false,
+        "folga": 8,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "099b4856-b20d-4ea5-b132-c14a74e71807",
+        "titulo": "E2E Ramos Atrasado 1792557921970",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Maria Aparecida dos Santos Figueiredo",
+          "esquerda": 2996,
+          "direita": 3145.4,
+          "truncado": true
+        },
+        "etapa": {
+          "texto": "14h em Aguardando retorno do financeiro",
+          "esquerda": 3153.4,
+          "direita": 3242,
+          "truncado": true
+        },
+        "intercepta": false,
+        "folga": 8,
+        "vazaDoCartao": false
+      }
+    ]
+  },
+  {
+    "caso": "depois-tudo-longo_desktop_escuro_atkinson",
+    "fonteEfetiva": "atkinson",
+    "cartoes": [
+      {
+        "id": "d0000000-0000-4000-8000-000000000201",
+        "titulo": "Kit clareamento — Marina",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Maria Aparecida dos Santos Figueiredo",
+          "esquerda": 340,
+          "direita": 489.4,
+          "truncado": true
+        },
+        "etapa": {
+          "texto": "15h em Aguardando retorno do financeiro",
+          "esquerda": 497.4,
+          "direita": 586,
+          "truncado": true
+        },
+        "intercepta": false,
+        "folga": 8,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "d0000000-0000-4000-8000-000000000202",
+        "titulo": "Pedido #1042 — Rafael",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Maria Aparecida dos Santos Figueiredo",
+          "esquerda": 340,
+          "direita": 489.4,
+          "truncado": true
+        },
+        "etapa": {
+          "texto": "15h em Aguardando retorno do financeiro",
+          "esquerda": 497.4,
+          "direita": 586,
+          "truncado": true
+        },
+        "intercepta": false,
+        "folga": 8,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "d0000000-0000-4000-8000-000000000203",
+        "titulo": "Contrato anual — Sorriso Pleno",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Maria Aparecida dos Santos Figueiredo",
+          "esquerda": 672,
+          "direita": 821.4,
+          "truncado": true
+        },
+        "etapa": {
+          "texto": "15h em Aguardando retorno do financeiro",
+          "esquerda": 829.4,
+          "direita": 918,
+          "truncado": true
+        },
+        "intercepta": false,
+        "folga": 8,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "d0000000-0000-4000-8000-000000000204",
+        "titulo": "Pedido #1039 — Joana",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Maria Aparecida dos Santos Figueiredo",
+          "esquerda": 1004,
+          "direita": 1153.4,
+          "truncado": true
+        },
+        "etapa": {
+          "texto": "15h em Aguardando retorno do financeiro",
+          "esquerda": 1161.4,
+          "direita": 1250,
+          "truncado": true
+        },
+        "intercepta": false,
+        "folga": 8,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "d0000000-0000-4000-8000-000000000205",
+        "titulo": "Reposição — Rafael",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Maria Aparecida dos Santos Figueiredo",
+          "esquerda": 1336,
+          "direita": 1485.4,
+          "truncado": true
+        },
+        "etapa": {
+          "texto": "15h em Aguardando retorno do financeiro",
+          "esquerda": 1493.4,
+          "direita": 1582,
+          "truncado": true
+        },
+        "intercepta": false,
+        "folga": 8,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "c95890b2-ac93-46e8-8727-d62f7affe81b",
+        "titulo": "E2E Ramos VIP 1792557921970",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Maria Aparecida dos Santos Figueiredo",
+          "esquerda": 2996,
+          "direita": 3145.4,
+          "truncado": true
+        },
+        "etapa": {
+          "texto": "14h em Aguardando retorno do financeiro",
+          "esquerda": 3153.4,
+          "direita": 3242,
+          "truncado": true
+        },
+        "intercepta": false,
+        "folga": 8,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "099b4856-b20d-4ea5-b132-c14a74e71807",
+        "titulo": "E2E Ramos Atrasado 1792557921970",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Maria Aparecida dos Santos Figueiredo",
+          "esquerda": 2996,
+          "direita": 3145.4,
+          "truncado": true
+        },
+        "etapa": {
+          "texto": "14h em Aguardando retorno do financeiro",
+          "esquerda": 3153.4,
+          "direita": 3242,
+          "truncado": true
+        },
+        "intercepta": false,
+        "folga": 8,
+        "vazaDoCartao": false
+      }
+    ]
+  },
+  {
+    "caso": "depois-tudo-longo_celular_claro_inter",
+    "fonteEfetiva": "\"Inter Derasu\"",
+    "cartoes": [
+      {
+        "id": "d0000000-0000-4000-8000-000000000201",
+        "titulo": "Kit clareamento — Marina",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Maria Aparecida dos Santos Figueiredo",
+          "esquerda": 84,
+          "direita": 233.4,
+          "truncado": true
+        },
+        "etapa": {
+          "texto": "15h em Aguardando retorno do financeiro",
+          "esquerda": 241.4,
+          "direita": 330,
+          "truncado": true
+        },
+        "intercepta": false,
+        "folga": 8,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "d0000000-0000-4000-8000-000000000202",
+        "titulo": "Pedido #1042 — Rafael",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Maria Aparecida dos Santos Figueiredo",
+          "esquerda": 84,
+          "direita": 233.4,
+          "truncado": true
+        },
+        "etapa": {
+          "texto": "15h em Aguardando retorno do financeiro",
+          "esquerda": 241.4,
+          "direita": 330,
+          "truncado": true
+        },
+        "intercepta": false,
+        "folga": 8,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "d0000000-0000-4000-8000-000000000203",
+        "titulo": "Contrato anual — Sorriso Pleno",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Maria Aparecida dos Santos Figueiredo",
+          "esquerda": 416,
+          "direita": 565.4,
+          "truncado": true
+        },
+        "etapa": {
+          "texto": "15h em Aguardando retorno do financeiro",
+          "esquerda": 573.4,
+          "direita": 662,
+          "truncado": true
+        },
+        "intercepta": false,
+        "folga": 8,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "d0000000-0000-4000-8000-000000000204",
+        "titulo": "Pedido #1039 — Joana",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Maria Aparecida dos Santos Figueiredo",
+          "esquerda": 748,
+          "direita": 897.4,
+          "truncado": true
+        },
+        "etapa": {
+          "texto": "15h em Aguardando retorno do financeiro",
+          "esquerda": 905.4,
+          "direita": 994,
+          "truncado": true
+        },
+        "intercepta": false,
+        "folga": 8,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "d0000000-0000-4000-8000-000000000205",
+        "titulo": "Reposição — Rafael",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Maria Aparecida dos Santos Figueiredo",
+          "esquerda": 1080,
+          "direita": 1229.4,
+          "truncado": true
+        },
+        "etapa": {
+          "texto": "15h em Aguardando retorno do financeiro",
+          "esquerda": 1237.4,
+          "direita": 1326,
+          "truncado": true
+        },
+        "intercepta": false,
+        "folga": 8,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "c95890b2-ac93-46e8-8727-d62f7affe81b",
+        "titulo": "E2E Ramos VIP 1792557921970",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Maria Aparecida dos Santos Figueiredo",
+          "esquerda": 2740,
+          "direita": 2889.4,
+          "truncado": true
+        },
+        "etapa": {
+          "texto": "14h em Aguardando retorno do financeiro",
+          "esquerda": 2897.4,
+          "direita": 2986,
+          "truncado": true
+        },
+        "intercepta": false,
+        "folga": 8,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "099b4856-b20d-4ea5-b132-c14a74e71807",
+        "titulo": "E2E Ramos Atrasado 1792557921970",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Maria Aparecida dos Santos Figueiredo",
+          "esquerda": 2740,
+          "direita": 2889.4,
+          "truncado": true
+        },
+        "etapa": {
+          "texto": "14h em Aguardando retorno do financeiro",
+          "esquerda": 2897.4,
+          "direita": 2986,
+          "truncado": true
+        },
+        "intercepta": false,
+        "folga": 8,
+        "vazaDoCartao": false
+      }
+    ]
+  },
+  {
+    "caso": "depois-tudo-longo_celular_claro_atkinson",
+    "fonteEfetiva": "atkinson",
+    "cartoes": [
+      {
+        "id": "d0000000-0000-4000-8000-000000000201",
+        "titulo": "Kit clareamento — Marina",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Maria Aparecida dos Santos Figueiredo",
+          "esquerda": 84,
+          "direita": 233.4,
+          "truncado": true
+        },
+        "etapa": {
+          "texto": "15h em Aguardando retorno do financeiro",
+          "esquerda": 241.4,
+          "direita": 330,
+          "truncado": true
+        },
+        "intercepta": false,
+        "folga": 8,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "d0000000-0000-4000-8000-000000000202",
+        "titulo": "Pedido #1042 — Rafael",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Maria Aparecida dos Santos Figueiredo",
+          "esquerda": 84,
+          "direita": 233.4,
+          "truncado": true
+        },
+        "etapa": {
+          "texto": "15h em Aguardando retorno do financeiro",
+          "esquerda": 241.4,
+          "direita": 330,
+          "truncado": true
+        },
+        "intercepta": false,
+        "folga": 8,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "d0000000-0000-4000-8000-000000000203",
+        "titulo": "Contrato anual — Sorriso Pleno",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Maria Aparecida dos Santos Figueiredo",
+          "esquerda": 416,
+          "direita": 565.4,
+          "truncado": true
+        },
+        "etapa": {
+          "texto": "15h em Aguardando retorno do financeiro",
+          "esquerda": 573.4,
+          "direita": 662,
+          "truncado": true
+        },
+        "intercepta": false,
+        "folga": 8,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "d0000000-0000-4000-8000-000000000204",
+        "titulo": "Pedido #1039 — Joana",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Maria Aparecida dos Santos Figueiredo",
+          "esquerda": 748,
+          "direita": 897.4,
+          "truncado": true
+        },
+        "etapa": {
+          "texto": "15h em Aguardando retorno do financeiro",
+          "esquerda": 905.4,
+          "direita": 994,
+          "truncado": true
+        },
+        "intercepta": false,
+        "folga": 8,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "d0000000-0000-4000-8000-000000000205",
+        "titulo": "Reposição — Rafael",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Maria Aparecida dos Santos Figueiredo",
+          "esquerda": 1080,
+          "direita": 1229.4,
+          "truncado": true
+        },
+        "etapa": {
+          "texto": "15h em Aguardando retorno do financeiro",
+          "esquerda": 1237.4,
+          "direita": 1326,
+          "truncado": true
+        },
+        "intercepta": false,
+        "folga": 8,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "c95890b2-ac93-46e8-8727-d62f7affe81b",
+        "titulo": "E2E Ramos VIP 1792557921970",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Maria Aparecida dos Santos Figueiredo",
+          "esquerda": 2740,
+          "direita": 2889.4,
+          "truncado": true
+        },
+        "etapa": {
+          "texto": "14h em Aguardando retorno do financeiro",
+          "esquerda": 2897.4,
+          "direita": 2986,
+          "truncado": true
+        },
+        "intercepta": false,
+        "folga": 8,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "099b4856-b20d-4ea5-b132-c14a74e71807",
+        "titulo": "E2E Ramos Atrasado 1792557921970",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Maria Aparecida dos Santos Figueiredo",
+          "esquerda": 2740,
+          "direita": 2889.4,
+          "truncado": true
+        },
+        "etapa": {
+          "texto": "14h em Aguardando retorno do financeiro",
+          "esquerda": 2897.4,
+          "direita": 2986,
+          "truncado": true
+        },
+        "intercepta": false,
+        "folga": 8,
+        "vazaDoCartao": false
+      }
+    ]
+  },
+  {
+    "caso": "depois-tudo-longo_celular_escuro_inter",
+    "fonteEfetiva": "\"Inter Derasu\"",
+    "cartoes": [
+      {
+        "id": "d0000000-0000-4000-8000-000000000201",
+        "titulo": "Kit clareamento — Marina",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Maria Aparecida dos Santos Figueiredo",
+          "esquerda": 84,
+          "direita": 233.4,
+          "truncado": true
+        },
+        "etapa": {
+          "texto": "15h em Aguardando retorno do financeiro",
+          "esquerda": 241.4,
+          "direita": 330,
+          "truncado": true
+        },
+        "intercepta": false,
+        "folga": 8,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "d0000000-0000-4000-8000-000000000202",
+        "titulo": "Pedido #1042 — Rafael",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Maria Aparecida dos Santos Figueiredo",
+          "esquerda": 84,
+          "direita": 233.4,
+          "truncado": true
+        },
+        "etapa": {
+          "texto": "15h em Aguardando retorno do financeiro",
+          "esquerda": 241.4,
+          "direita": 330,
+          "truncado": true
+        },
+        "intercepta": false,
+        "folga": 8,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "d0000000-0000-4000-8000-000000000203",
+        "titulo": "Contrato anual — Sorriso Pleno",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Maria Aparecida dos Santos Figueiredo",
+          "esquerda": 416,
+          "direita": 565.4,
+          "truncado": true
+        },
+        "etapa": {
+          "texto": "15h em Aguardando retorno do financeiro",
+          "esquerda": 573.4,
+          "direita": 662,
+          "truncado": true
+        },
+        "intercepta": false,
+        "folga": 8,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "d0000000-0000-4000-8000-000000000204",
+        "titulo": "Pedido #1039 — Joana",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Maria Aparecida dos Santos Figueiredo",
+          "esquerda": 748,
+          "direita": 897.4,
+          "truncado": true
+        },
+        "etapa": {
+          "texto": "15h em Aguardando retorno do financeiro",
+          "esquerda": 905.4,
+          "direita": 994,
+          "truncado": true
+        },
+        "intercepta": false,
+        "folga": 8,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "d0000000-0000-4000-8000-000000000205",
+        "titulo": "Reposição — Rafael",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Maria Aparecida dos Santos Figueiredo",
+          "esquerda": 1080,
+          "direita": 1229.4,
+          "truncado": true
+        },
+        "etapa": {
+          "texto": "15h em Aguardando retorno do financeiro",
+          "esquerda": 1237.4,
+          "direita": 1326,
+          "truncado": true
+        },
+        "intercepta": false,
+        "folga": 8,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "c95890b2-ac93-46e8-8727-d62f7affe81b",
+        "titulo": "E2E Ramos VIP 1792557921970",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Maria Aparecida dos Santos Figueiredo",
+          "esquerda": 2740,
+          "direita": 2889.4,
+          "truncado": true
+        },
+        "etapa": {
+          "texto": "14h em Aguardando retorno do financeiro",
+          "esquerda": 2897.4,
+          "direita": 2986,
+          "truncado": true
+        },
+        "intercepta": false,
+        "folga": 8,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "099b4856-b20d-4ea5-b132-c14a74e71807",
+        "titulo": "E2E Ramos Atrasado 1792557921970",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Maria Aparecida dos Santos Figueiredo",
+          "esquerda": 2740,
+          "direita": 2889.4,
+          "truncado": true
+        },
+        "etapa": {
+          "texto": "14h em Aguardando retorno do financeiro",
+          "esquerda": 2897.4,
+          "direita": 2986,
+          "truncado": true
+        },
+        "intercepta": false,
+        "folga": 8,
+        "vazaDoCartao": false
+      }
+    ]
+  },
+  {
+    "caso": "depois-tudo-longo_celular_escuro_atkinson",
+    "fonteEfetiva": "atkinson",
+    "cartoes": [
+      {
+        "id": "d0000000-0000-4000-8000-000000000201",
+        "titulo": "Kit clareamento — Marina",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Maria Aparecida dos Santos Figueiredo",
+          "esquerda": 84,
+          "direita": 233.4,
+          "truncado": true
+        },
+        "etapa": {
+          "texto": "15h em Aguardando retorno do financeiro",
+          "esquerda": 241.4,
+          "direita": 330,
+          "truncado": true
+        },
+        "intercepta": false,
+        "folga": 8,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "d0000000-0000-4000-8000-000000000202",
+        "titulo": "Pedido #1042 — Rafael",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Maria Aparecida dos Santos Figueiredo",
+          "esquerda": 84,
+          "direita": 233.4,
+          "truncado": true
+        },
+        "etapa": {
+          "texto": "15h em Aguardando retorno do financeiro",
+          "esquerda": 241.4,
+          "direita": 330,
+          "truncado": true
+        },
+        "intercepta": false,
+        "folga": 8,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "d0000000-0000-4000-8000-000000000203",
+        "titulo": "Contrato anual — Sorriso Pleno",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Maria Aparecida dos Santos Figueiredo",
+          "esquerda": 416,
+          "direita": 565.4,
+          "truncado": true
+        },
+        "etapa": {
+          "texto": "15h em Aguardando retorno do financeiro",
+          "esquerda": 573.4,
+          "direita": 662,
+          "truncado": true
+        },
+        "intercepta": false,
+        "folga": 8,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "d0000000-0000-4000-8000-000000000204",
+        "titulo": "Pedido #1039 — Joana",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Maria Aparecida dos Santos Figueiredo",
+          "esquerda": 748,
+          "direita": 897.4,
+          "truncado": true
+        },
+        "etapa": {
+          "texto": "15h em Aguardando retorno do financeiro",
+          "esquerda": 905.4,
+          "direita": 994,
+          "truncado": true
+        },
+        "intercepta": false,
+        "folga": 8,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "d0000000-0000-4000-8000-000000000205",
+        "titulo": "Reposição — Rafael",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Maria Aparecida dos Santos Figueiredo",
+          "esquerda": 1080,
+          "direita": 1229.4,
+          "truncado": true
+        },
+        "etapa": {
+          "texto": "15h em Aguardando retorno do financeiro",
+          "esquerda": 1237.4,
+          "direita": 1326,
+          "truncado": true
+        },
+        "intercepta": false,
+        "folga": 8,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "c95890b2-ac93-46e8-8727-d62f7affe81b",
+        "titulo": "E2E Ramos VIP 1792557921970",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Maria Aparecida dos Santos Figueiredo",
+          "esquerda": 2740,
+          "direita": 2889.4,
+          "truncado": true
+        },
+        "etapa": {
+          "texto": "14h em Aguardando retorno do financeiro",
+          "esquerda": 2897.4,
+          "direita": 2986,
+          "truncado": true
+        },
+        "intercepta": false,
+        "folga": 8,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "099b4856-b20d-4ea5-b132-c14a74e71807",
+        "titulo": "E2E Ramos Atrasado 1792557921970",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Maria Aparecida dos Santos Figueiredo",
+          "esquerda": 2740,
+          "direita": 2889.4,
+          "truncado": true
+        },
+        "etapa": {
+          "texto": "14h em Aguardando retorno do financeiro",
+          "esquerda": 2897.4,
+          "direita": 2986,
+          "truncado": true
+        },
+        "intercepta": false,
+        "folga": 8,
+        "vazaDoCartao": false
+      }
+    ]
+  }
+]

@@ -302,7 +302,11 @@ export function KanbanCard({
 
           {/* ④ dono (+ selo de tarefas) · ⑤ tempo no estágio */}
           <div className="mt-1 flex h-6 items-center justify-between gap-2">
-            <div className="flex min-w-0 items-center gap-2">
+            {/* Quem cede é a ETAPA: a coluna já a diz, e o tempo vem antes e
+                sobrevive ao corte. O dono não encolhe até 65% do rodapé; acima
+                disso o rótulo dele trunca. Com a etapa `shrink-0` nenhum lado
+                cedia e um texto passava por baixo do outro. */}
+            <div className="flex min-w-0 max-w-[65%] shrink-0 items-center gap-2">
               <OwnerBadge
                 ownerKind={card.owner.kind}
                 ownerName={card.owner.name}
@@ -310,7 +314,10 @@ export function KanbanCard({
               />
               <TarefasNoCard tarefas={lead.tarefas} />
             </div>
-            <span className="shrink-0 whitespace-nowrap text-[11px] tabular-nums text-text-muted">
+            <span
+              className="min-w-0 truncate text-[11px] tabular-nums text-text-muted"
+              title={card.stageName}
+            >
               {state.showStageAge && age
                 ? `${age} ${t("em")} ${card.stageName}`
                 : `${t("em")} ${card.stageName}`}

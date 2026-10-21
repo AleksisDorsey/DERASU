@@ -1,0 +1,1170 @@
+[
+  {
+    "caso": "antes_desktop_claro_inter",
+    "fonteEfetiva": "\"Inter Derasu\"",
+    "cartoes": [
+      {
+        "id": "d0000000-0000-4000-8000-000000000201",
+        "titulo": "Kit clareamento — Marina",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Sem responsável",
+          "esquerda": 340,
+          "direita": 437.2,
+          "truncado": false
+        },
+        "etapa": {
+          "texto": "15h em Carrinho abandonado",
+          "esquerda": 432.7,
+          "direita": 586,
+          "truncado": false
+        },
+        "intercepta": true,
+        "folga": -4.4,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "d0000000-0000-4000-8000-000000000202",
+        "titulo": "Pedido #1042 — Rafael",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Sem responsável",
+          "esquerda": 340,
+          "direita": 437.2,
+          "truncado": false
+        },
+        "etapa": {
+          "texto": "15h em Carrinho abandonado",
+          "esquerda": 432.7,
+          "direita": 586,
+          "truncado": false
+        },
+        "intercepta": true,
+        "folga": -4.4,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "d0000000-0000-4000-8000-000000000203",
+        "titulo": "Contrato anual — Sorriso Pleno",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Sem responsável",
+          "esquerda": 672,
+          "direita": 769.2,
+          "truncado": false
+        },
+        "etapa": {
+          "texto": "15h em Aguardando pagamento",
+          "esquerda": 752.6,
+          "direita": 918,
+          "truncado": false
+        },
+        "intercepta": true,
+        "folga": -16.6,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "d0000000-0000-4000-8000-000000000204",
+        "titulo": "Pedido #1039 — Joana",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Sem responsável",
+          "esquerda": 1004,
+          "direita": 1101.2,
+          "truncado": false
+        },
+        "etapa": {
+          "texto": "15h em Pago",
+          "esquerda": 1181.8,
+          "direita": 1250,
+          "truncado": false
+        },
+        "intercepta": false,
+        "folga": 80.6,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "d0000000-0000-4000-8000-000000000205",
+        "titulo": "Reposição — Rafael",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Sem responsável",
+          "esquerda": 1336,
+          "direita": 1433.2,
+          "truncado": false
+        },
+        "etapa": {
+          "texto": "15h em Em separação",
+          "esquerda": 1467.2,
+          "direita": 1582,
+          "truncado": false
+        },
+        "intercepta": false,
+        "folga": 34,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "c95890b2-ac93-46e8-8727-d62f7affe81b",
+        "titulo": "E2E Ramos VIP 1792557921970",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Sem responsável",
+          "esquerda": 2996,
+          "direita": 3093.2,
+          "truncado": false
+        },
+        "etapa": {
+          "texto": "14h em E2E Ramos 1792557914349",
+          "esquerda": 3047.9,
+          "direita": 3242,
+          "truncado": false
+        },
+        "intercepta": true,
+        "folga": -45.3,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "099b4856-b20d-4ea5-b132-c14a74e71807",
+        "titulo": "E2E Ramos Atrasado 1792557921970",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Sem responsável",
+          "esquerda": 2996,
+          "direita": 3093.2,
+          "truncado": false
+        },
+        "etapa": {
+          "texto": "14h em E2E Ramos 1792557914349",
+          "esquerda": 3047.9,
+          "direita": 3242,
+          "truncado": false
+        },
+        "intercepta": true,
+        "folga": -45.3,
+        "vazaDoCartao": false
+      }
+    ]
+  },
+  {
+    "caso": "antes_desktop_claro_atkinson",
+    "fonteEfetiva": "atkinson",
+    "cartoes": [
+      {
+        "id": "d0000000-0000-4000-8000-000000000201",
+        "titulo": "Kit clareamento — Marina",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Sem responsável",
+          "esquerda": 340,
+          "direita": 429.8,
+          "truncado": false
+        },
+        "etapa": {
+          "texto": "15h em Carrinho abandonado",
+          "esquerda": 442.5,
+          "direita": 586,
+          "truncado": false
+        },
+        "intercepta": false,
+        "folga": 12.6,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "d0000000-0000-4000-8000-000000000202",
+        "titulo": "Pedido #1042 — Rafael",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Sem responsável",
+          "esquerda": 340,
+          "direita": 429.8,
+          "truncado": false
+        },
+        "etapa": {
+          "texto": "15h em Carrinho abandonado",
+          "esquerda": 442.5,
+          "direita": 586,
+          "truncado": false
+        },
+        "intercepta": false,
+        "folga": 12.6,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "d0000000-0000-4000-8000-000000000203",
+        "titulo": "Contrato anual — Sorriso Pleno",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Sem responsável",
+          "esquerda": 672,
+          "direita": 761.8,
+          "truncado": false
+        },
+        "etapa": {
+          "texto": "15h em Aguardando pagamento",
+          "esquerda": 763,
+          "direita": 918,
+          "truncado": false
+        },
+        "intercepta": false,
+        "folga": 1.1,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "d0000000-0000-4000-8000-000000000204",
+        "titulo": "Pedido #1039 — Joana",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Sem responsável",
+          "esquerda": 1004,
+          "direita": 1093.8,
+          "truncado": false
+        },
+        "etapa": {
+          "texto": "15h em Pago",
+          "esquerda": 1185.3,
+          "direita": 1250,
+          "truncado": false
+        },
+        "intercepta": false,
+        "folga": 91.5,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "d0000000-0000-4000-8000-000000000205",
+        "titulo": "Reposição — Rafael",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Sem responsável",
+          "esquerda": 1336,
+          "direita": 1425.8,
+          "truncado": false
+        },
+        "etapa": {
+          "texto": "15h em Em separação",
+          "esquerda": 1474.1,
+          "direita": 1582,
+          "truncado": false
+        },
+        "intercepta": false,
+        "folga": 48.3,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "c95890b2-ac93-46e8-8727-d62f7affe81b",
+        "titulo": "E2E Ramos VIP 1792557921970",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Sem responsável",
+          "esquerda": 2996,
+          "direita": 3085.8,
+          "truncado": false
+        },
+        "etapa": {
+          "texto": "14h em E2E Ramos 1792557914349",
+          "esquerda": 3053.5,
+          "direita": 3242,
+          "truncado": false
+        },
+        "intercepta": true,
+        "folga": -32.4,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "099b4856-b20d-4ea5-b132-c14a74e71807",
+        "titulo": "E2E Ramos Atrasado 1792557921970",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Sem responsável",
+          "esquerda": 2996,
+          "direita": 3085.8,
+          "truncado": false
+        },
+        "etapa": {
+          "texto": "14h em E2E Ramos 1792557914349",
+          "esquerda": 3053.5,
+          "direita": 3242,
+          "truncado": false
+        },
+        "intercepta": true,
+        "folga": -32.4,
+        "vazaDoCartao": false
+      }
+    ]
+  },
+  {
+    "caso": "antes_desktop_escuro_inter",
+    "fonteEfetiva": "\"Inter Derasu\"",
+    "cartoes": [
+      {
+        "id": "d0000000-0000-4000-8000-000000000201",
+        "titulo": "Kit clareamento — Marina",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Sem responsável",
+          "esquerda": 340,
+          "direita": 437.2,
+          "truncado": false
+        },
+        "etapa": {
+          "texto": "15h em Carrinho abandonado",
+          "esquerda": 432.7,
+          "direita": 586,
+          "truncado": false
+        },
+        "intercepta": true,
+        "folga": -4.4,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "d0000000-0000-4000-8000-000000000202",
+        "titulo": "Pedido #1042 — Rafael",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Sem responsável",
+          "esquerda": 340,
+          "direita": 437.2,
+          "truncado": false
+        },
+        "etapa": {
+          "texto": "15h em Carrinho abandonado",
+          "esquerda": 432.7,
+          "direita": 586,
+          "truncado": false
+        },
+        "intercepta": true,
+        "folga": -4.4,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "d0000000-0000-4000-8000-000000000203",
+        "titulo": "Contrato anual — Sorriso Pleno",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Sem responsável",
+          "esquerda": 672,
+          "direita": 769.2,
+          "truncado": false
+        },
+        "etapa": {
+          "texto": "15h em Aguardando pagamento",
+          "esquerda": 752.6,
+          "direita": 918,
+          "truncado": false
+        },
+        "intercepta": true,
+        "folga": -16.6,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "d0000000-0000-4000-8000-000000000204",
+        "titulo": "Pedido #1039 — Joana",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Sem responsável",
+          "esquerda": 1004,
+          "direita": 1101.2,
+          "truncado": false
+        },
+        "etapa": {
+          "texto": "15h em Pago",
+          "esquerda": 1181.8,
+          "direita": 1250,
+          "truncado": false
+        },
+        "intercepta": false,
+        "folga": 80.6,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "d0000000-0000-4000-8000-000000000205",
+        "titulo": "Reposição — Rafael",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Sem responsável",
+          "esquerda": 1336,
+          "direita": 1433.2,
+          "truncado": false
+        },
+        "etapa": {
+          "texto": "15h em Em separação",
+          "esquerda": 1467.2,
+          "direita": 1582,
+          "truncado": false
+        },
+        "intercepta": false,
+        "folga": 34,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "c95890b2-ac93-46e8-8727-d62f7affe81b",
+        "titulo": "E2E Ramos VIP 1792557921970",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Sem responsável",
+          "esquerda": 2996,
+          "direita": 3093.2,
+          "truncado": false
+        },
+        "etapa": {
+          "texto": "14h em E2E Ramos 1792557914349",
+          "esquerda": 3047.9,
+          "direita": 3242,
+          "truncado": false
+        },
+        "intercepta": true,
+        "folga": -45.3,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "099b4856-b20d-4ea5-b132-c14a74e71807",
+        "titulo": "E2E Ramos Atrasado 1792557921970",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Sem responsável",
+          "esquerda": 2996,
+          "direita": 3093.2,
+          "truncado": false
+        },
+        "etapa": {
+          "texto": "14h em E2E Ramos 1792557914349",
+          "esquerda": 3047.9,
+          "direita": 3242,
+          "truncado": false
+        },
+        "intercepta": true,
+        "folga": -45.3,
+        "vazaDoCartao": false
+      }
+    ]
+  },
+  {
+    "caso": "antes_desktop_escuro_atkinson",
+    "fonteEfetiva": "atkinson",
+    "cartoes": [
+      {
+        "id": "d0000000-0000-4000-8000-000000000201",
+        "titulo": "Kit clareamento — Marina",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Sem responsável",
+          "esquerda": 340,
+          "direita": 429.8,
+          "truncado": false
+        },
+        "etapa": {
+          "texto": "15h em Carrinho abandonado",
+          "esquerda": 442.5,
+          "direita": 586,
+          "truncado": false
+        },
+        "intercepta": false,
+        "folga": 12.6,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "d0000000-0000-4000-8000-000000000202",
+        "titulo": "Pedido #1042 — Rafael",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Sem responsável",
+          "esquerda": 340,
+          "direita": 429.8,
+          "truncado": false
+        },
+        "etapa": {
+          "texto": "15h em Carrinho abandonado",
+          "esquerda": 442.5,
+          "direita": 586,
+          "truncado": false
+        },
+        "intercepta": false,
+        "folga": 12.6,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "d0000000-0000-4000-8000-000000000203",
+        "titulo": "Contrato anual — Sorriso Pleno",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Sem responsável",
+          "esquerda": 672,
+          "direita": 761.8,
+          "truncado": false
+        },
+        "etapa": {
+          "texto": "15h em Aguardando pagamento",
+          "esquerda": 763,
+          "direita": 918,
+          "truncado": false
+        },
+        "intercepta": false,
+        "folga": 1.1,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "d0000000-0000-4000-8000-000000000204",
+        "titulo": "Pedido #1039 — Joana",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Sem responsável",
+          "esquerda": 1004,
+          "direita": 1093.8,
+          "truncado": false
+        },
+        "etapa": {
+          "texto": "15h em Pago",
+          "esquerda": 1185.3,
+          "direita": 1250,
+          "truncado": false
+        },
+        "intercepta": false,
+        "folga": 91.5,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "d0000000-0000-4000-8000-000000000205",
+        "titulo": "Reposição — Rafael",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Sem responsável",
+          "esquerda": 1336,
+          "direita": 1425.8,
+          "truncado": false
+        },
+        "etapa": {
+          "texto": "15h em Em separação",
+          "esquerda": 1474.1,
+          "direita": 1582,
+          "truncado": false
+        },
+        "intercepta": false,
+        "folga": 48.3,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "c95890b2-ac93-46e8-8727-d62f7affe81b",
+        "titulo": "E2E Ramos VIP 1792557921970",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Sem responsável",
+          "esquerda": 2996,
+          "direita": 3085.8,
+          "truncado": false
+        },
+        "etapa": {
+          "texto": "14h em E2E Ramos 1792557914349",
+          "esquerda": 3053.5,
+          "direita": 3242,
+          "truncado": false
+        },
+        "intercepta": true,
+        "folga": -32.4,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "099b4856-b20d-4ea5-b132-c14a74e71807",
+        "titulo": "E2E Ramos Atrasado 1792557921970",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Sem responsável",
+          "esquerda": 2996,
+          "direita": 3085.8,
+          "truncado": false
+        },
+        "etapa": {
+          "texto": "14h em E2E Ramos 1792557914349",
+          "esquerda": 3053.5,
+          "direita": 3242,
+          "truncado": false
+        },
+        "intercepta": true,
+        "folga": -32.4,
+        "vazaDoCartao": false
+      }
+    ]
+  },
+  {
+    "caso": "antes_celular_claro_inter",
+    "fonteEfetiva": "\"Inter Derasu\"",
+    "cartoes": [
+      {
+        "id": "d0000000-0000-4000-8000-000000000201",
+        "titulo": "Kit clareamento — Marina",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Sem responsável",
+          "esquerda": 84,
+          "direita": 181.2,
+          "truncado": false
+        },
+        "etapa": {
+          "texto": "15h em Carrinho abandonado",
+          "esquerda": 176.7,
+          "direita": 330,
+          "truncado": false
+        },
+        "intercepta": true,
+        "folga": -4.4,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "d0000000-0000-4000-8000-000000000202",
+        "titulo": "Pedido #1042 — Rafael",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Sem responsável",
+          "esquerda": 84,
+          "direita": 181.2,
+          "truncado": false
+        },
+        "etapa": {
+          "texto": "15h em Carrinho abandonado",
+          "esquerda": 176.7,
+          "direita": 330,
+          "truncado": false
+        },
+        "intercepta": true,
+        "folga": -4.4,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "d0000000-0000-4000-8000-000000000203",
+        "titulo": "Contrato anual — Sorriso Pleno",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Sem responsável",
+          "esquerda": 416,
+          "direita": 513.2,
+          "truncado": false
+        },
+        "etapa": {
+          "texto": "15h em Aguardando pagamento",
+          "esquerda": 496.6,
+          "direita": 662,
+          "truncado": false
+        },
+        "intercepta": true,
+        "folga": -16.6,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "d0000000-0000-4000-8000-000000000204",
+        "titulo": "Pedido #1039 — Joana",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Sem responsável",
+          "esquerda": 748,
+          "direita": 845.2,
+          "truncado": false
+        },
+        "etapa": {
+          "texto": "15h em Pago",
+          "esquerda": 925.8,
+          "direita": 994,
+          "truncado": false
+        },
+        "intercepta": false,
+        "folga": 80.6,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "d0000000-0000-4000-8000-000000000205",
+        "titulo": "Reposição — Rafael",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Sem responsável",
+          "esquerda": 1080,
+          "direita": 1177.2,
+          "truncado": false
+        },
+        "etapa": {
+          "texto": "15h em Em separação",
+          "esquerda": 1211.2,
+          "direita": 1326,
+          "truncado": false
+        },
+        "intercepta": false,
+        "folga": 34,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "c95890b2-ac93-46e8-8727-d62f7affe81b",
+        "titulo": "E2E Ramos VIP 1792557921970",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Sem responsável",
+          "esquerda": 2740,
+          "direita": 2837.2,
+          "truncado": false
+        },
+        "etapa": {
+          "texto": "14h em E2E Ramos 1792557914349",
+          "esquerda": 2791.9,
+          "direita": 2986,
+          "truncado": false
+        },
+        "intercepta": true,
+        "folga": -45.3,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "099b4856-b20d-4ea5-b132-c14a74e71807",
+        "titulo": "E2E Ramos Atrasado 1792557921970",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Sem responsável",
+          "esquerda": 2740,
+          "direita": 2837.2,
+          "truncado": false
+        },
+        "etapa": {
+          "texto": "14h em E2E Ramos 1792557914349",
+          "esquerda": 2791.9,
+          "direita": 2986,
+          "truncado": false
+        },
+        "intercepta": true,
+        "folga": -45.3,
+        "vazaDoCartao": false
+      }
+    ]
+  },
+  {
+    "caso": "antes_celular_claro_atkinson",
+    "fonteEfetiva": "atkinson",
+    "cartoes": [
+      {
+        "id": "d0000000-0000-4000-8000-000000000201",
+        "titulo": "Kit clareamento — Marina",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Sem responsável",
+          "esquerda": 84,
+          "direita": 173.8,
+          "truncado": false
+        },
+        "etapa": {
+          "texto": "15h em Carrinho abandonado",
+          "esquerda": 186.5,
+          "direita": 330,
+          "truncado": false
+        },
+        "intercepta": false,
+        "folga": 12.6,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "d0000000-0000-4000-8000-000000000202",
+        "titulo": "Pedido #1042 — Rafael",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Sem responsável",
+          "esquerda": 84,
+          "direita": 173.8,
+          "truncado": false
+        },
+        "etapa": {
+          "texto": "15h em Carrinho abandonado",
+          "esquerda": 186.5,
+          "direita": 330,
+          "truncado": false
+        },
+        "intercepta": false,
+        "folga": 12.6,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "d0000000-0000-4000-8000-000000000203",
+        "titulo": "Contrato anual — Sorriso Pleno",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Sem responsável",
+          "esquerda": 416,
+          "direita": 505.8,
+          "truncado": false
+        },
+        "etapa": {
+          "texto": "15h em Aguardando pagamento",
+          "esquerda": 507,
+          "direita": 662,
+          "truncado": false
+        },
+        "intercepta": false,
+        "folga": 1.1,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "d0000000-0000-4000-8000-000000000204",
+        "titulo": "Pedido #1039 — Joana",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Sem responsável",
+          "esquerda": 748,
+          "direita": 837.8,
+          "truncado": false
+        },
+        "etapa": {
+          "texto": "15h em Pago",
+          "esquerda": 929.3,
+          "direita": 994,
+          "truncado": false
+        },
+        "intercepta": false,
+        "folga": 91.5,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "d0000000-0000-4000-8000-000000000205",
+        "titulo": "Reposição — Rafael",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Sem responsável",
+          "esquerda": 1080,
+          "direita": 1169.8,
+          "truncado": false
+        },
+        "etapa": {
+          "texto": "15h em Em separação",
+          "esquerda": 1218.1,
+          "direita": 1326,
+          "truncado": false
+        },
+        "intercepta": false,
+        "folga": 48.3,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "c95890b2-ac93-46e8-8727-d62f7affe81b",
+        "titulo": "E2E Ramos VIP 1792557921970",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Sem responsável",
+          "esquerda": 2740,
+          "direita": 2829.8,
+          "truncado": false
+        },
+        "etapa": {
+          "texto": "14h em E2E Ramos 1792557914349",
+          "esquerda": 2797.5,
+          "direita": 2986,
+          "truncado": false
+        },
+        "intercepta": true,
+        "folga": -32.4,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "099b4856-b20d-4ea5-b132-c14a74e71807",
+        "titulo": "E2E Ramos Atrasado 1792557921970",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Sem responsável",
+          "esquerda": 2740,
+          "direita": 2829.8,
+          "truncado": false
+        },
+        "etapa": {
+          "texto": "14h em E2E Ramos 1792557914349",
+          "esquerda": 2797.5,
+          "direita": 2986,
+          "truncado": false
+        },
+        "intercepta": true,
+        "folga": -32.4,
+        "vazaDoCartao": false
+      }
+    ]
+  },
+  {
+    "caso": "antes_celular_escuro_inter",
+    "fonteEfetiva": "\"Inter Derasu\"",
+    "cartoes": [
+      {
+        "id": "d0000000-0000-4000-8000-000000000201",
+        "titulo": "Kit clareamento — Marina",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Sem responsável",
+          "esquerda": 84,
+          "direita": 181.2,
+          "truncado": false
+        },
+        "etapa": {
+          "texto": "15h em Carrinho abandonado",
+          "esquerda": 176.7,
+          "direita": 330,
+          "truncado": false
+        },
+        "intercepta": true,
+        "folga": -4.4,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "d0000000-0000-4000-8000-000000000202",
+        "titulo": "Pedido #1042 — Rafael",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Sem responsável",
+          "esquerda": 84,
+          "direita": 181.2,
+          "truncado": false
+        },
+        "etapa": {
+          "texto": "15h em Carrinho abandonado",
+          "esquerda": 176.7,
+          "direita": 330,
+          "truncado": false
+        },
+        "intercepta": true,
+        "folga": -4.4,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "d0000000-0000-4000-8000-000000000203",
+        "titulo": "Contrato anual — Sorriso Pleno",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Sem responsável",
+          "esquerda": 416,
+          "direita": 513.2,
+          "truncado": false
+        },
+        "etapa": {
+          "texto": "15h em Aguardando pagamento",
+          "esquerda": 496.6,
+          "direita": 662,
+          "truncado": false
+        },
+        "intercepta": true,
+        "folga": -16.6,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "d0000000-0000-4000-8000-000000000204",
+        "titulo": "Pedido #1039 — Joana",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Sem responsável",
+          "esquerda": 748,
+          "direita": 845.2,
+          "truncado": false
+        },
+        "etapa": {
+          "texto": "15h em Pago",
+          "esquerda": 925.8,
+          "direita": 994,
+          "truncado": false
+        },
+        "intercepta": false,
+        "folga": 80.6,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "d0000000-0000-4000-8000-000000000205",
+        "titulo": "Reposição — Rafael",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Sem responsável",
+          "esquerda": 1080,
+          "direita": 1177.2,
+          "truncado": false
+        },
+        "etapa": {
+          "texto": "15h em Em separação",
+          "esquerda": 1211.2,
+          "direita": 1326,
+          "truncado": false
+        },
+        "intercepta": false,
+        "folga": 34,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "c95890b2-ac93-46e8-8727-d62f7affe81b",
+        "titulo": "E2E Ramos VIP 1792557921970",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Sem responsável",
+          "esquerda": 2740,
+          "direita": 2837.2,
+          "truncado": false
+        },
+        "etapa": {
+          "texto": "14h em E2E Ramos 1792557914349",
+          "esquerda": 2791.9,
+          "direita": 2986,
+          "truncado": false
+        },
+        "intercepta": true,
+        "folga": -45.3,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "099b4856-b20d-4ea5-b132-c14a74e71807",
+        "titulo": "E2E Ramos Atrasado 1792557921970",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Sem responsável",
+          "esquerda": 2740,
+          "direita": 2837.2,
+          "truncado": false
+        },
+        "etapa": {
+          "texto": "14h em E2E Ramos 1792557914349",
+          "esquerda": 2791.9,
+          "direita": 2986,
+          "truncado": false
+        },
+        "intercepta": true,
+        "folga": -45.3,
+        "vazaDoCartao": false
+      }
+    ]
+  },
+  {
+    "caso": "antes_celular_escuro_atkinson",
+    "fonteEfetiva": "atkinson",
+    "cartoes": [
+      {
+        "id": "d0000000-0000-4000-8000-000000000201",
+        "titulo": "Kit clareamento — Marina",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Sem responsável",
+          "esquerda": 84,
+          "direita": 173.8,
+          "truncado": false
+        },
+        "etapa": {
+          "texto": "15h em Carrinho abandonado",
+          "esquerda": 186.5,
+          "direita": 330,
+          "truncado": false
+        },
+        "intercepta": false,
+        "folga": 12.6,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "d0000000-0000-4000-8000-000000000202",
+        "titulo": "Pedido #1042 — Rafael",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Sem responsável",
+          "esquerda": 84,
+          "direita": 173.8,
+          "truncado": false
+        },
+        "etapa": {
+          "texto": "15h em Carrinho abandonado",
+          "esquerda": 186.5,
+          "direita": 330,
+          "truncado": false
+        },
+        "intercepta": false,
+        "folga": 12.6,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "d0000000-0000-4000-8000-000000000203",
+        "titulo": "Contrato anual — Sorriso Pleno",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Sem responsável",
+          "esquerda": 416,
+          "direita": 505.8,
+          "truncado": false
+        },
+        "etapa": {
+          "texto": "15h em Aguardando pagamento",
+          "esquerda": 507,
+          "direita": 662,
+          "truncado": false
+        },
+        "intercepta": false,
+        "folga": 1.1,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "d0000000-0000-4000-8000-000000000204",
+        "titulo": "Pedido #1039 — Joana",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Sem responsável",
+          "esquerda": 748,
+          "direita": 837.8,
+          "truncado": false
+        },
+        "etapa": {
+          "texto": "15h em Pago",
+          "esquerda": 929.3,
+          "direita": 994,
+          "truncado": false
+        },
+        "intercepta": false,
+        "folga": 91.5,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "d0000000-0000-4000-8000-000000000205",
+        "titulo": "Reposição — Rafael",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Sem responsável",
+          "esquerda": 1080,
+          "direita": 1169.8,
+          "truncado": false
+        },
+        "etapa": {
+          "texto": "15h em Em separação",
+          "esquerda": 1218.1,
+          "direita": 1326,
+          "truncado": false
+        },
+        "intercepta": false,
+        "folga": 48.3,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "c95890b2-ac93-46e8-8727-d62f7affe81b",
+        "titulo": "E2E Ramos VIP 1792557921970",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Sem responsável",
+          "esquerda": 2740,
+          "direita": 2829.8,
+          "truncado": false
+        },
+        "etapa": {
+          "texto": "14h em E2E Ramos 1792557914349",
+          "esquerda": 2797.5,
+          "direita": 2986,
+          "truncado": false
+        },
+        "intercepta": true,
+        "folga": -32.4,
+        "vazaDoCartao": false
+      },
+      {
+        "id": "099b4856-b20d-4ea5-b132-c14a74e71807",
+        "titulo": "E2E Ramos Atrasado 1792557921970",
+        "larguraDoCartao": 302,
+        "rotulo": {
+          "texto": "Sem responsável",
+          "esquerda": 2740,
+          "direita": 2829.8,
+          "truncado": false
+        },
+        "etapa": {
+          "texto": "14h em E2E Ramos 1792557914349",
+          "esquerda": 2797.5,
+          "direita": 2986,
+          "truncado": false
+        },
+        "intercepta": true,
+        "folga": -32.4,
+        "vazaDoCartao": false
+      }
+    ]
+  }
+]
