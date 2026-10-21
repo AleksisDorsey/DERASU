@@ -1882,6 +1882,21 @@ a:focus-visible > .ds-cartao {
   background: none;
   border-color: transparent;
 }
+/* Faixa transparente não pode ROUBAR clique. O `<header>` tem 56px de ponta a
+   ponta, e o conteúdo que rola por baixo dele está À VISTA — sem esta regra,
+   clicar no que se vê sob o topo acertava o header e não acontecia nada.
+   Medido no trace do e2e `followup-ramos`: depois de a página rolar, o clique
+   no canvas do fluxo ficou 7 minutos tentando com
+   "<header class="ds-topo …"> intercepts pointer events". Só as cápsulas
+   recebem o ponteiro; o resto da faixa deixa passar, como na Apple. */
+.ds-topo,
+.ds-topo > .ds-capsulas-soltas {
+  pointer-events: none;
+}
+.ds-topo > .ds-capsulas-soltas > *,
+.ds-topo > .ds-capsula {
+  pointer-events: auto;
+}
 .ds-topo::before {
   content: "";
   position: fixed;
@@ -2225,6 +2240,9 @@ button[role="switch"][data-state="checked"]:active:not(:disabled) > span {
   .ds-topo {
     background-color: var(--color-bg);
     border-bottom: 1px solid var(--color-border-strong);
+    /* Faixa opaca de novo: o que está atrás não se vê, então o clique fica
+       com o topo, e não atravessa para um conteúdo escondido. */
+    pointer-events: auto;
   }
   .ds-topo::before {
     content: none;
