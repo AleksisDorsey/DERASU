@@ -121,8 +121,10 @@ escrito para Ubuntu. O que funcionar ou exigir ajuste no Windows fica registrado
 - **Só leitura sem pedir** (`docker ps`, logs, `git status`, ler o `.env` sem copiar segredos para a conversa).
   Qualquer coisa que muda a VPS — editar `.env`, `docker compose up`, `update.sh`, migration —
   só com o "sim" do usuário **naquela sessão**.
-- **Pôr a versão Derasu no ar:** trocar `APP_IMAGE` / `WORKER_IMAGE` / `SCHEDULER_IMAGE` no
-  `.env` para as imagens `ghcr.io/aleksisdorsey/...:main` e subir de novo.
+- **Pôr a versão Derasu no ar:** seguir [`docs/roteiro-producao.md`](docs/roteiro-producao.md).
+  O banco anda pelo `update.sh --to <tag>` do oficial, e só depois se trocam
+  `APP_IMAGE` / `WORKER_IMAGE` / `SCHEDULER_IMAGE` para as imagens da fork, fixadas por digest.
+  Trocar as imagens sem o banco da mesma versão quebra o app.
 - **Voltar ao oficial:** `bash hostgator-setup-kit/update.sh` (regrava as imagens oficiais).
 - Depois de qualquer troca: `/` responde **200** e `/app` responde **307** (ver "Deploy em
   produção" no `CLAUDE.md` oficial).
