@@ -194,8 +194,35 @@ if (!soReadme) {
               timeout: 60_000,
             })
             .catch(() => process.stdout.write(`aviso: esqueleto ainda na tela em ${rota}\n`));
+          // No `next dev` desta máquina a rajada do primeiro carregamento leva
+          // APIs a 6–11s, e a tela desiste antes ("Erro ao carregar…"). Sozinhas
+          // elas respondem em menos de 1s. Faz o que a pessoa faria: usa o
+          // "Tentar novamente" que a própria tela oferece, até duas vezes.
+          for (let tentativa = 0; tentativa < 2; tentativa++) {
+            const retentar = page.getByRole("button", { name: /^(Tentar novamente|Tentar de novo)$/ });
+            const n = await retentar.count().catch(() => 0);
+            if (!n) break;
+            process.stdout.write(`aviso: ${n} "tentar novamente" em ${rota} — repetindo\n`);
+            for (let i = 0; i < n; i++) await retentar.nth(i).click({ timeout: 5_000 }).catch(() => {});
+            await page.waitForTimeout(2_000);
+            // A nova tentativa volta a mostrar esqueleto: espera ele sumir de novo.
+            await page
+              .waitForFunction(() => !document.querySelector(".ds-esqueleto, .animate-pulse"), null, {
+                timeout: 60_000,
+              })
+              .catch(() => process.stdout.write(`aviso: esqueleto ainda na tela em ${rota} depois de repetir\n`));
+          }
           // O selo "Compiling" do `next dev` não é do produto.
-          await page.addStyleTag({ content: "nextjs-portal{display:none!important}" });
+          // Uma rota que redireciona no cliente destrói o contexto no meio do
+          // caminho: espera a página assentar e tenta de novo.
+          for (let tentativa = 0; tentativa < 3; tentativa++) {
+            try {
+              await page.addStyleTag({ content: "nextjs-portal{display:none!important}" });
+              break;
+            } catch {
+              await page.waitForLoadState("networkidle", { timeout: 60_000 }).catch(() => {});
+            }
+          }
           await page.waitForTimeout(600);
           const nome = `${rota.replace(/\W+/g, "-").replace(/^-|-$/g, "")}_${nomeVp}_${tema === "light" ? "claro" : "escuro"}_${transparencia === "reduce" ? "sem-transparencia" : "vidro"}`;
           await page.screenshot({ path: path.join(SAIDA, `${nome}.jpg`), ...JPEG });
