@@ -129,22 +129,47 @@ try {
     await page.mouse.move(caixa.x + caixa.width / 2, caixa.y + caixa.height / 2);
     await page.mouse.down();
     medidas.pressionarDescida = await amostrar(page, alvoBotao, ["scale"], [0, 60, 150, 250]);
-    await foto(page, "desktop_claro_pressionar_botao", "Botão pressionado: encolhe para 96% enquanto está seguro", {
-      clip: { x: caixa.x - 24, y: caixa.y - 16, width: caixa.width + 48, height: caixa.height + 32 },
-    });
+    await foto(
+      page,
+      "desktop_claro_pressionar_botao",
+      "Botão pressionado: encolhe para 96% enquanto está seguro",
+      {
+        clip: {
+          x: caixa.x - 24,
+          y: caixa.y - 16,
+          width: caixa.width + 48,
+          height: caixa.height + 32,
+        },
+      },
+    );
     // Solta FORA do botão: a volta em mola é a mesma, e o clique não dispara.
     await page.mouse.move(5, 450);
     await page.mouse.up();
-    medidas.pressionarVolta = await amostrar(page, alvoBotao, ["scale"], [0, 80, 160, 240, 320, 450, 650]);
+    medidas.pressionarVolta = await amostrar(
+      page,
+      alvoBotao,
+      ["scale"],
+      [0, 80, 160, 240, 320, 450, 650],
+    );
 
     // 1b. O cartão que é link (a grade do hub de CRM) afunda menos.
     await ir(page, "/app/crm");
-    await page.evaluate(() => document.querySelector("main a > .ds-cartao")?.setAttribute("data-prova", "cartao"));
+    await page.evaluate(() =>
+      document.querySelector("main a > .ds-cartao")?.setAttribute("data-prova", "cartao"),
+    );
     const cartao = page.locator("[data-prova='cartao']");
     const caixaCartao = await cartao.boundingBox();
-    await page.mouse.move(caixaCartao.x + caixaCartao.width / 2, caixaCartao.y + caixaCartao.height / 2);
+    await page.mouse.move(
+      caixaCartao.x + caixaCartao.width / 2,
+      caixaCartao.y + caixaCartao.height / 2,
+    );
     await page.mouse.down();
-    medidas.cartaoPressionado = await amostrar(page, "[data-prova='cartao']", ["scale", "translate"], [0, 150]);
+    medidas.cartaoPressionado = await amostrar(
+      page,
+      "[data-prova='cartao']",
+      ["scale", "translate"],
+      [0, 150],
+    );
     await page.mouse.move(5, 450);
     await page.mouse.up();
     await page.waitForTimeout(800);
@@ -154,7 +179,12 @@ try {
     await cdp.send("Animation.setPlaybackRate", { playbackRate: 0.15 });
     await gatilho.click();
     await page.waitForSelector("[role='menu']");
-    medidas.menuAbrindo = await amostrar(page, "[role='menu']", ["opacity", "scale", "transform-origin", "animation-name"], [0, 300, 700, 1400, 4200]);
+    medidas.menuAbrindo = await amostrar(
+      page,
+      "[role='menu']",
+      ["opacity", "scale", "transform-origin", "animation-name"],
+      [0, 300, 700, 1400, 4200],
+    );
     await cdp.send("Animation.setPlaybackRate", { playbackRate: 0.05 });
     await page.keyboard.press("Escape");
     await page.waitForTimeout(150);
@@ -163,12 +193,19 @@ try {
     await cdp.send("Animation.setPlaybackRate", { playbackRate: 0.08 });
     await gatilho.click();
     await page.waitForTimeout(120);
-    await foto(page, "desktop_claro_menu_nascendo", "Menu no meio da abertura (relógio a 8%): cresce a partir do botão que o abriu", {
-      clip: { x: 900, y: 0, width: 540, height: 420 },
-    });
+    await foto(
+      page,
+      "desktop_claro_menu_nascendo",
+      "Menu no meio da abertura (relógio a 8%): cresce a partir do botão que o abriu",
+      {
+        clip: { x: 900, y: 0, width: 540, height: 420 },
+      },
+    );
     await cdp.send("Animation.setPlaybackRate", { playbackRate: 1 });
     await page.waitForTimeout(800);
-    await foto(page, "desktop_claro_menu_aberto", "Menu assentado", { clip: { x: 900, y: 0, width: 540, height: 420 } });
+    await foto(page, "desktop_claro_menu_aberto", "Menu assentado", {
+      clip: { x: 900, y: 0, width: 540, height: 420 },
+    });
     await page.keyboard.press("Escape");
     await page.waitForTimeout(400);
 
@@ -176,10 +213,19 @@ try {
     await cdp.send("Animation.setPlaybackRate", { playbackRate: 0.15 });
     await page.keyboard.press("Control+k");
     await page.waitForSelector("[role='dialog']");
-    medidas.modalAbrindo = await amostrar(page, "[role='dialog']", ["opacity", "scale", "translate", "animation-name"], [0, 300, 900, 4200]);
+    medidas.modalAbrindo = await amostrar(
+      page,
+      "[role='dialog']",
+      ["opacity", "scale", "translate", "animation-name"],
+      [0, 300, 900, 4200],
+    );
     await cdp.send("Animation.setPlaybackRate", { playbackRate: 1 });
     await page.waitForTimeout(800);
-    await foto(page, "desktop_claro_modal_aberto", "Paleta de comandos (modal) assentada depois da entrada em mola");
+    await foto(
+      page,
+      "desktop_claro_modal_aberto",
+      "Paleta de comandos (modal) assentada depois da entrada em mola",
+    );
     await page.keyboard.press("Escape");
     const fechou = await page
       .waitForSelector(".ds-cortina", { state: "detached", timeout: 5_000 })
@@ -192,7 +238,9 @@ try {
           classe: el.className.slice(0, 60),
           estado: el.getAttribute("data-state"),
           animacao: getComputedStyle(el).animationName,
-          animacoes: el.getAnimations().map((a) => `${a.animationName}:${a.playState}:${a.currentTime}`),
+          animacoes: el
+            .getAnimations()
+            .map((a) => `${a.animationName}:${a.playState}:${a.currentTime}`),
         })),
       );
       process.stdout.write(`modal não fechou: ${JSON.stringify(medidas.modalDepoisDoEsc)}
@@ -207,7 +255,11 @@ try {
     await page.locator(".ds-barra-lateral nav a[href='/app/inbox']").first().click();
     await page.waitForFunction(() => window.__vt.length > 0, null, { timeout: 30_000 });
     await page.waitForTimeout(250);
-    await foto(page, "desktop_claro_rota_no_meio", "Troca de área no meio (relógio a 10%): a página do CRM esmaece e a inbox sobe 8px");
+    await foto(
+      page,
+      "desktop_claro_rota_no_meio",
+      "Troca de área no meio (relógio a 10%): a página do CRM esmaece e a inbox sobe 8px",
+    );
     await cdp.send("Animation.setPlaybackRate", { playbackRate: 1 });
     await page.waitForURL("**/app/inbox**");
     await page.waitForTimeout(1200);
@@ -230,7 +282,11 @@ try {
     medidas.rotaMesmaArea = await page.evaluate(() =>
       window.__vt.map((v) => v.animacoes.filter((a) => /ds-rota/.test(a.nome))),
     );
-    await foto(page, "desktop_claro_inbox_depois_da_rota", "Inbox depois da troca de área, assentada");
+    await foto(
+      page,
+      "desktop_claro_inbox_depois_da_rota",
+      "Inbox depois da troca de área, assentada",
+    );
     await ctx.close();
   }
 
@@ -254,7 +310,12 @@ try {
     await cdp.send("Animation.setPlaybackRate", { playbackRate: 0.15 });
     await abrirMenu.click();
     await page.waitForSelector(".ds-gaveta");
-    medidas.gavetaAbrindo = await amostrar(page, ".ds-gaveta", ["translate", "animation-name"], [0, 400, 1000, 2000, 3500]);
+    medidas.gavetaAbrindo = await amostrar(
+      page,
+      ".ds-gaveta",
+      ["translate", "animation-name"],
+      [0, 400, 1000, 2000, 3500],
+    );
     await cdp.send("Animation.setPlaybackRate", { playbackRate: 0.08 });
     await page.keyboard.press("Escape");
     await page.waitForTimeout(400);
@@ -263,7 +324,11 @@ try {
     await cdp.send("Animation.setPlaybackRate", { playbackRate: 0.08 });
     await abrirMenu.click();
     await page.waitForTimeout(500);
-    await foto(page, "celular_escuro_gaveta_entrando", "Gaveta de navegação no meio da entrada (relógio a 8%), sem passar da borda");
+    await foto(
+      page,
+      "celular_escuro_gaveta_entrando",
+      "Gaveta de navegação no meio da entrada (relógio a 8%), sem passar da borda",
+    );
     await cdp.send("Animation.setPlaybackRate", { playbackRate: 1 });
     await page.keyboard.press("Escape");
     await page.waitForTimeout(800);
@@ -277,9 +342,14 @@ try {
     await page.mouse.move(caixaAba.x + caixaAba.width / 2, caixaAba.y + caixaAba.height / 2);
     await page.mouse.down();
     medidas.abaPressionada = await amostrar(page, "[data-prova='aba']", ["scale"], [0, 150]);
-    await foto(page, "celular_escuro_aba_pressionada", "Aba da barra inferior pressionada: encolhe para 90%", {
-      clip: { x: 0, y: 844 - 120, width: 390, height: 120 },
-    });
+    await foto(
+      page,
+      "celular_escuro_aba_pressionada",
+      "Aba da barra inferior pressionada: encolhe para 90%",
+      {
+        clip: { x: 0, y: 844 - 120, width: 390, height: 120 },
+      },
+    );
     await page.mouse.move(195, 300);
     await page.mouse.up();
     await page.waitForTimeout(1500);
@@ -322,7 +392,12 @@ const readme = [
   "animada amostrado em vários instantes) estão em [`medidas.json`](medidas.json); as fotos do",
   "meio de cada animação foram tiradas com o relógio de animações do Chrome desacelerado.",
   "",
-  ...imagens.flatMap(({ arquivo, legenda }) => [`## ${legenda}`, "", `![${legenda}](${arquivo})`, ""]),
+  ...imagens.flatMap(({ arquivo, legenda }) => [
+    `## ${legenda}`,
+    "",
+    `![${legenda}](${arquivo})`,
+    "",
+  ]),
 ].join("\n");
 fs.writeFileSync(path.join(SAIDA, "README.md"), readme);
 process.stdout.write(`ok — ${imagens.length} imagens\n`);
