@@ -1352,7 +1352,9 @@
    1. AMBIENTE — luzes difusas na cor da marca + grão. É o que o vidro desfoca.
    2. MATERIAIS — tokens de vidro e superfície; as peças só os consomem.
    3. RESPOSTA — elevação que sobe em mola no cartão que é link.
-   4. RECUOS — reduzir transparência, aumentar contraste e navegador sem
+   4. CAMADA DE CONTROLE — barra lateral flutuante, topo sem faixa com
+      cápsulas, barra de abas com gota, forma de menus, modais e gavetas.
+   5. RECUOS — reduzir transparência, aumentar contraste e navegador sem
       `backdrop-filter`: o vidro vira superfície. Translucidez nunca compra
       leitura.
 
@@ -1634,6 +1636,17 @@ body {
     );
 }
 
+/* A raiz da casca do tenant (`app/app/_components/AppShell.tsx`) escreve
+   `bg-background`, um fundo OPACO de tela inteira por cima do `body`: o
+   ambiente ficava escondido, e o vidro da camada de controle só tinha cinza
+   liso para desfocar. Aqui ela fica transparente — quem pinta o fundo é o
+   `body` (cor e luzes). O gancho é estrutural, e não uma classe nova no
+   JSX do oficial: a raiz é o pai da coluna que contém o topo. Sem `:has()`,
+   a regra não casa e a casca fica como era. */
+.bg-background:has(> div > header.ds-topo) {
+  background-color: transparent;
+}
+
 /* ---- 2. Materiais ---------------------------------------------------------
    SUPERFÍCIE — o `<Card>` (`.ds-cartao`). Em `@layer components` de propósito:
    utilitário vence componente, então quem escreve
@@ -1699,9 +1712,9 @@ body {
    `-webkit-` por último o Chrome (que só lê o padrão) ficava sem desfoque
    nenhum. Medido no CSS servido, não deduzido.
 
-   O tooltip (`.ds-painel.bg-primary`) fica de fora: o texto dele é
-   `text-primary-foreground` (branco), e sobre vidro claro sumiria. Ele vira
-   vidro quando o primitivo trocar a cor do texto (entrega 2 do plano). */
+   O tooltip também é vidro: o primitivo (`components/ui/tooltip.tsx`) passou a
+   escrever `bg-popover`/`text-popover-foreground`, e o texto escuro sobre a
+   matiz densa se lê como o de qualquer menu. */
 .ds-barra-lateral {
   background-color: var(--vidro-matiz);
   border-color: var(--vidro-borda);
@@ -1712,7 +1725,7 @@ body {
 
 .ds-modal,
 .ds-gaveta,
-.ds-painel:not(.bg-primary) {
+.ds-painel {
   background-color: var(--vidro-matiz-denso);
   border-color: var(--vidro-borda);
   box-shadow: var(--vidro-aresta), var(--vidro-sombra-flutuante);
@@ -1776,7 +1789,255 @@ a:focus-visible > .ds-cartao {
   }
 }
 
-/* ---- 4. Recuos -------------------------------------------------------------
+/* ---- 4. Camada de controle -----------------------------------------------
+   A navegação deixa de ser faixa colada na borda e passa a FLUTUAR sobre o
+   conteúdo: lâmina solta, cápsulas, barra de abas com gota. Tudo daqui é
+   vidro (ADR 0002) e só consome os tokens `--vidro-*`/`--mola-*` acima.
+
+   Fora de layer pelo mesmo motivo do vidro: vence os utilitários que o JSX do
+   oficial escreve (`sticky top-0 h-dvh border-r`, `border-t bg-background/95`,
+   `rounded-md`). É isso que deixa a mudança inteira num arquivo — o JSX só
+   ganhou as classes `ds-topo`/`ds-capsula`/`ds-capsulas-soltas` no `TopBar`. */
+
+/* BARRA LATERAL FLUTUANTE — no desktop, uma lâmina solta: folga em volta,
+   cantos arredondados e o ambiente aparecendo pelas bordas. A barra continua
+   `sticky` e ocupando lugar na linha (o porquê está em `Sidebar.tsx`); só
+   ganha margem, e `top` e `height` descontam a folga para ela continuar
+   inteira na janela. O celular segue com a gaveta (`MobileSidebar`), que é
+   `.ds-gaveta`. */
+.ds-barra-lateral {
+  --lamina-folga: 0.5rem;
+  top: var(--lamina-folga);
+  height: calc(100dvh - 2 * var(--lamina-folga));
+  margin: var(--lamina-folga) 0 var(--lamina-folga) var(--lamina-folga);
+  border-width: 1px;
+  border-radius: 1.375rem;
+  overflow: hidden;
+  box-shadow: var(--vidro-aresta), var(--vidro-sombra);
+}
+
+/* As linhas sob a marca e sobre o rodapé saem: quem separa a lista rolável do
+   que fica parado é o EFEITO DE BORDA — a lista esmaece nas duas pontas, por
+   dentro da folga de 8px (`p-2`) que ela já tem. */
+.ds-barra-lateral > .border-b,
+.ds-barra-lateral > .border-t {
+  border-color: transparent;
+}
+.ds-barra-lateral > nav {
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    #000 0.5rem,
+    #000 calc(100% - 0.5rem),
+    transparent
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    #000 0.5rem,
+    #000 calc(100% - 0.5rem),
+    transparent
+  );
+}
+
+/* TOPO SEM FAIXA — o `<header>` não tem fundo nem linha de ponta a ponta; o
+   que flutua são as cápsulas. O conteúdo rola por baixo, e no lugar da linha
+   entra o EFEITO DE BORDA: uma camada atrás dos controles que desfoca e cobre
+   de leve o que passa, e esmaece até sumir 1rem abaixo do topo.
+
+   O `::before` fica em `z-index: -1` DENTRO do contexto que o `sticky z-20`
+   do header já cria: atrás das cápsulas, na frente do conteúdo.
+
+   LARGURA DA JANELA, e não do header: o `<header>` mora só na coluna do
+   conteúdo, à direita da barra lateral. Com a camada do tamanho dele, o topo
+   da coluna ficava lavado e a folga acima da lâmina não — uma emenda vertical
+   na borda da coluna, lida como "uma linha atrás da barra" (embaixo, sem
+   efeito de borda, a lâmina ficava limpa). `fixed` a estende de ponta a ponta
+   sem tocar no JSX; o header não tem `transform`/`filter`, então o bloco de
+   contenção é a janela. Continua atrás da lâmina: a barra é `z-30`, acima do
+   contexto `z-20` do header. */
+.ds-topo {
+  background: none;
+  border-color: transparent;
+}
+.ds-topo::before {
+  content: "";
+  position: fixed;
+  inset: 0 0 auto;
+  height: calc(3.5rem + 1rem);
+  z-index: -1;
+  pointer-events: none;
+  background-image: linear-gradient(
+    to bottom,
+    color-mix(in srgb, var(--color-bg) 72%, transparent),
+    transparent
+  );
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  -webkit-mask-image: linear-gradient(to bottom, #000 45%, transparent);
+  mask-image: linear-gradient(to bottom, #000 45%, transparent);
+}
+
+/* CÁPSULAS — `.ds-capsula` é um GRUPO de controles numa só lâmina (sino,
+   idioma, tema e usuário); `.ds-capsulas-soltas` faz de cada controle filho
+   uma lâmina própria (o menu do celular, a organização, a busca). Soltas por
+   filho, e não um grupo, porque esses filhos podem não estar na tela
+   (`md:hidden`, organização única): uma cápsula vazia desenharia um ponto de
+   vidro sozinho. */
+.ds-capsula,
+.ds-capsulas-soltas > :is(button, a) {
+  border: 1px solid var(--vidro-borda);
+  border-radius: 9999px;
+  background-color: var(--vidro-matiz);
+  box-shadow: var(--vidro-aresta), var(--vidro-sombra);
+  -webkit-backdrop-filter: var(--vidro-desfoque);
+  backdrop-filter: var(--vidro-desfoque);
+}
+.ds-capsulas-soltas > :is(button, a):hover {
+  background-color: var(--vidro-matiz-denso);
+}
+/* Dentro do grupo os controles encostam (2px) e viram cápsulas também, com o
+   raio do contêiner: o realce do cursor acompanha a curva de fora. */
+.ds-capsula {
+  padding: 0.125rem;
+}
+.ds-capsula,
+.ds-capsula > div {
+  gap: 0.125rem;
+}
+.ds-capsula :is(button, a) {
+  border-radius: 9999px;
+}
+
+/* BARRA DE ABAS DO CELULAR — a `<nav>` continua encostada no fundo e com a
+   altura que o contrato de `lib/ui/rodape-ocupado.tsx` mede (o `<main>`
+   desconta exatamente o que ela ocupa; vigiado em
+   `tests/e2e/celular-cabe-na-tela.spec.ts`), mas fica TRANSPARENTE e sem
+   toque: quem é vidro é a lista dentro dela, uma cápsula afastada das bordas.
+   A área segura do iOS vira folga embaixo da cápsula.
+
+   O gancho é o atributo `data-barra-inferior`, que o componente já emite, e
+   não uma classe nova: assim `BarraInferior.tsx` não muda uma linha.
+
+   A entrada (`ds-surge`) passa da `<nav>` para a cápsula. Um ancestral com
+   opacidade em animação é RAIZ DO BACKDROP (Filter Effects 2): enquanto a
+   `<nav>` entrasse, a cápsula desfocaria só o que a `<nav>` transparente
+   pinta — nada — e o conteúdo de trás passaria nítido sob a matiz. Na própria
+   cápsula a opacidade vale para o resultado já desfocado. */
+nav[data-barra-inferior] {
+  animation: none;
+  padding: 0 0.75rem max(0.5rem, env(safe-area-inset-bottom, 0px));
+  border-color: transparent;
+  background: none;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  pointer-events: none;
+}
+nav[data-barra-inferior] > ul {
+  --abas: 5;
+  --gota: 0;
+  position: relative;
+  padding: 0.25rem;
+  border: 1px solid var(--vidro-borda);
+  border-radius: 9999px;
+  background-color: var(--vidro-matiz);
+  box-shadow: var(--vidro-aresta), var(--vidro-sombra-flutuante);
+  -webkit-backdrop-filter: var(--vidro-desfoque);
+  backdrop-filter: var(--vidro-desfoque);
+  pointer-events: auto;
+  animation: ds-surge var(--duration-slow) var(--ease-out-slow) both;
+}
+nav[data-barra-inferior] > ul > li > :is(a, button) {
+  border-radius: 9999px;
+}
+
+/* A GOTA — a peça de vidro sob a aba ativa, que desliza em mola viva até a
+   aba escolhida (morfose). Só CSS (ADR 0003): a barra persiste entre rotas
+   (mora na casca), então quando o `aria-current` muda de aba o `translate`
+   computado muda e a transição corre.
+
+   As abas são `flex-1`, todas da mesma largura; a gota tem a largura de uma
+   (`100%` do `::before` absoluto é a caixa de preenchimento da lista) e anda
+   `--gota` larguras dela mesma. `--abas` e `--gota` saem de `:has()`: a barra
+   tem de 2 a 5 itens (até quatro abas mais o "Mais"). Sem aba ativa — uma
+   tela fora da barra —, a gota encolhe e some no lugar em que estava.
+   Navegador sem `:has()` fica sem gota, com a cor da aba ativa de sempre. */
+nav[data-barra-inferior] > ul::before {
+  content: "";
+  position: absolute;
+  top: 0.25rem;
+  bottom: 0.25rem;
+  left: 0.25rem;
+  width: calc((100% - 0.5rem) / var(--abas));
+  border-radius: 9999px;
+  background-color: color-mix(in oklab, var(--color-accent) 14%, transparent);
+  box-shadow: var(--vidro-aresta);
+  translate: calc(var(--gota) * 100%) 0;
+  opacity: 0;
+  scale: 0.6;
+  pointer-events: none;
+  transition-property: translate, opacity, scale;
+  transition-duration: var(--mola-viva-duracao), var(--duration-base), var(--mola-viva-duracao);
+  transition-timing-function: var(--ease-out-slow);
+  transition-timing-function: var(--mola-viva), var(--ease-out), var(--mola-viva);
+}
+nav[data-barra-inferior] > ul:has([aria-current="page"])::before {
+  opacity: 1;
+  scale: 1;
+}
+nav[data-barra-inferior] > ul:has(> li:nth-child(2):last-child) {
+  --abas: 2;
+}
+nav[data-barra-inferior] > ul:has(> li:nth-child(3):last-child) {
+  --abas: 3;
+}
+nav[data-barra-inferior] > ul:has(> li:nth-child(4):last-child) {
+  --abas: 4;
+}
+nav[data-barra-inferior] > ul:has(> li:nth-child(2) > [aria-current="page"]) {
+  --gota: 1;
+}
+nav[data-barra-inferior] > ul:has(> li:nth-child(3) > [aria-current="page"]) {
+  --gota: 2;
+}
+nav[data-barra-inferior] > ul:has(> li:nth-child(4) > [aria-current="page"]) {
+  --gota: 3;
+}
+
+/* MENUS, POPOVERS, DICAS, MODAIS E GAVETAS — o material (vidro denso) vem da
+   seção 2; aqui entra a forma. Cantos maiores que o `rounded-md` do shadcn,
+   e os itens de dentro com o raio do contêiner menos o `p-1` que os separa
+   (concentricidade). A gaveta arredonda só o lado que fica sobre a tela. */
+.ds-painel {
+  --raio-painel: 0.875rem;
+  border-radius: var(--raio-painel);
+}
+.ds-painel:is([data-state="delayed-open"], [data-state="instant-open"]) {
+  --raio-painel: 0.625rem;
+}
+.ds-painel
+  :is([role="menuitem"], [role="menuitemcheckbox"], [role="menuitemradio"], [role="option"]) {
+  border-radius: calc(var(--raio-painel) - 0.25rem);
+}
+@media (min-width: 640px) {
+  .ds-modal {
+    border-radius: 1.375rem;
+  }
+}
+.ds-gaveta[data-lado="left"] {
+  border-radius: 0 1.375rem 1.375rem 0;
+}
+.ds-gaveta[data-lado="right"] {
+  border-radius: 1.375rem 0 0 1.375rem;
+}
+.ds-gaveta[data-lado="bottom"] {
+  border-radius: 1.375rem 1.375rem 0 0;
+}
+.ds-gaveta[data-lado="top"] {
+  border-radius: 0 0 1.375rem 1.375rem;
+}
+
+/* ---- 5. Recuos -------------------------------------------------------------
    Três situações em que o vidro vira superfície, e as três pelo mesmo motivo:
    quem pediu (ou o navegador que não sustenta) prefere ler a ver o fundo.
 
@@ -1789,9 +2050,20 @@ a:focus-visible > .ds-cartao {
   .ds-barra-lateral,
   .ds-modal,
   .ds-gaveta,
-  .ds-painel:not(.bg-primary) {
+  .ds-painel,
+  .ds-capsula,
+  .ds-capsulas-soltas > :is(button, a),
+  nav[data-barra-inferior] > ul {
     background-color: var(--color-surface);
     border-color: var(--color-border);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+  .ds-capsulas-soltas > :is(button, a):hover {
+    background-color: var(--color-surface-elevated);
+  }
+  .ds-topo::before {
+    background-image: linear-gradient(to bottom, var(--color-bg) 60%, transparent);
     -webkit-backdrop-filter: none;
     backdrop-filter: none;
   }
@@ -1801,11 +2073,26 @@ a:focus-visible > .ds-cartao {
   .ds-barra-lateral,
   .ds-modal,
   .ds-gaveta,
-  .ds-painel:not(.bg-primary) {
+  .ds-painel,
+  .ds-capsula,
+  .ds-capsulas-soltas > :is(button, a),
+  nav[data-barra-inferior] > ul {
     background-color: var(--color-surface);
     border-color: var(--color-border-strong);
     -webkit-backdrop-filter: none;
     backdrop-filter: none;
+  }
+  .ds-capsulas-soltas > :is(button, a):hover {
+    background-color: var(--color-surface-elevated);
+  }
+  /* Mais contraste devolve a linha que o topo sem faixa tirou: fundo opaco e
+     divisória forte, sem esmaecimento. */
+  .ds-topo {
+    background-color: var(--color-bg);
+    border-bottom: 1px solid var(--color-border-strong);
+  }
+  .ds-topo::before {
+    content: none;
   }
   .ds-cartao.border-border {
     border-color: var(--color-border-strong);
@@ -1816,9 +2103,15 @@ a:focus-visible > .ds-cartao {
   .ds-barra-lateral,
   .ds-modal,
   .ds-gaveta,
-  .ds-painel:not(.bg-primary) {
+  .ds-painel,
+  .ds-capsula,
+  .ds-capsulas-soltas > :is(button, a),
+  nav[data-barra-inferior] > ul {
     background-color: var(--color-surface);
     border-color: var(--color-border);
+  }
+  .ds-topo::before {
+    background-image: linear-gradient(to bottom, var(--color-bg) 60%, transparent);
   }
 }
 

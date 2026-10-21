@@ -1,0 +1,44 @@
+[
+  {
+    "ms": 0,
+    "rota": "/app/inbox",
+    "translate": "0%",
+    "opacidade": "1",
+    "largura": "71.1875px"
+  },
+  {
+    "ms": 71,
+    "rota": "/app/kanban",
+    "translate": "45.0804%",
+    "opacidade": "1",
+    "largura": "71.1875px"
+  },
+  {
+    "ms": 351,
+    "rota": "/app/kanban",
+    "translate": "102.863%",
+    "opacidade": "1",
+    "largura": "71.1875px"
+  },
+  {
+    "ms": 542,
+    "rota": "/app/kanban",
+    "translate": "100.366%",
+    "opacidade": "1",
+    "largura": "71.1875px"
+  },
+  {
+    "ms": 832,
+    "rota": "/app/kanban",
+    "translate": "100%",
+    "opacidade": "1",
+    "largura": "71.1875px"
+  },
+  {
+    "ms": 1058,
+    "rota": "/app/kanban",
+    "translate": "100%",
+    "opacidade": "1",
+    "largura": "71.1875px"
+  }
+]

@@ -592,7 +592,14 @@ test.describe("a moldura do logo no tema escuro", () => {
     // E ele continua sendo o `h-14` de sempre, no topo: a igualdade acima passaria
     // se os DOIS tivessem mudado junto.
     expect(escuro.altura, "o cabeçalho deixou de ser `h-14` (56px)").toBe(56);
-    expect(escuro.y, "o cabeçalho saiu do topo da barra").toBe(0);
+    // Derasu: a barra é uma lâmina flutuante, com folga até a janela
+    // (app/globals.css, "LIQUID GLASS" §4). O topo DA BARRA é medido contra a
+    // própria barra, por dentro da borda — não contra a janela.
+    const folgaNoTopo = await cabecalhoDaBarra(page).evaluate((el) => {
+      const barra = el.closest("aside")!;
+      return el.getBoundingClientRect().y - (barra.getBoundingClientRect().y + barra.clientTop);
+    });
+    expect(folgaNoTopo, "o cabeçalho saiu do topo da barra").toBe(0);
   });
 
   test("(7) dois logos: troca real de tema, fachada e remoção independente", async ({

@@ -493,11 +493,13 @@ export function Sidebar({ collapsed }: { collapsed: boolean }) {
         // `duration-base` em vez do `duration-200` literal: 200ms é o mesmo
         // número, mas vindo de `--duration-base`. A Lei de movimento fecha a
         // tabela de durações, e número solto é o que a faz apodrecer.
-        // `ds-barra-lateral` + desfoque: a barra é vidro sobre o ambiente da página
-        // (luzes da marca no `body`, app/globals.css). Seguro aqui porque o
-        // `sticky z-30` já faz dela um contexto de empilhamento, e nada dentro
-        // dela usa `fixed` (o desfoque viraria o bloco de contenção dele).
-        "sticky top-0 z-30 flex h-dvh shrink-0 flex-col border-r ds-barra-lateral backdrop-blur-xl backdrop-saturate-150 transition-[width] duration-base",
+        // Derasu: `ds-barra-lateral` faz dela uma lâmina de vidro FLUTUANTE —
+        // folga em volta, cantos arredondados; `top`, `height` e a borda
+        // inteira vêm de app/globals.css (seção "LIQUID GLASS", 4). Seguro
+        // aqui porque o `sticky z-30` já faz dela um contexto de empilhamento,
+        // e nada dentro dela usa `fixed` (o desfoque viraria o bloco de
+        // contenção dele).
+        "sticky top-0 z-30 flex h-dvh shrink-0 flex-col border-r ds-barra-lateral transition-[width] duration-base",
         collapsed ? "w-16" : "w-60",
       )}
     >
