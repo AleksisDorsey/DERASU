@@ -7,10 +7,10 @@ Este arquivo é o roteiro; marque a entrega quando o PR dela entrar na `main` da
 
 ## Entregas (um PR cada, com prova de tela)
 
-1. [ ] **Fundação** — tokens de material (vidro e superfície), de mola (`linear()`), neutros frios
+1. [x] **Fundação** (PR #9) — tokens de material (vidro e superfície), de mola (`linear()`), neutros frios
    nos dois temas, Inter Variable, `prefers-reduced-transparency` e `prefers-contrast: more`.
    O `<Card>` volta a ser superfície (ADR 0002).
-2. [ ] **Camada de controle** — barra lateral flutuante (lâmina solta, com margem, no desktop;
+2. [x] **Camada de controle** (PR #10) — barra lateral flutuante (lâmina solta, com margem, no desktop;
    gaveta no celular); topo sem faixa, com controles em cápsulas de vidro e efeito de borda; barra
    de abas do celular em cápsula com gota deslizante; menus, popovers, modais, gavetas e dicas.
 3. [ ] **Controles** — botões em cápsula; interruptor, abas segmentadas com gota, campos e seleção
