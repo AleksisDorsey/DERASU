@@ -5,15 +5,15 @@
       "scale": "1"
     },
     {
-      "ms": 66,
+      "ms": 65,
       "scale": "1"
     },
     {
-      "ms": 157,
-      "scale": "0.961525"
+      "ms": 159,
+      "scale": "0.960413"
     },
     {
-      "ms": 289,
+      "ms": 316,
       "scale": "0.96"
     }
   ],
@@ -23,28 +23,28 @@
       "scale": "0.96"
     },
     {
-      "ms": 164,
-      "scale": "0.982565"
+      "ms": 97,
+      "scale": "0.96"
     },
     {
-      "ms": 166,
-      "scale": "0.982565"
+      "ms": 185,
+      "scale": "0.978034"
     },
     {
-      "ms": 249,
-      "scale": "0.999131"
+      "ms": 246,
+      "scale": "0.993322"
     },
     {
-      "ms": 332,
-      "scale": "1.00148"
+      "ms": 329,
+      "scale": "1.00077"
     },
     {
-      "ms": 465,
-      "scale": "1.00081"
+      "ms": 461,
+      "scale": "1.00106"
     },
     {
-      "ms": 666,
-      "scale": "none"
+      "ms": 662,
+      "scale": "1.00006"
     }
   ],
   "cartaoPressionado": [
@@ -54,42 +54,42 @@
       "translate": "0px"
     },
     {
-      "ms": 236,
-      "scale": "0.985153",
-      "translate": "0px -1.8809px"
+      "ms": 218,
+      "scale": "0.985572",
+      "translate": "0px -1.78537px"
     }
   ],
   "menuAbrindo": [
     {
       "ms": 0,
-      "opacity": "0.286806",
-      "scale": "0.914417",
+      "opacity": "0.132462",
+      "scale": "0.895895",
       "transform-origin": "220px 0px",
       "animation-name": "ds-painel-brota"
     },
     {
-      "ms": 325,
-      "opacity": "0.610782",
-      "scale": "0.953294",
+      "ms": 335,
+      "opacity": "0.480346",
+      "scale": "0.937641",
       "transform-origin": "220px 0px",
       "animation-name": "ds-painel-brota"
     },
     {
-      "ms": 723,
-      "opacity": "0.895173",
-      "scale": "0.987421",
+      "ms": 721,
+      "opacity": "0.811183",
+      "scale": "0.977342",
       "transform-origin": "220px 0px",
       "animation-name": "ds-painel-brota"
     },
     {
-      "ms": 1491,
+      "ms": 1403,
       "opacity": "1",
-      "scale": "1.00445",
+      "scale": "1.0036",
       "transform-origin": "220px 0px",
       "animation-name": "ds-painel-brota"
     },
     {
-      "ms": 4220,
+      "ms": 4283,
       "opacity": "1",
       "scale": "1",
       "transform-origin": "220px 0px",
@@ -99,27 +99,27 @@
   "modalAbrindo": [
     {
       "ms": 0,
-      "opacity": "0.353644",
-      "scale": "0.961219",
-      "translate": "-50% calc(-50% + 7.75628px)",
+      "opacity": "0.300831",
+      "scale": "0.95805",
+      "translate": "-50% calc(-50% + 8.39003px)",
       "animation-name": "ds-modal-brota"
     },
     {
-      "ms": 348,
-      "opacity": "0.698463",
-      "scale": "0.981908",
-      "translate": "-50% calc(-50% + 3.61844px)",
+      "ms": 403,
+      "opacity": "0.698315",
+      "scale": "0.981899",
+      "translate": "-50% calc(-50% + 3.62022px)",
       "animation-name": "ds-modal-brota"
     },
     {
-      "ms": 950,
-      "opacity": "0.997349",
-      "scale": "0.999841",
-      "translate": "-50% calc(-50% + 0.0318095px)",
+      "ms": 987,
+      "opacity": "0.993381",
+      "scale": "0.999603",
+      "translate": "-50% calc(-50% + 0.0794286px)",
       "animation-name": "ds-modal-brota"
     },
     {
-      "ms": 4214,
+      "ms": 4211,
       "opacity": "1",
       "scale": "1",
       "translate": "-50% -50%",
@@ -144,7 +144,7 @@
       {
         "pseudo": "::view-transition-new(_t_1_)",
         "nome": "ds-rota-surge",
-        "duracao": 500,
+        "duracao": 320,
         "curva": "linear"
       },
       {
@@ -164,26 +164,26 @@
   "gavetaAbrindo": [
     {
       "ms": 0,
-      "translate": "-99.3149%",
+      "translate": "-76.798%",
       "animation-name": "ds-gaveta-entra"
     },
     {
-      "ms": 414,
-      "translate": "-65.1796%",
+      "ms": 452,
+      "translate": "-36.6039%",
       "animation-name": "ds-gaveta-entra"
     },
     {
-      "ms": 1018,
-      "translate": "-21.8235%",
+      "ms": 1094,
+      "translate": "-23.357%",
       "animation-name": "ds-gaveta-entra"
     },
     {
-      "ms": 2030,
-      "translate": "-3.05162%",
+      "ms": 2003,
+      "translate": "-2.41096%",
       "animation-name": "ds-gaveta-entra"
     },
     {
-      "ms": 3503,
+      "ms": 3517,
       "translate": "0%",
       "animation-name": "ds-gaveta-entra"
     }
@@ -191,11 +191,11 @@
   "abaPressionada": [
     {
       "ms": 0,
-      "scale": "1"
+      "scale": "none"
     },
     {
-      "ms": 156,
-      "scale": "0.9"
+      "ms": 473,
+      "scale": "none"
     }
   ],
   "reduzidoPressionar": [
@@ -204,7 +204,7 @@
       "scale": "none"
     },
     {
-      "ms": 153,
+      "ms": 171,
       "scale": "none"
     }
   ],
