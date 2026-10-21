@@ -106,6 +106,6 @@ _Avoid_: morph, transformação, animação de layout
 
 **Entrada de rota**:
 A troca de uma área do app para outra (inbox → funil): a página que sai esmaece rápido e a que
-chega sobe 8px em mola suave, enquanto a barra lateral e o topo ficam parados. Dentro da mesma
+chega sobe 8px em 320ms, enquanto a barra lateral e o topo ficam parados. Dentro da mesma
 área — trocar de conversa, de subpágina, recarregar dados — não há entrada de rota.
 _Avoid_: transição de página, page transition, animação de navegação

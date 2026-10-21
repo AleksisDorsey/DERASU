@@ -2439,7 +2439,8 @@ a:active > .ds-cartao {
 }
 
 /* ENTRADA DE ROTA — a página que sai esmaece rápido e a que chega sobe 8px em
-   mola suave. Quem dispara é `app/app/template.tsx`, com o `<ViewTransition>`
+   320ms (`--duration-slow` + `--ease-out-slow`, os números da lei de movimento
+   do oficial para transição de página). Quem dispara é `app/app/template.tsx`, com o `<ViewTransition>`
    do React: ele NÃO acrescenta elemento entre o `<main>` e a página (dá nome à
    página para a View Transitions API do navegador), e por isso o colapso do
    `h-full` que fez o oficial recusar a transição de página (ver "Entrada de
@@ -2451,7 +2452,12 @@ a:active > .ds-cartao {
    piscando a tela a cada clique era o outro motivo da recusa.
 
    Durante a transição o navegador desenha fotografias da página por cima da
-   real; `pointer-events: none` deixa o clique atravessar para a página viva. */
+   real; `pointer-events: none` deixa o clique atravessar para a página viva.
+   Mas a página que CHEGA, por ter nome de transição, fica fora do teste de
+   clique enquanto a animação dura (medido: `elementFromPoint` devolve o
+   `<main>`). É por isso que ela não é mola suave (500ms): um clique rápido
+   logo depois de trocar de área se perderia por meio segundo. 320ms é a
+   janela mais curta que ainda se lê como movimento. */
 @keyframes ds-rota-some {
   to {
     opacity: 0;
@@ -2470,8 +2476,7 @@ a:active > .ds-cartao {
   animation: ds-rota-some var(--duration-fast) var(--ease-out) both;
 }
 ::view-transition-new(.ds-rota-entra) {
-  animation: ds-rota-surge var(--mola-suave-duracao) var(--ease-out-slow) both;
-  animation-timing-function: var(--mola-suave);
+  animation: ds-rota-surge var(--duration-slow) var(--ease-out-slow) both;
 }
 
 @media (prefers-reduced-motion: reduce) {
