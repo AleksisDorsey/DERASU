@@ -1846,15 +1846,25 @@ a:focus-visible > .ds-cartao {
    de leve o que passa, e esmaece até sumir 1rem abaixo do topo.
 
    O `::before` fica em `z-index: -1` DENTRO do contexto que o `sticky z-20`
-   do header já cria: atrás das cápsulas, na frente do conteúdo. */
+   do header já cria: atrás das cápsulas, na frente do conteúdo.
+
+   LARGURA DA JANELA, e não do header: o `<header>` mora só na coluna do
+   conteúdo, à direita da barra lateral. Com a camada do tamanho dele, o topo
+   da coluna ficava lavado e a folga acima da lâmina não — uma emenda vertical
+   na borda da coluna, lida como "uma linha atrás da barra" (embaixo, sem
+   efeito de borda, a lâmina ficava limpa). `fixed` a estende de ponta a ponta
+   sem tocar no JSX; o header não tem `transform`/`filter`, então o bloco de
+   contenção é a janela. Continua atrás da lâmina: a barra é `z-30`, acima do
+   contexto `z-20` do header. */
 .ds-topo {
   background: none;
   border-color: transparent;
 }
 .ds-topo::before {
   content: "";
-  position: absolute;
-  inset: 0 0 -1rem;
+  position: fixed;
+  inset: 0 0 auto;
+  height: calc(3.5rem + 1rem);
   z-index: -1;
   pointer-events: none;
   background-image: linear-gradient(
