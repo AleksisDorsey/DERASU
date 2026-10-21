@@ -33,6 +33,9 @@ const buttonVariants = cva(
     // E a subida arrastadas, que é o oposto do que o recuo comunica.
     "transition-[background-color,border-color,color,box-shadow]",
     "duration-fast ease-out",
+    // Derasu: `ds-pressionar` troca o recuo de 1px por escala em mola
+    // (app/globals.css, "LIQUID GLASS", 4d).
+    "ds-pressionar",
     "focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-accent-500 focus-visible:ring-offset-2 focus-visible:ring-offset-bg",
     "disabled:pointer-events-none disabled:opacity-50",
     "[&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",

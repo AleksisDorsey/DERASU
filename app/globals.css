@@ -1782,13 +1782,14 @@ body {
    em mola viva e ganha o aro da marca. Fora de layer porque precisa vencer o
    `transition-colors` que os hubs escrevem no próprio cartão. */
 .ds-cartao {
-  transition-property: color, background-color, border-color, box-shadow, translate;
+  transition-property: color, background-color, border-color, box-shadow, translate, scale;
   transition-duration:
     var(--duration-base), var(--duration-base), var(--duration-base), var(--mola-viva-duracao),
-    var(--mola-viva-duracao);
+    var(--mola-viva-duracao), var(--mola-viva-duracao);
   transition-timing-function: var(--ease-out-slow);
   transition-timing-function:
-    var(--ease-out), var(--ease-out), var(--ease-out), var(--mola-viva), var(--mola-viva);
+    var(--ease-out), var(--ease-out), var(--ease-out), var(--mola-viva), var(--mola-viva),
+    var(--mola-viva);
 }
 
 a:hover > .ds-cartao,
@@ -2301,6 +2302,197 @@ button[role="switch"][data-state="checked"]:active:not(:disabled) > span {
     inset 0 1px 0 0 rgb(255 255 255 / 0.18),
     0 1px 2px rgb(0 0 0 / 0.1),
     0 4px 12px -6px color-mix(in oklab, var(--color-accent) 50%, transparent);
+}
+
+/* ---- 4d. Movimento ----------------------------------------------------------
+   Três peças, todas em CSS (ADR 0003): PRESSIONAR, os sobrepostos em MOLA e a
+   ENTRADA DE ROTA. As durações saem dos tokens `--mola-*` e `--duration-*`;
+   nada aqui inventa número de tempo.
+
+   PRESSIONAR — o controle encolhe de leve enquanto o dedo ou o botão do mouse
+   está em cima, e volta em mola ao soltar. A descida é rápida (`--duration-fast`,
+   curva comum: é resposta, não movimento) e a volta é mola viva, que passa um
+   fio do tamanho e assenta. Por isso a duração muda no `:active`: a transição
+   usa a duração do estado de DESTINO, então quem desce usa a do `:active` e
+   quem sobe usa a de repouso.
+
+   A escala muda por peça, porque o mesmo encolhimento em tamanhos diferentes
+   não parece o mesmo toque: o item largo da barra lateral encolhe pouco, o
+   ícone da barra de abas encolhe mais. `scale` individual, e não `transform`,
+   para compor com o `translate` que algumas destas peças já usam.
+
+   `transition-property` repete as cores porque esta regra substitui a lista
+   que os utilitários do primitivo declaram (`transition-colors` e afins). */
+.ds-pressionar,
+.ds-barra-lateral nav a,
+nav[data-barra-inferior] > ul > li > :is(a, button),
+.ds-capsulas-soltas > :is(button, a),
+.ds-capsula :is(button, a),
+.ds-abas:not(.bg-transparent) > .ds-aba {
+  --pressionar: 0.96;
+  transition-property: color, background-color, border-color, box-shadow, scale;
+  transition-duration:
+    var(--duration-fast), var(--duration-fast), var(--duration-fast), var(--duration-fast),
+    var(--mola-viva-duracao);
+  transition-timing-function: var(--ease-out-slow);
+  transition-timing-function:
+    var(--ease-out), var(--ease-out), var(--ease-out), var(--ease-out), var(--mola-viva);
+}
+.ds-barra-lateral nav a {
+  --pressionar: 0.97;
+}
+nav[data-barra-inferior] > ul > li > :is(a, button),
+.ds-capsulas-soltas > :is(button, a),
+.ds-capsula :is(button, a) {
+  --pressionar: 0.9;
+}
+:is(
+    .ds-pressionar,
+    .ds-barra-lateral nav a,
+    nav[data-barra-inferior] > ul > li > :is(a, button),
+    .ds-capsulas-soltas > :is(button, a),
+    .ds-capsula :is(button, a),
+    .ds-abas:not(.bg-transparent) > .ds-aba
+  ):active:not(:disabled, [aria-disabled="true"]) {
+  scale: var(--pressionar);
+  /* O recuo de 1px do primitivo (`active:translate-y-px`) sai: com a escala,
+     ele empurrava o botão para baixo enquanto encolhia para o centro. */
+  translate: none;
+  transition-duration: var(--duration-fast);
+  transition-timing-function: var(--ease-out);
+}
+/* O cartão que é link também afunda, menos que um botão (é maior). A regra
+   de transição dele, na seção 3, já lista `scale`. */
+a:active > .ds-cartao {
+  scale: 0.985;
+  transition-duration: var(--duration-fast);
+  transition-timing-function: var(--ease-out);
+}
+
+/* MENUS, SELETORES, POPOVERS E DICAS NASCEM DO GATILHO — a morfose do
+   glossário ("um botão que vira o menu que ele abre"), feita em CSS: o painel
+   cresce a partir do ponto do gatilho, que o Radix publica em
+   `--radix-*-content-transform-origin` e os primitivos já usam em `origin-*`.
+   Antes ele deslizava 8px vindo do lado do gatilho; crescer DO gatilho diz a
+   mesma coisa com mais precisão. Entra em mola viva; sai rápido, sem mola —
+   quem fecha já decidiu, e a peça não deve disputar a atenção.
+
+   A dica (`delayed-open`/`instant-open`) entra pela mesma regra: a do oficial
+   só animava `open`, e a dica aparecia seca. */
+@keyframes ds-painel-brota {
+  from {
+    opacity: 0;
+    scale: 0.88;
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+@keyframes ds-painel-recolhe {
+  from {
+    opacity: 1;
+    scale: 1;
+  }
+  to {
+    opacity: 0;
+    scale: 0.95;
+  }
+}
+.ds-painel:is([data-state="open"], [data-state="delayed-open"], [data-state="instant-open"]) {
+  animation: ds-painel-brota var(--mola-viva-duracao) var(--ease-out-slow) both;
+  animation-timing-function: var(--mola-viva);
+}
+.ds-painel[data-state="closed"] {
+  animation: ds-painel-recolhe var(--duration-fast) var(--ease-out) both;
+}
+
+/* O MODAL entra em mola viva, crescendo do centro (mais do que os 0,985 do
+   oficial, que não se percebiam). Os mesmos `--ds-modal-x/y` dos keyframes do
+   oficial: quem ancora o modal em outro lugar (a paleta de comandos) segue
+   ancorado. A saída continua a do oficial. */
+@keyframes ds-modal-brota {
+  from {
+    opacity: 0;
+    translate: var(--ds-modal-x, -50%) calc(var(--ds-modal-y, -50%) + 12px);
+    scale: 0.94;
+  }
+  to {
+    opacity: 1;
+    translate: var(--ds-modal-x, -50%) var(--ds-modal-y, -50%);
+    scale: 1;
+  }
+}
+.ds-modal[data-state="open"] {
+  animation: ds-modal-brota var(--mola-viva-duracao) var(--ease-out-slow) 8ms both;
+  animation-timing-function: var(--mola-viva);
+}
+
+/* A GAVETA entra em mola SUAVE, que é amortecimento crítico: chega sem passar
+   do destino. Mola viva aqui desenharia a gaveta passando da borda e voltando,
+   com uma faixa vazia entre ela e o lado da tela — o mesmo motivo pelo qual o
+   oficial recusou o `ease-spring`. */
+.ds-gaveta[data-state="open"] {
+  animation: ds-gaveta-entra var(--mola-suave-duracao) var(--ease-out-slow) 8ms both;
+  animation-timing-function: var(--mola-suave);
+}
+
+/* ENTRADA DE ROTA — a página que sai esmaece rápido e a que chega sobe 8px em
+   mola suave. Quem dispara é `app/app/template.tsx`, com o `<ViewTransition>`
+   do React: ele NÃO acrescenta elemento entre o `<main>` e a página (dá nome à
+   página para a View Transitions API do navegador), e por isso o colapso do
+   `h-full` que fez o oficial recusar a transição de página (ver "Entrada de
+   rota: NÃO EXISTE", acima) não acontece aqui.
+
+   Só a troca de ÁREA anima: o template remonta quando muda o primeiro segmento
+   depois de `/app` (inbox → funil), não quando muda a conversa
+   (`/app/inbox?id=`) nem a subpágina de configurações — trocar de conversa
+   piscando a tela a cada clique era o outro motivo da recusa.
+
+   Durante a transição o navegador desenha fotografias da página por cima da
+   real; `pointer-events: none` deixa o clique atravessar para a página viva. */
+@keyframes ds-rota-some {
+  to {
+    opacity: 0;
+  }
+}
+@keyframes ds-rota-surge {
+  from {
+    opacity: 0;
+    translate: 0 8px;
+  }
+}
+::view-transition {
+  pointer-events: none;
+}
+::view-transition-old(.ds-rota-sai) {
+  animation: ds-rota-some var(--duration-fast) var(--ease-out) both;
+}
+::view-transition-new(.ds-rota-entra) {
+  animation: ds-rota-surge var(--mola-suave-duracao) var(--ease-out-slow) both;
+  animation-timing-function: var(--mola-suave);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :is(
+      .ds-pressionar,
+      .ds-barra-lateral nav a,
+      nav[data-barra-inferior] > ul > li > :is(a, button),
+      .ds-capsulas-soltas > :is(button, a),
+      .ds-capsula :is(button, a),
+      .ds-abas:not(.bg-transparent) > .ds-aba
+    ):active:not(:disabled, [aria-disabled="true"]),
+  a:active > .ds-cartao {
+    scale: none;
+  }
+  /* A regra global de movimento reduzido alcança elementos, não os
+     pseudo-elementos da View Transitions: sem isto a rota seguiria subindo. */
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
+  }
 }
 
 /* ---- 5. Recuos -------------------------------------------------------------

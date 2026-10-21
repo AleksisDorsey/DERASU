@@ -18,9 +18,10 @@ Este arquivo é o roteiro; marque a entrega quando o PR dela entrar na `main` da
 4. [x] **Superfícies de conteúdo** (PR #14) — cartão, tabela, cartão do funil, balões da inbox. Em
    componente de área, só se acrescenta uma classe `ds-*`; nada de reescrever estrutura ou lógica,
    e o motivo vai escrito no PR.
-5. [ ] **Movimento** — pressionar, molas, morfose (View Transitions), e a transição de rota, que
-   exige antes tirar o `h-full` da raiz das páginas (ver `docs/design-system/07-motion-language.md`).
-   Pode correr em paralelo depois da 1.
+5. [x] **Movimento** (PR #15) — pressionar; menus, seletores e dicas que nascem do gatilho;
+   modal e gaveta em mola; e a entrada de rota. Esta dispensou a refatoração do `h-full` que o
+   oficial previa (`docs/design-system/07-motion-language.md`): o `<ViewTransition>` do React,
+   que o Next 16.4 já traz, dá nome à página sem acrescentar elemento entre ela e o `<main>`.
 
 Depois: refração (`feDisplacementMap`) como melhoria progressiva na barra de abas e no botão
 flutuante; barra de abas que encolhe ao rolar.
