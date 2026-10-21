@@ -26,4 +26,17 @@ export async function zoomAte(page: Page, alvo: number): Promise<void> {
     await zoomOut.click();
     await page.waitForTimeout(80);
   }
+  // O zoom dos controles ANIMA. Devolver no meio dele entrega posições em
+  // trânsito: medido num trace do CI, a bolinha de saída foi lida em x=746 e o
+  // nó assentou ~125px adiante, então o `mouseDown` do arrasto caiu no corpo
+  // do cartão e o arrastou em vez de ligar a aresta. Espera a matriz parar.
+  let anterior = "";
+  for (let i = 0; i < 20; i++) {
+    const atual = await page
+      .locator(".react-flow__viewport")
+      .evaluate((el) => getComputedStyle(el).transform);
+    if (atual === anterior) break;
+    anterior = atual;
+    await page.waitForTimeout(100);
+  }
 }
