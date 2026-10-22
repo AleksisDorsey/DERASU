@@ -1,0 +1,243 @@
+{
+  "pressionarDescida": [
+    {
+      "ms": 0,
+      "scale": "1"
+    },
+    {
+      "ms": 65,
+      "scale": "1"
+    },
+    {
+      "ms": 159,
+      "scale": "0.960413"
+    },
+    {
+      "ms": 316,
+      "scale": "0.96"
+    }
+  ],
+  "pressionarVolta": [
+    {
+      "ms": 0,
+      "scale": "0.96"
+    },
+    {
+      "ms": 97,
+      "scale": "0.96"
+    },
+    {
+      "ms": 185,
+      "scale": "0.978034"
+    },
+    {
+      "ms": 246,
+      "scale": "0.993322"
+    },
+    {
+      "ms": 329,
+      "scale": "1.00077"
+    },
+    {
+      "ms": 461,
+      "scale": "1.00106"
+    },
+    {
+      "ms": 662,
+      "scale": "1.00006"
+    }
+  ],
+  "cartaoPressionado": [
+    {
+      "ms": 0,
+      "scale": "1",
+      "translate": "0px"
+    },
+    {
+      "ms": 218,
+      "scale": "0.985572",
+      "translate": "0px -1.78537px"
+    }
+  ],
+  "menuAbrindo": [
+    {
+      "ms": 0,
+      "opacity": "0.132462",
+      "scale": "0.895895",
+      "transform-origin": "220px 0px",
+      "animation-name": "ds-painel-brota"
+    },
+    {
+      "ms": 335,
+      "opacity": "0.480346",
+      "scale": "0.937641",
+      "transform-origin": "220px 0px",
+      "animation-name": "ds-painel-brota"
+    },
+    {
+      "ms": 721,
+      "opacity": "0.811183",
+      "scale": "0.977342",
+      "transform-origin": "220px 0px",
+      "animation-name": "ds-painel-brota"
+    },
+    {
+      "ms": 1403,
+      "opacity": "1",
+      "scale": "1.0036",
+      "transform-origin": "220px 0px",
+      "animation-name": "ds-painel-brota"
+    },
+    {
+      "ms": 4283,
+      "opacity": "1",
+      "scale": "1",
+      "transform-origin": "220px 0px",
+      "animation-name": "ds-painel-brota"
+    }
+  ],
+  "modalAbrindo": [
+    {
+      "ms": 0,
+      "opacity": "0.300831",
+      "scale": "0.95805",
+      "translate": "-50% calc(-50% + 8.39003px)",
+      "animation-name": "ds-modal-brota"
+    },
+    {
+      "ms": 403,
+      "opacity": "0.698315",
+      "scale": "0.981899",
+      "translate": "-50% calc(-50% + 3.62022px)",
+      "animation-name": "ds-modal-brota"
+    },
+    {
+      "ms": 987,
+      "opacity": "0.993381",
+      "scale": "0.999603",
+      "translate": "-50% calc(-50% + 0.0794286px)",
+      "animation-name": "ds-modal-brota"
+    },
+    {
+      "ms": 4211,
+      "opacity": "1",
+      "scale": "1",
+      "translate": "-50% -50%",
+      "animation-name": "ds-modal-brota"
+    }
+  ],
+  "modalFechouComEsc": true,
+  "rotaAreaParaArea": [
+    [
+      {
+        "pseudo": "::view-transition-old(root)",
+        "nome": "-ua-view-transition-fade-out",
+        "duracao": 250,
+        "curva": "linear"
+      },
+      {
+        "pseudo": "::view-transition-old(_t_0_)",
+        "nome": "ds-rota-some",
+        "duracao": 120,
+        "curva": "linear"
+      },
+      {
+        "pseudo": "::view-transition-new(_t_1_)",
+        "nome": "ds-rota-surge",
+        "duracao": 320,
+        "curva": "linear"
+      },
+      {
+        "pseudo": "::view-transition-group(root)",
+        "duracao": 0,
+        "curva": "linear"
+      },
+      {
+        "pseudo": "::view-transition",
+        "duracao": 0,
+        "curva": "linear"
+      }
+    ]
+  ],
+  "rotaMesmaAreaNavegacoes": "?id=d0000000-0000-4000-8000-000000000301",
+  "rotaMesmaArea": [],
+  "gavetaAbrindo": [
+    {
+      "ms": 0,
+      "translate": "-76.798%",
+      "animation-name": "ds-gaveta-entra"
+    },
+    {
+      "ms": 452,
+      "translate": "-36.6039%",
+      "animation-name": "ds-gaveta-entra"
+    },
+    {
+      "ms": 1094,
+      "translate": "-23.357%",
+      "animation-name": "ds-gaveta-entra"
+    },
+    {
+      "ms": 2003,
+      "translate": "-2.41096%",
+      "animation-name": "ds-gaveta-entra"
+    },
+    {
+      "ms": 3517,
+      "translate": "0%",
+      "animation-name": "ds-gaveta-entra"
+    }
+  ],
+  "abaPressionada": [
+    {
+      "ms": 0,
+      "scale": "none"
+    },
+    {
+      "ms": 473,
+      "scale": "none"
+    }
+  ],
+  "reduzidoPressionar": [
+    {
+      "ms": 0,
+      "scale": "none"
+    },
+    {
+      "ms": 171,
+      "scale": "none"
+    }
+  ],
+  "reduzidoRota": [
+    [
+      {
+        "pseudo": "::view-transition-old(root)",
+        "nome": "-ua-view-transition-fade-out",
+        "duracao": 0,
+        "curva": "linear"
+      },
+      {
+        "pseudo": "::view-transition-old(_t_0_)",
+        "nome": "ds-rota-some",
+        "duracao": 0,
+        "curva": "linear"
+      },
+      {
+        "pseudo": "::view-transition-new(_t_1_)",
+        "nome": "ds-rota-surge",
+        "duracao": 0,
+        "curva": "linear"
+      },
+      {
+        "pseudo": "::view-transition-group(root)",
+        "duracao": 0,
+        "curva": "linear"
+      },
+      {
+        "pseudo": "::view-transition",
+        "duracao": 0,
+        "curva": "linear"
+      }
+    ]
+  ]
+}
