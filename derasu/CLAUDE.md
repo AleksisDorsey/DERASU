@@ -36,9 +36,20 @@ conteúdo é superfície** ([ADR 0002](docs/adr/0002-vidro-so-na-camada-de-contr
   `ghcr.io/aleksisdorsey/{deskcommcrm,deskcomm-worker,deskcomm-scheduler}:main`. A `main` da
   fork é, portanto, o que pode ir para produção. Trabalho em branch `feat/derasu-*` /
   `fix/derasu-*` e PR.
-- **Atualizar com o oficial:** `git fetch upstream && git merge upstream/main` numa branch
-  própria, PR para a `main` da fork. Nunca rebase nem force-push na `main`. Para saber o
-  atraso: `git rev-list --count main..upstream/main`.
+- **Atualizar com o oficial pela TAG de release, nunca pela `main` dele** (decisão do dono,
+  21/10/2026). Numa branch própria, PR para a `main` da fork:
+
+  ```bash
+  git fetch upstream --tags
+  T=$(gh release view --repo melgarafael/DeskcommCRM --json tagName --jq .tagName)
+  git merge "$T"
+  ```
+
+  Por quê: produção só recebe banco pelo `update.sh --to <tag>` do oficial
+  ([roteiro](docs/roteiro-producao.md)). Fork que contém commit do oficial além da release pede
+  schema que nenhuma release instala, e fica sem caminho para produção até sair a próxima.
+  Nunca rebase nem force-push na `main`. Para saber o atraso:
+  `git rev-list --count main.."$T"`.
 
 ## Regra de ouro: superfície mínima de conflito
 
@@ -121,8 +132,10 @@ escrito para Ubuntu. O que funcionar ou exigir ajuste no Windows fica registrado
 - **Só leitura sem pedir** (`docker ps`, logs, `git status`, ler o `.env` sem copiar segredos para a conversa).
   Qualquer coisa que muda a VPS — editar `.env`, `docker compose up`, `update.sh`, migration —
   só com o "sim" do usuário **naquela sessão**.
-- **Pôr a versão Derasu no ar:** trocar `APP_IMAGE` / `WORKER_IMAGE` / `SCHEDULER_IMAGE` no
-  `.env` para as imagens `ghcr.io/aleksisdorsey/...:main` e subir de novo.
+- **Pôr a versão Derasu no ar:** seguir [`docs/roteiro-producao.md`](docs/roteiro-producao.md).
+  O banco anda pelo `update.sh --to <tag>` do oficial, e só depois se trocam
+  `APP_IMAGE` / `WORKER_IMAGE` / `SCHEDULER_IMAGE` para as imagens da fork, fixadas por digest.
+  Trocar as imagens sem o banco da mesma versão quebra o app.
 - **Voltar ao oficial:** `bash hostgator-setup-kit/update.sh` (regrava as imagens oficiais).
 - Depois de qualquer troca: `/` responde **200** e `/app` responde **307** (ver "Deploy em
   produção" no `CLAUDE.md` oficial).
