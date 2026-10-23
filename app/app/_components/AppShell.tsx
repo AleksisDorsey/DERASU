@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, type ReactNode } from "react";
-import { Sidebar } from "@/components/shell/Sidebar";
+import { BarraLateral } from "@/components/derasu/BarraLateral";
 import { TopBar } from "@/components/shell/TopBar";
 import { BarraInferior } from "@/components/shell/BarraInferior";
 import { BarraDeProgressoNavegacao } from "@/components/shell/BarraDeProgressoNavegacao";
@@ -62,7 +62,8 @@ export function AppShell({ sidebarCollapsed, podeAtender, children }: AppShellPr
     <div className="flex min-h-dvh w-full bg-background">
       <BarraDeProgressoNavegacao />
       <div className="hidden md:block">
-        <Sidebar collapsed={sidebarCollapsed} />
+        {/* Derasu: barra fixada ou solta, com espiada (derasu/docs/adr/0004). */}
+        <BarraLateral solta={sidebarCollapsed} />
       </div>
       {/*
         `min-w-0` é o que permite a coluna de conteúdo ENCOLHER. Um flex item

@@ -2501,6 +2501,122 @@ a:active > .ds-cartao {
   }
 }
 
+/* ---- 4e. Barra lateral fixada ou solta (ADR 0004) -------------------------
+   O comportamento mora em `components/derasu/BarraLateral.tsx`; aqui, a
+   geometria e o material. Tudo só a partir de `md` (768px): abaixo disso a
+   navegação é a gaveta do celular, e o AppShell nem mostra este bloco.
+
+   O ÍCONE fica no MESMO ponto da tela nos dois estados: 40px, centrado na
+   linha do topo (56px de altura → 8px de cima) e a 16px da borda, que é a
+   folga da lâmina (8px) mais o respiro de dentro dela (8px). Fixada, a lâmina
+   reserva esse canto: a linha da marca baixa para 40px, centrada na mesma
+   altura do ícone, e começa depois dele. */
+.ds-icone-barra {
+  position: fixed;
+  z-index: 50;
+  top: 0.5rem;
+  left: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid transparent;
+  border-radius: 9999px;
+  color: var(--color-text);
+  transition-property: background-color, border-color, box-shadow, scale;
+  transition-duration:
+    var(--duration-fast), var(--duration-fast), var(--duration-fast), var(--mola-viva-duracao);
+  transition-timing-function: var(--ease-out-slow);
+  transition-timing-function: var(--ease-out), var(--ease-out), var(--ease-out), var(--mola-viva);
+}
+.ds-icone-barra:hover {
+  background-color: var(--trilho);
+}
+.ds-icone-barra:active {
+  scale: 0.9;
+  transition-duration: var(--duration-fast);
+  transition-timing-function: var(--ease-out);
+}
+.ds-icone-barra:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+/* Solta e sem espiada, o ícone está sozinho sobre o conteúdo: vira a mesma
+   cápsula de vidro das outras do topo. Com a lâmina embaixo dele (fixada ou
+   espiando), fica transparente sobre o vidro dela. */
+[data-barra-lateral="solta"]:not([data-espiando]) > .ds-icone-barra {
+  border-color: var(--vidro-borda);
+  background-color: var(--vidro-matiz);
+  box-shadow: var(--vidro-aresta), var(--vidro-sombra);
+  -webkit-backdrop-filter: var(--vidro-desfoque);
+  backdrop-filter: var(--vidro-desfoque);
+}
+[data-barra-lateral="solta"]:not([data-espiando]) > .ds-icone-barra:hover {
+  background-color: var(--vidro-matiz-denso);
+}
+
+[data-barra-lateral] .ds-barra-lateral > :first-child {
+  height: 2.5rem;
+  padding-left: 3.5rem;
+}
+
+/* A ESPIADA é a mesma lâmina, presa à janela e por cima do conteúdo, sem
+   cortina: dá para ver onde se estava. Entra em mola suave (amortecimento
+   crítico: não passa da borda); sai mais rápido, e só some para o teclado e
+   o leitor de tela depois de sair (o `visibility` espera a transição). */
+.ds-espiada {
+  position: fixed;
+  z-index: 40;
+  left: var(--lamina-folga);
+  margin: 0;
+  translate: calc(-100% - 1rem) 0;
+  visibility: hidden;
+  transition-property: translate, visibility;
+  transition-duration: var(--duration-base), 0s;
+  transition-delay: 0s, var(--duration-base);
+  transition-timing-function: var(--ease-out);
+}
+.ds-espiada[data-aberta] {
+  translate: 0 0;
+  visibility: visible;
+  transition-duration: var(--mola-suave-duracao), 0s;
+  transition-delay: 0s, 0s;
+  transition-timing-function: var(--ease-out-slow);
+  transition-timing-function: var(--mola-suave);
+}
+
+@media (min-width: 768px) {
+  /* Solta, o topo começa depois do ícone, e não por baixo dele. */
+  body:has([data-barra-lateral="solta"]) .ds-topo {
+    padding-left: 4.25rem;
+  }
+}
+/* Aparelho sem hover (tablet de toque): não existe fixar. A lâmina fixada sai
+   de cena e o topo abre espaço para o ícone, que lá só abre e fecha a espiada.
+   O critério é o aparelho, e não a largura: um notebook estreito com mouse
+   continua podendo fixar. */
+@media (min-width: 768px) and (not ((hover: hover) and (pointer: fine))) {
+  .ds-barra-fixada {
+    display: none;
+  }
+  body:has([data-barra-lateral]) .ds-topo {
+    padding-left: 4.5rem;
+  }
+  .ds-icone-barra {
+    width: 2.75rem;
+    height: 2.75rem;
+    top: 0.375rem;
+  }
+  [data-barra-lateral]:not([data-espiando]) > .ds-icone-barra {
+    border-color: var(--vidro-borda);
+    background-color: var(--vidro-matiz);
+    box-shadow: var(--vidro-aresta), var(--vidro-sombra);
+    -webkit-backdrop-filter: var(--vidro-desfoque);
+    backdrop-filter: var(--vidro-desfoque);
+  }
+}
+
 /* ---- 5. Recuos -------------------------------------------------------------
    Três situações em que o vidro vira superfície, e as três pelo mesmo motivo:
    quem pediu (ou o navegador que não sustenta) prefere ler a ver o fundo.
@@ -2517,6 +2633,7 @@ a:active > .ds-cartao {
   .ds-painel,
   .ds-capsula,
   .ds-capsulas-soltas > :is(button, a),
+  [data-barra-lateral]:not([data-espiando]) > .ds-icone-barra,
   nav[data-barra-inferior] > ul {
     background-color: var(--color-surface);
     border-color: var(--color-border);
@@ -2540,6 +2657,7 @@ a:active > .ds-cartao {
   .ds-painel,
   .ds-capsula,
   .ds-capsulas-soltas > :is(button, a),
+  [data-barra-lateral]:not([data-espiando]) > .ds-icone-barra,
   nav[data-barra-inferior] > ul {
     background-color: var(--color-surface);
     border-color: var(--color-border-strong);
@@ -2581,6 +2699,7 @@ a:active > .ds-cartao {
   .ds-painel,
   .ds-capsula,
   .ds-capsulas-soltas > :is(button, a),
+  [data-barra-lateral]:not([data-espiando]) > .ds-icone-barra,
   nav[data-barra-inferior] > ul {
     background-color: var(--color-surface);
     border-color: var(--color-border);

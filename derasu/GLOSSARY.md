@@ -88,6 +88,33 @@ _Avoid_: pílula, pill, botão redondo
 A sombra difusa na cor da própria peça sob um controle sólido de destaque, como o botão primário.
 _Avoid_: glow, brilho externo
 
+## Navegação
+
+**Barra lateral**:
+A lâmina de vidro com a navegação principal do app, à esquerda. No desktop ela fica **fixada**
+ou **solta**; no celular é a gaveta que o ícone do topo abre por cima do conteúdo.
+_Avoid_: sidebar, menu lateral, menu
+
+**Ícone da barra lateral**:
+O controle no canto de cima à esquerda, sempre no mesmo ponto da tela, que mostra a barra
+lateral. Clicado, fixa ou solta a barra; com o mouse em cima, abre a **espiada**.
+_Avoid_: hambúrguer (no desktop), botão de recolher
+
+**Fixada**:
+O estado em que a barra lateral fica na tela, ao lado do conteúdo, ocupando o próprio lugar. É
+uma escolha de quem usa, e vale até ser desfeita.
+_Avoid_: aberta, expandida, pin
+
+**Solta**:
+O estado em que a barra lateral sai da tela, e só o ícone fica. Ela volta por **espiada**.
+_Avoid_: recolhida, fechada, escondida, unpin
+
+**Espiada**:
+A aparição passageira da barra lateral solta, por cima do conteúdo, enquanto o mouse está sobre o
+ícone ou sobre a própria barra. Some quando o mouse sai, ao escolher um destino, com Esc ou com
+um clique fora, e nunca escurece o conteúdo. Em tela de toque, é o toque no ícone que a abre.
+_Avoid_: peek, flyout, hover, prévia
+
 ## Movimento
 
 **Mola**:
