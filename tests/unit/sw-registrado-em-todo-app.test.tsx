@@ -9,6 +9,8 @@ import { describe, expect, it, vi } from "vitest";
 const registrar = vi.hoisted(() => vi.fn().mockResolvedValue(null));
 vi.mock("@/lib/notifications/service_worker", () => ({ ensureNotifyServiceWorker: registrar }));
 vi.mock("@/components/shell/Sidebar", () => ({ Sidebar: () => null }));
+// Derasu: a casca desenha a barra pelo `BarraLateral` (derasu/docs/adr/0004).
+vi.mock("@/components/derasu/BarraLateral", () => ({ BarraLateral: () => null }));
 vi.mock("@/components/shell/TopBar", () => ({ TopBar: () => null }));
 vi.mock("@/components/shell/BarraDeProgressoNavegacao", () => ({ BarraDeProgressoNavegacao: () => null }));
 vi.mock("@/components/shell/BarraInferior", () => ({ BarraInferior: () => null }));

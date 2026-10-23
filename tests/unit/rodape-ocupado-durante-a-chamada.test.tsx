@@ -43,6 +43,8 @@ vi.mock("@/hooks/i18n/useT", () => ({ useT: () => (texto: string) => texto }));
 // de progresso e os vigias de notificação/presença. Ficam fora para o teste
 // medir o rodapé, e não a rede delas.
 vi.mock("@/components/shell/Sidebar", () => ({ Sidebar: () => null }));
+// Derasu: a casca desenha a barra pelo `BarraLateral` (derasu/docs/adr/0004).
+vi.mock("@/components/derasu/BarraLateral", () => ({ BarraLateral: () => null }));
 vi.mock("@/components/shell/TopBar", () => ({ TopBar: () => null }));
 vi.mock("@/components/shell/BarraDeProgressoNavegacao", () => ({
   BarraDeProgressoNavegacao: () => null,

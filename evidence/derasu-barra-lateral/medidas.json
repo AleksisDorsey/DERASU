@@ -1,0 +1,602 @@
+{
+  "desktop_light": {
+    "fixada": {
+      "estado": "fixada",
+      "icone": {
+        "x": 16,
+        "y": 8,
+        "w": 40,
+        "h": 40
+      },
+      "iconeRotulo": "Recolher sidebar",
+      "lamina": {
+        "x": 8,
+        "y": 8,
+        "w": 240,
+        "h": 884
+      },
+      "laminaVisivel": true,
+      "espiadaAberta": false,
+      "espiada": {
+        "x": -248,
+        "y": 8,
+        "w": 240,
+        "h": 884
+      },
+      "espiadaVisivel": "hidden",
+      "main": {
+        "x": 248,
+        "y": 56,
+        "w": 1192,
+        "h": 844
+      },
+      "topoPaddingEsquerda": "24px",
+      "primeiraCapsula": {
+        "x": 272,
+        "y": 12,
+        "w": 149,
+        "h": 32
+      },
+      "cabecalho": {
+        "x": 9,
+        "y": 9,
+        "w": 238,
+        "h": 56
+      },
+      "marca": {
+        "x": 65,
+        "y": 12,
+        "w": 111,
+        "h": 32
+      },
+      "url": "/app/crm"
+    },
+    "solta": {
+      "estado": "solta",
+      "icone": {
+        "x": 16,
+        "y": 8,
+        "w": 40,
+        "h": 40
+      },
+      "iconeRotulo": "Expandir sidebar",
+      "lamina": null,
+      "laminaVisivel": false,
+      "espiadaAberta": false,
+      "espiada": {
+        "x": -248,
+        "y": 8,
+        "w": 240,
+        "h": 884
+      },
+      "espiadaVisivel": "hidden",
+      "main": {
+        "x": 0,
+        "y": 56,
+        "w": 1440,
+        "h": 844
+      },
+      "topoPaddingEsquerda": "68px",
+      "primeiraCapsula": {
+        "x": 68,
+        "y": 12,
+        "w": 149,
+        "h": 32
+      },
+      "cabecalho": null,
+      "marca": null,
+      "url": "/app/crm"
+    },
+    "espiadaAberta": {
+      "estado": "solta",
+      "icone": {
+        "x": 16,
+        "y": 8,
+        "w": 40,
+        "h": 40
+      },
+      "iconeRotulo": "Expandir sidebar",
+      "lamina": null,
+      "laminaVisivel": false,
+      "espiadaAberta": true,
+      "espiada": {
+        "x": 8,
+        "y": 8,
+        "w": 240,
+        "h": 884
+      },
+      "espiadaVisivel": "visible",
+      "main": {
+        "x": 0,
+        "y": 56,
+        "w": 1440,
+        "h": 844
+      },
+      "topoPaddingEsquerda": "68px",
+      "primeiraCapsula": {
+        "x": 68,
+        "y": 12,
+        "w": 149,
+        "h": 32
+      },
+      "cabecalho": null,
+      "marca": null,
+      "url": "/app/crm"
+    },
+    "mouseNaEspiada": {
+      "estado": "solta",
+      "icone": {
+        "x": 16,
+        "y": 8,
+        "w": 40,
+        "h": 40
+      },
+      "iconeRotulo": "Expandir sidebar",
+      "lamina": null,
+      "laminaVisivel": false,
+      "espiadaAberta": true,
+      "espiada": {
+        "x": 8,
+        "y": 8,
+        "w": 240,
+        "h": 884
+      },
+      "espiadaVisivel": "visible",
+      "main": {
+        "x": 0,
+        "y": 56,
+        "w": 1440,
+        "h": 844
+      },
+      "topoPaddingEsquerda": "68px",
+      "primeiraCapsula": {
+        "x": 68,
+        "y": 12,
+        "w": 149,
+        "h": 32
+      },
+      "cabecalho": null,
+      "marca": null,
+      "url": "/app/crm"
+    },
+    "saiuAgora": {
+      "estado": "solta",
+      "icone": {
+        "x": 16,
+        "y": 8,
+        "w": 40,
+        "h": 40
+      },
+      "iconeRotulo": "Expandir sidebar",
+      "lamina": null,
+      "laminaVisivel": false,
+      "espiadaAberta": true,
+      "espiada": {
+        "x": 8,
+        "y": 8,
+        "w": 240,
+        "h": 884
+      },
+      "espiadaVisivel": "visible",
+      "main": {
+        "x": 0,
+        "y": 56,
+        "w": 1440,
+        "h": 844
+      },
+      "topoPaddingEsquerda": "68px",
+      "primeiraCapsula": {
+        "x": 68,
+        "y": 12,
+        "w": 149,
+        "h": 32
+      },
+      "cabecalho": null,
+      "marca": null,
+      "url": "/app/crm"
+    },
+    "saiuHa700ms": {
+      "estado": "solta",
+      "icone": {
+        "x": 16,
+        "y": 8,
+        "w": 40,
+        "h": 40
+      },
+      "iconeRotulo": "Expandir sidebar",
+      "lamina": null,
+      "laminaVisivel": false,
+      "espiadaAberta": false,
+      "espiada": {
+        "x": -248,
+        "y": 8,
+        "w": 240,
+        "h": 884
+      },
+      "espiadaVisivel": "hidden",
+      "main": {
+        "x": 0,
+        "y": 56,
+        "w": 1440,
+        "h": 844
+      },
+      "topoPaddingEsquerda": "68px",
+      "primeiraCapsula": {
+        "x": 68,
+        "y": 12,
+        "w": 149,
+        "h": 32
+      },
+      "cabecalho": null,
+      "marca": null,
+      "url": "/app/crm"
+    },
+    "depoisDoEsc": {
+      "estado": "solta",
+      "icone": {
+        "x": 16,
+        "y": 8,
+        "w": 40,
+        "h": 40
+      },
+      "iconeRotulo": "Expandir sidebar",
+      "lamina": null,
+      "laminaVisivel": false,
+      "espiadaAberta": false,
+      "espiada": {
+        "x": -248,
+        "y": 8,
+        "w": 240,
+        "h": 884
+      },
+      "espiadaVisivel": "hidden",
+      "main": {
+        "x": 0,
+        "y": 56,
+        "w": 1440,
+        "h": 844
+      },
+      "topoPaddingEsquerda": "68px",
+      "primeiraCapsula": {
+        "x": 68,
+        "y": 12,
+        "w": 149,
+        "h": 32
+      },
+      "cabecalho": null,
+      "marca": null,
+      "url": "/app/crm"
+    },
+    "depoisDeEscolher": {
+      "estado": "solta",
+      "icone": {
+        "x": 16,
+        "y": 8,
+        "w": 40,
+        "h": 40
+      },
+      "iconeRotulo": "Expandir sidebar",
+      "lamina": null,
+      "laminaVisivel": false,
+      "espiadaAberta": false,
+      "espiada": {
+        "x": -248,
+        "y": 8,
+        "w": 240,
+        "h": 884
+      },
+      "espiadaVisivel": "hidden",
+      "main": {
+        "x": 0,
+        "y": 56,
+        "w": 1440,
+        "h": 844
+      },
+      "topoPaddingEsquerda": "68px",
+      "primeiraCapsula": {
+        "x": 68,
+        "y": 12,
+        "w": 149,
+        "h": 32
+      },
+      "cabecalho": null,
+      "marca": null,
+      "url": "/app/contacts"
+    },
+    "fixadaDeNovo": {
+      "estado": "fixada",
+      "icone": {
+        "x": 16,
+        "y": 8,
+        "w": 40,
+        "h": 40
+      },
+      "iconeRotulo": "Recolher sidebar",
+      "lamina": {
+        "x": 8,
+        "y": 8,
+        "w": 240,
+        "h": 884
+      },
+      "laminaVisivel": true,
+      "espiadaAberta": false,
+      "espiada": {
+        "x": -248,
+        "y": 8,
+        "w": 240,
+        "h": 884
+      },
+      "espiadaVisivel": "hidden",
+      "main": {
+        "x": 248,
+        "y": 56,
+        "w": 1192,
+        "h": 844
+      },
+      "topoPaddingEsquerda": "24px",
+      "primeiraCapsula": {
+        "x": 272,
+        "y": 12,
+        "w": 149,
+        "h": 32
+      },
+      "cabecalho": {
+        "x": 9,
+        "y": 9,
+        "w": 238,
+        "h": 56
+      },
+      "marca": {
+        "x": 65,
+        "y": 12,
+        "w": 111,
+        "h": 32
+      },
+      "url": "/app/contacts"
+    }
+  },
+  "desktop_dark": {
+    "fixada": {
+      "estado": "fixada",
+      "icone": {
+        "x": 16,
+        "y": 8,
+        "w": 40,
+        "h": 40
+      },
+      "iconeRotulo": "Recolher sidebar",
+      "lamina": {
+        "x": 8,
+        "y": 8,
+        "w": 240,
+        "h": 884
+      },
+      "laminaVisivel": true,
+      "espiadaAberta": false,
+      "espiada": {
+        "x": -248,
+        "y": 8,
+        "w": 240,
+        "h": 884
+      },
+      "espiadaVisivel": "hidden",
+      "main": {
+        "x": 248,
+        "y": 56,
+        "w": 1192,
+        "h": 844
+      },
+      "topoPaddingEsquerda": "24px",
+      "primeiraCapsula": {
+        "x": 272,
+        "y": 12,
+        "w": 149,
+        "h": 32
+      },
+      "cabecalho": {
+        "x": 9,
+        "y": 9,
+        "w": 238,
+        "h": 56
+      },
+      "marca": {
+        "x": 65,
+        "y": 12,
+        "w": 111,
+        "h": 32
+      },
+      "url": "/app/crm"
+    },
+    "espiadaAberta": {
+      "estado": "solta",
+      "icone": {
+        "x": 16,
+        "y": 8,
+        "w": 40,
+        "h": 40
+      },
+      "iconeRotulo": "Expandir sidebar",
+      "lamina": null,
+      "laminaVisivel": false,
+      "espiadaAberta": true,
+      "espiada": {
+        "x": 8,
+        "y": 8,
+        "w": 240,
+        "h": 884
+      },
+      "espiadaVisivel": "visible",
+      "main": {
+        "x": 0,
+        "y": 56,
+        "w": 1440,
+        "h": 844
+      },
+      "topoPaddingEsquerda": "68px",
+      "primeiraCapsula": {
+        "x": 68,
+        "y": 12,
+        "w": 149,
+        "h": 32
+      },
+      "cabecalho": null,
+      "marca": null,
+      "url": "/app/crm"
+    }
+  },
+  "tablet_toque": {
+    "inicial": {
+      "estado": "fixada",
+      "icone": {
+        "x": 16,
+        "y": 6,
+        "w": 44,
+        "h": 44
+      },
+      "iconeRotulo": "Recolher sidebar",
+      "lamina": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      },
+      "laminaVisivel": false,
+      "espiadaAberta": false,
+      "espiada": {
+        "x": -248,
+        "y": 8,
+        "w": 240,
+        "h": 1164
+      },
+      "espiadaVisivel": "hidden",
+      "main": {
+        "x": 0,
+        "y": 56,
+        "w": 820,
+        "h": 1124
+      },
+      "topoPaddingEsquerda": "72px",
+      "primeiraCapsula": {
+        "x": 72,
+        "y": 6,
+        "w": 149,
+        "h": 44
+      },
+      "cabecalho": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      },
+      "marca": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      },
+      "url": "/app/crm"
+    },
+    "depoisDoToque": {
+      "estado": "fixada",
+      "icone": {
+        "x": 16,
+        "y": 6,
+        "w": 44,
+        "h": 44
+      },
+      "iconeRotulo": "Recolher sidebar",
+      "lamina": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      },
+      "laminaVisivel": false,
+      "espiadaAberta": true,
+      "espiada": {
+        "x": 8,
+        "y": 8,
+        "w": 240,
+        "h": 1164
+      },
+      "espiadaVisivel": "visible",
+      "main": {
+        "x": 0,
+        "y": 56,
+        "w": 820,
+        "h": 1124
+      },
+      "topoPaddingEsquerda": "72px",
+      "primeiraCapsula": {
+        "x": 72,
+        "y": 6,
+        "w": 149,
+        "h": 44
+      },
+      "cabecalho": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      },
+      "marca": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      },
+      "url": "/app/crm"
+    },
+    "depoisDoSegundoToque": {
+      "estado": "fixada",
+      "icone": {
+        "x": 16,
+        "y": 6,
+        "w": 44,
+        "h": 44
+      },
+      "iconeRotulo": "Recolher sidebar",
+      "lamina": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      },
+      "laminaVisivel": false,
+      "espiadaAberta": false,
+      "espiada": {
+        "x": -248,
+        "y": 8,
+        "w": 240,
+        "h": 1164
+      },
+      "espiadaVisivel": "hidden",
+      "main": {
+        "x": 0,
+        "y": 56,
+        "w": 820,
+        "h": 1124
+      },
+      "topoPaddingEsquerda": "72px",
+      "primeiraCapsula": {
+        "x": 72,
+        "y": 6,
+        "w": 149,
+        "h": 44
+      },
+      "cabecalho": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      },
+      "marca": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      },
+      "url": "/app/crm"
+    }
+  }
+}
