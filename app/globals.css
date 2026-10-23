@@ -2509,8 +2509,11 @@ a:active > .ds-cartao {
    O ÍCONE fica no MESMO ponto da tela nos dois estados: 40px, centrado na
    linha do topo (56px de altura → 8px de cima) e a 16px da borda, que é a
    folga da lâmina (8px) mais o respiro de dentro dela (8px). Fixada, a lâmina
-   reserva esse canto: a linha da marca baixa para 40px, centrada na mesma
-   altura do ícone, e começa depois dele. */
+   reserva esse canto: a marca começa depois do ícone e sobe para a mesma
+   altura dele. A linha da marca continua com os 56px do `h-14` (a prova
+   `logo-moldura-no-tema-escuro` mede essa altura): quem sobe a marca é o
+   respiro embaixo — o conteúdo fica nos 38px de cima, centrado a 28px da
+   janela (8 de folga + 1 de borda + 19), a linha do ícone e do topo. */
 .ds-icone-barra {
   position: fixed;
   z-index: 50;
@@ -2557,7 +2560,7 @@ a:active > .ds-cartao {
 }
 
 [data-barra-lateral] .ds-barra-lateral > :first-child {
-  height: 2.5rem;
+  padding-bottom: calc(1rem + 2px);
   padding-left: 3.5rem;
 }
 

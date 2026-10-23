@@ -37,6 +37,18 @@
         "w": 149,
         "h": 32
       },
+      "cabecalho": {
+        "x": 9,
+        "y": 9,
+        "w": 238,
+        "h": 56
+      },
+      "marca": {
+        "x": 65,
+        "y": 12,
+        "w": 111,
+        "h": 32
+      },
       "url": "/app/crm"
     },
     "solta": {
@@ -71,6 +83,8 @@
         "w": 149,
         "h": 32
       },
+      "cabecalho": null,
+      "marca": null,
       "url": "/app/crm"
     },
     "espiadaAberta": {
@@ -86,7 +100,7 @@
       "laminaVisivel": false,
       "espiadaAberta": true,
       "espiada": {
-        "x": -248,
+        "x": 8,
         "y": 8,
         "w": 240,
         "h": 884
@@ -105,6 +119,8 @@
         "w": 149,
         "h": 32
       },
+      "cabecalho": null,
+      "marca": null,
       "url": "/app/crm"
     },
     "mouseNaEspiada": {
@@ -139,6 +155,8 @@
         "w": 149,
         "h": 32
       },
+      "cabecalho": null,
+      "marca": null,
       "url": "/app/crm"
     },
     "saiuAgora": {
@@ -173,6 +191,8 @@
         "w": 149,
         "h": 32
       },
+      "cabecalho": null,
+      "marca": null,
       "url": "/app/crm"
     },
     "saiuHa700ms": {
@@ -207,6 +227,8 @@
         "w": 149,
         "h": 32
       },
+      "cabecalho": null,
+      "marca": null,
       "url": "/app/crm"
     },
     "depoisDoEsc": {
@@ -241,6 +263,8 @@
         "w": 149,
         "h": 32
       },
+      "cabecalho": null,
+      "marca": null,
       "url": "/app/crm"
     },
     "depoisDeEscolher": {
@@ -275,6 +299,8 @@
         "w": 149,
         "h": 32
       },
+      "cabecalho": null,
+      "marca": null,
       "url": "/app/contacts"
     },
     "fixadaDeNovo": {
@@ -312,6 +338,18 @@
         "x": 272,
         "y": 12,
         "w": 149,
+        "h": 32
+      },
+      "cabecalho": {
+        "x": 9,
+        "y": 9,
+        "w": 238,
+        "h": 56
+      },
+      "marca": {
+        "x": 65,
+        "y": 12,
+        "w": 111,
         "h": 32
       },
       "url": "/app/contacts"
@@ -355,6 +393,18 @@
         "w": 149,
         "h": 32
       },
+      "cabecalho": {
+        "x": 9,
+        "y": 9,
+        "w": 238,
+        "h": 56
+      },
+      "marca": {
+        "x": 65,
+        "y": 12,
+        "w": 111,
+        "h": 32
+      },
       "url": "/app/crm"
     },
     "espiadaAberta": {
@@ -389,6 +439,8 @@
         "w": 149,
         "h": 32
       },
+      "cabecalho": null,
+      "marca": null,
       "url": "/app/crm"
     }
   },
@@ -430,6 +482,18 @@
         "w": 149,
         "h": 44
       },
+      "cabecalho": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      },
+      "marca": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      },
       "url": "/app/crm"
     },
     "depoisDoToque": {
@@ -469,6 +533,18 @@
         "w": 149,
         "h": 44
       },
+      "cabecalho": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      },
+      "marca": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      },
       "url": "/app/crm"
     },
     "depoisDoSegundoToque": {
@@ -507,6 +583,18 @@
         "y": 6,
         "w": 149,
         "h": 44
+      },
+      "cabecalho": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      },
+      "marca": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
       },
       "url": "/app/crm"
     }

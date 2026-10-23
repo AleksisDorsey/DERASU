@@ -92,6 +92,10 @@ function estado(page) {
       main: r(document.querySelector("main")),
       topoPaddingEsquerda: topo ? getComputedStyle(topo).paddingLeft : null,
       primeiraCapsula: r(primeiraCapsula),
+      // A linha da marca: continua com 56px, e a marca centrada na linha do
+      // ícone (centro a 28px da janela).
+      cabecalho: r(document.querySelector("aside.ds-barra-fixada > div")),
+      marca: r(document.querySelector("aside.ds-barra-fixada > div > *")),
       url: location.pathname,
     };
   });
