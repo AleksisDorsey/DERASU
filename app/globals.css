@@ -2564,8 +2564,14 @@ a:active > .ds-cartao {
 /* A ESPIADA é a mesma lâmina, presa à janela e por cima do conteúdo, sem
    cortina: dá para ver onde se estava. Entra em mola suave (amortecimento
    crítico: não passa da borda); sai mais rápido, e só some para o teclado e
-   o leitor de tela depois de sair (o `visibility` espera a transição). */
+   o leitor de tela depois de sair (o `visibility` espera a transição).
+
+   A matiz é a DENSA, a dos menus e modais: diferente da lâmina fixada, que
+   tem o ambiente atrás, a espiada passa por cima de texto. Pela variável, e
+   não pelo `background-color`: os recuos (reduzir transparência, mais
+   contraste) continuam vencendo com a superfície opaca. */
 .ds-espiada {
+  --vidro-matiz: var(--vidro-matiz-denso);
   position: fixed;
   z-index: 40;
   left: var(--lamina-folga);
