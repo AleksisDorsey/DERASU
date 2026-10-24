@@ -91,14 +91,30 @@ _Avoid_: glow, brilho externo
 ## Navegação
 
 **Barra lateral**:
-A lâmina de vidro com a navegação principal do app, à esquerda. No desktop ela fica **fixada**
-ou **solta**; no celular é a gaveta que o ícone do topo abre por cima do conteúdo.
+O painel de vidro com a navegação principal do app, encostado na borda esquerda, de cima a baixo.
+No desktop ela fica **fixada** ou **solta**; no celular é a gaveta que o ícone do topo abre por
+cima do conteúdo.
 _Avoid_: sidebar, menu lateral, menu
 
+**Cápsula do canto**:
+A cápsula de vidro no canto de cima à esquerda, sempre no mesmo ponto da tela no desktop, com os
+controles de uso constante: o **ícone da barra lateral**, Configurações, Notificações e Buscar.
+_Avoid_: toolbar, barra de ferramentas, cabeçalho
+
 **Ícone da barra lateral**:
-O controle no canto de cima à esquerda, sempre no mesmo ponto da tela, que mostra a barra
-lateral. Clicado, fixa ou solta a barra; com o mouse em cima, abre a **espiada**.
+O primeiro controle da **cápsula do canto**, que mostra a barra lateral. Clicado, fixa ou solta a
+barra; com o mouse em cima, abre a **espiada**.
 _Avoid_: hambúrguer (no desktop), botão de recolher
+
+**Pé da barra**:
+O fundo da barra lateral no desktop: a organização, o idioma e o tema numa fileira, e embaixo a
+**conta** de quem está usando.
+_Avoid_: rodapé (o rodapé é o da página), footer
+
+**Conta**:
+O botão com o avatar, o nome e o e-mail de quem está usando, no **pé da barra**. Abre o menu com a
+versão, o modo administrador, a nova versão e sair.
+_Avoid_: perfil, usuário (quando se quer dizer o botão), avatar
 
 **Fixada**:
 O estado em que a barra lateral fica na tela, ao lado do conteúdo, ocupando o próprio lugar. É

@@ -1829,21 +1829,20 @@ a:focus-visible > .ds-cartao {
    `rounded-md`). É isso que deixa a mudança inteira num arquivo — o JSX só
    ganhou as classes `ds-topo`/`ds-capsula`/`ds-capsulas-soltas` no `TopBar`. */
 
-/* BARRA LATERAL FLUTUANTE — no desktop, uma lâmina solta: folga em volta,
-   cantos arredondados e o ambiente aparecendo pelas bordas. A barra continua
-   `sticky` e ocupando lugar na linha (o porquê está em `Sidebar.tsx`); só
-   ganha margem, e `top` e `height` descontam a folga para ela continuar
-   inteira na janela. O celular segue com a gaveta (`MobileSidebar`), que é
-   `.ds-gaveta`. */
+/* BARRA LATERAL ENCOSTADA — no desktop, um painel de vidro do alto ao pé da
+   janela, colado na borda esquerda, sem folga e sem cantos (ADR 0005; antes
+   era uma lâmina solta, com margem). A barra continua `sticky` e ocupando
+   lugar na linha (o porquê está em `Sidebar.tsx`). Do conteúdo, separa-a só
+   a borda direita, de vidro. O celular segue com a gaveta (`MobileSidebar`),
+   que é `.ds-gaveta`. */
 .ds-barra-lateral {
-  --lamina-folga: 0.5rem;
-  top: var(--lamina-folga);
-  height: calc(100dvh - 2 * var(--lamina-folga));
-  margin: var(--lamina-folga) 0 var(--lamina-folga) var(--lamina-folga);
-  border-width: 1px;
-  border-radius: 1.375rem;
+  top: 0;
+  height: 100dvh;
+  margin: 0;
+  border-width: 0 1px 0 0;
+  border-radius: 0;
   overflow: hidden;
-  box-shadow: var(--vidro-aresta), var(--vidro-sombra);
+  box-shadow: var(--vidro-aresta);
 }
 
 /* As linhas sob a marca e sobre o rodapé saem: quem separa a lista rolável do
@@ -2501,128 +2500,252 @@ a:active > .ds-cartao {
   }
 }
 
-/* ---- 4e. Barra lateral fixada ou solta (ADR 0004) -------------------------
+/* ---- 4e. Barra lateral: cápsula do canto e pé da barra (ADR 0004, 0005) ---
    O comportamento mora em `components/derasu/BarraLateral.tsx`; aqui, a
    geometria e o material. Tudo só a partir de `md` (768px): abaixo disso a
    navegação é a gaveta do celular, e o AppShell nem mostra este bloco.
 
-   O ÍCONE fica no MESMO ponto da tela nos dois estados: 40px, centrado na
-   linha do topo (56px de altura → 8px de cima) e a 16px da borda, que é a
-   folga da lâmina (8px) mais o respiro de dentro dela (8px). Fixada, a lâmina
-   reserva esse canto: a marca começa depois do ícone e sobe para a mesma
-   altura dele. A linha da marca continua com os 56px do `h-14` (a prova
-   `logo-moldura-no-tema-escuro` mede essa altura): quem sobe a marca é o
-   respiro embaixo — o conteúdo fica nos 38px de cima, centrado a 28px da
-   janela (8 de folga + 1 de borda + 19), a linha do ícone e do topo. */
-.ds-icone-barra {
+   No desktop o TOPO fica sem controles: o que ele tinha foi para a cápsula do
+   canto e para o pé da barra (por portal, ver `NoLugar.tsx`). Ele continua
+   como faixa de 56px, para a cápsula nunca cobrir o título da página e para o
+   conteúdo não pular ao fixar ou soltar a barra. */
+@media (min-width: 768px) {
+  .ds-topo > * {
+    display: none;
+  }
+  /* O rodapé do `SidebarContent` (Configurações e a versão) sai: Configurações
+     está na cápsula, e a versão no menu da conta. O pé da barra ocupa o lugar. */
+  [data-barra-lateral] .ds-barra-lateral > .border-t {
+    display: none;
+  }
+}
+
+/* A CÁPSULA DO CANTO — presa à janela, no mesmo ponto nos dois estados: 8px
+   da borda e do alto, centrada na linha do topo (40px de altura num topo de
+   56px). Solta e sem espiada, ela está sozinha sobre o conteúdo e é vidro;
+   com o painel embaixo (fixada ou espiando), fica transparente sobre ele. */
+.ds-canto {
   position: fixed;
   z-index: 50;
   top: 0.5rem;
-  left: 1rem;
+  left: 0.5rem;
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 2.5rem;
+  gap: 0.125rem;
   height: 2.5rem;
+  padding: 0.125rem;
   border: 1px solid transparent;
   border-radius: 9999px;
-  color: var(--color-text);
-  transition-property: background-color, border-color, box-shadow, scale;
-  transition-duration:
-    var(--duration-fast), var(--duration-fast), var(--duration-fast), var(--mola-viva-duracao);
-  transition-timing-function: var(--ease-out-slow);
-  transition-timing-function: var(--ease-out), var(--ease-out), var(--ease-out), var(--mola-viva);
 }
-.ds-icone-barra:hover {
-  background-color: var(--trilho);
-}
-.ds-icone-barra:active {
-  scale: 0.9;
-  transition-duration: var(--duration-fast);
-  transition-timing-function: var(--ease-out);
-}
-.ds-icone-barra:focus-visible {
-  outline: 2px solid var(--color-accent);
-  outline-offset: 2px;
-}
-/* Solta e sem espiada, o ícone está sozinho sobre o conteúdo: vira a mesma
-   cápsula de vidro das outras do topo. Com a lâmina embaixo dele (fixada ou
-   espiando), fica transparente sobre o vidro dela. */
-[data-barra-lateral="solta"]:not([data-espiando]) > .ds-icone-barra {
+[data-barra-lateral="solta"]:not([data-espiando]) > .ds-canto {
   border-color: var(--vidro-borda);
   background-color: var(--vidro-matiz);
   box-shadow: var(--vidro-aresta), var(--vidro-sombra);
   -webkit-backdrop-filter: var(--vidro-desfoque);
   backdrop-filter: var(--vidro-desfoque);
 }
-[data-barra-lateral="solta"]:not([data-espiando]) > .ds-icone-barra:hover {
-  background-color: var(--vidro-matiz-denso);
+/* Os lugares não têm caixa: o controle que chega por portal é o item. */
+.ds-lugar {
+  display: contents;
+}
+/* Os quatro itens: círculos de 36px, concêntricos com a cápsula. O sino e a
+   busca são os do oficial, e chegam com o tamanho do topo: aqui ganham o da
+   cápsula. A busca vira só a lupa; o texto "Buscar..." continua no nome
+   acessível (escondido só da vista) e o atalho ⌘K sai da tela. */
+.ds-icone-barra,
+.ds-canto-item,
+.ds-canto [data-testid="alerts-bell"],
+#derasu-lugar-buscar > button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0;
+  border: 0;
+  border-radius: 9999px;
+  background-color: transparent;
+  box-shadow: none;
+  color: var(--color-text);
+  transition-property: background-color, scale;
+  transition-duration: var(--duration-fast), var(--mola-viva-duracao);
+  transition-timing-function: var(--ease-out-slow);
+  transition-timing-function: var(--ease-out), var(--mola-viva);
+}
+:is(
+  .ds-icone-barra,
+  .ds-canto-item,
+  .ds-canto [data-testid="alerts-bell"],
+  #derasu-lugar-buscar > button
+):hover,
+.ds-canto-item[aria-current="page"] {
+  background-color: var(--trilho);
+}
+:is(
+  .ds-icone-barra,
+  .ds-canto-item,
+  .ds-canto [data-testid="alerts-bell"],
+  #derasu-lugar-buscar > button
+):active {
+  scale: 0.9;
+  transition-duration: var(--duration-fast);
+  transition-timing-function: var(--ease-out);
+}
+:is(.ds-icone-barra, .ds-canto-item):focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+#derasu-lugar-buscar > button > span {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+#derasu-lugar-buscar > button > kbd {
+  display: none;
+}
+#derasu-lugar-buscar > button > svg {
+  width: 1.125rem;
+  height: 1.125rem;
 }
 
+/* A MARCA desce para a faixa logo abaixo da cápsula. A linha dela continua o
+   primeiro filho do painel, no alto e com os 56px do `h-14` (a prova
+   `logo-moldura-no-tema-escuro` mede as duas coisas): quem desce é o desenho,
+   por `translate`, e a navegação abre o espaço com a mesma altura. */
 [data-barra-lateral] .ds-barra-lateral > :first-child {
-  padding-bottom: calc(1rem + 2px);
-  padding-left: 3.5rem;
+  translate: 0 3.5rem;
+}
+[data-barra-lateral] .ds-barra-lateral > :first-child + * {
+  margin-top: 3.5rem;
+}
+/* E embaixo, o espaço do pé da barra. */
+[data-barra-lateral] .ds-barra-lateral {
+  padding-bottom: 7.5rem;
 }
 
-/* A ESPIADA é a mesma lâmina, presa à janela e por cima do conteúdo, sem
+/* A ESPIADA é o mesmo painel, preso à janela e por cima do conteúdo, sem
    cortina: dá para ver onde se estava. Entra em mola suave (amortecimento
    crítico: não passa da borda); sai mais rápido, e só some para o teclado e
    o leitor de tela depois de sair (o `visibility` espera a transição).
 
-   A matiz é a DENSA, a dos menus e modais: diferente da lâmina fixada, que
+   A matiz é a DENSA, a dos menus e modais: diferente do painel fixado, que
    tem o ambiente atrás, a espiada passa por cima de texto. Pela variável, e
    não pelo `background-color`: os recuos (reduzir transparência, mais
    contraste) continuam vencendo com a superfície opaca. */
-.ds-espiada {
-  --vidro-matiz: var(--vidro-matiz-denso);
-  position: fixed;
-  z-index: 40;
-  left: var(--lamina-folga);
-  margin: 0;
-  translate: calc(-100% - 1rem) 0;
-  visibility: hidden;
+.ds-espiada,
+.ds-pe {
   transition-property: translate, visibility;
   transition-duration: var(--duration-base), 0s;
   transition-delay: 0s, var(--duration-base);
   transition-timing-function: var(--ease-out);
 }
+.ds-espiada {
+  --vidro-matiz: var(--vidro-matiz-denso);
+  position: fixed;
+  z-index: 40;
+  left: 0;
+  translate: calc(-100% - 1rem) 0;
+  visibility: hidden;
+}
 .ds-espiada[data-aberta] {
   translate: 0 0;
   visibility: visible;
+}
+.ds-espiada[data-aberta],
+[data-espiando] > .ds-pe {
   transition-duration: var(--mola-suave-duracao), 0s;
   transition-delay: 0s, 0s;
   transition-timing-function: var(--ease-out-slow);
   transition-timing-function: var(--mola-suave);
 }
 
-@media (min-width: 768px) {
-  /* Solta, o topo começa depois do ícone, e não por baixo dele. */
-  body:has([data-barra-lateral="solta"]) .ds-topo {
-    padding-left: 4.25rem;
-  }
+/* O PÉ DA BARRA — preso à janela, sobre o fundo do painel (fixada) ou da
+   espiada (solta), com a largura dele. Solta e sem espiada, sai junto. */
+.ds-pe {
+  position: fixed;
+  z-index: 41;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  width: 15rem;
+  padding: 0.5rem;
 }
-/* Aparelho sem hover (tablet de toque): não existe fixar. A lâmina fixada sai
-   de cena e o topo abre espaço para o ícone, que lá só abre e fecha a espiada.
-   O critério é o aparelho, e não a largura: um notebook estreito com mouse
-   continua podendo fixar. */
+[data-barra-lateral="solta"]:not([data-espiando]) > .ds-pe {
+  translate: calc(-100% - 1rem) 0;
+  visibility: hidden;
+}
+.ds-pe-controles {
+  display: flex;
+  align-items: center;
+  gap: 0.125rem;
+  min-width: 0;
+}
+/* A organização ocupa o que sobra e corta o nome; idioma e tema ficam com o
+   tamanho deles. */
+#derasu-lugar-organizacao > * {
+  flex: 1 1 auto;
+  min-width: 0;
+  justify-content: flex-start;
+}
+#derasu-lugar-organizacao > * > span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.ds-conta {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  width: 100%;
+  min-width: 0;
+  padding: 0.375rem 0.5rem;
+  border-radius: var(--raio-campo);
+  color: var(--color-text);
+  transition: background-color var(--duration-fast) var(--ease-out);
+}
+.ds-conta:hover,
+.ds-conta[data-state="open"] {
+  background-color: var(--trilho);
+}
+.ds-conta:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* Aparelho sem hover (tablet de toque): não existe fixar. O painel fixado sai
+   de cena, e o pé só aparece com a espiada. O critério é o aparelho, e não a
+   largura: um notebook estreito com mouse continua podendo fixar. */
 @media (min-width: 768px) and (not ((hover: hover) and (pointer: fine))) {
   .ds-barra-fixada {
     display: none;
   }
-  body:has([data-barra-lateral]) .ds-topo {
-    padding-left: 4.5rem;
+  [data-barra-lateral]:not([data-espiando]) > .ds-pe {
+    translate: calc(-100% - 1rem) 0;
+    visibility: hidden;
   }
-  .ds-icone-barra {
-    width: 2.75rem;
-    height: 2.75rem;
-    top: 0.375rem;
-  }
-  [data-barra-lateral]:not([data-espiando]) > .ds-icone-barra {
+  [data-barra-lateral]:not([data-espiando]) > .ds-canto {
     border-color: var(--vidro-borda);
     background-color: var(--vidro-matiz);
     box-shadow: var(--vidro-aresta), var(--vidro-sombra);
     -webkit-backdrop-filter: var(--vidro-desfoque);
     backdrop-filter: var(--vidro-desfoque);
+  }
+  :is(
+    .ds-icone-barra,
+    .ds-canto-item,
+    .ds-canto [data-testid="alerts-bell"],
+    #derasu-lugar-buscar > button
+  ) {
+    width: 2.75rem;
+    height: 2.75rem;
+  }
+  .ds-canto {
+    top: 0.25rem;
+    height: 3rem;
   }
 }
 
@@ -2642,7 +2765,7 @@ a:active > .ds-cartao {
   .ds-painel,
   .ds-capsula,
   .ds-capsulas-soltas > :is(button, a),
-  [data-barra-lateral]:not([data-espiando]) > .ds-icone-barra,
+  [data-barra-lateral]:not([data-espiando]) > .ds-canto,
   nav[data-barra-inferior] > ul {
     background-color: var(--color-surface);
     border-color: var(--color-border);
@@ -2666,7 +2789,7 @@ a:active > .ds-cartao {
   .ds-painel,
   .ds-capsula,
   .ds-capsulas-soltas > :is(button, a),
-  [data-barra-lateral]:not([data-espiando]) > .ds-icone-barra,
+  [data-barra-lateral]:not([data-espiando]) > .ds-canto,
   nav[data-barra-inferior] > ul {
     background-color: var(--color-surface);
     border-color: var(--color-border-strong);
@@ -2708,7 +2831,7 @@ a:active > .ds-cartao {
   .ds-painel,
   .ds-capsula,
   .ds-capsulas-soltas > :is(button, a),
-  [data-barra-lateral]:not([data-espiando]) > .ds-icone-barra,
+  [data-barra-lateral]:not([data-espiando]) > .ds-canto,
   nav[data-barra-inferior] > ul {
     background-color: var(--color-surface);
     border-color: var(--color-border);

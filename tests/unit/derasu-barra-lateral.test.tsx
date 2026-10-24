@@ -12,21 +12,43 @@
  *  - em tela de toque o clique só abre e fecha a espiada, sem gravar nada.
  */
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
-import { act, cleanup, render, screen } from "@testing-library/react";
+import { act, cleanup, render, screen, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 import { BarraLateral } from "@/components/derasu/BarraLateral";
 import { toggleSidebar } from "@/app/actions/shell/toggleSidebar";
 import type { ActiveOrg, AuthUser } from "@/lib/auth/types";
 
-const authRef: { user: Pick<AuthUser, "is_platform_admin">; activeOrg: ActiveOrg | null } = {
-  user: { is_platform_admin: false },
+const authRef: {
+  user: Pick<AuthUser, "is_platform_admin" | "email" | "full_name" | "avatar_url">;
+  activeOrg: ActiveOrg | null;
+  signOut: () => Promise<void>;
+} = {
+  user: {
+    is_platform_admin: false,
+    email: "dona@exemplo.com",
+    full_name: "Dona da Loja",
+    avatar_url: null,
+  },
   activeOrg: { orgId: "org-1", name: "Org", role: "admin" },
+  signOut: async () => {},
 };
+const versaoRef: {
+  data?: {
+    current_version: string;
+    is_owner: boolean;
+    update_available?: boolean;
+    latest_version?: string;
+  };
+} = {};
 
 vi.mock("@/hooks/auth/AuthProvider", () => ({
   useAuth: () => authRef,
+  useUser: () => authRef.user,
   usePermission: () => false,
+}));
+vi.mock("@/hooks/system/useSystemVersion", () => ({
+  useSystemVersion: () => versaoRef,
 }));
 vi.mock("next/navigation", () => ({
   usePathname: () => "/app/inbox",
@@ -172,5 +194,79 @@ describe("BarraLateral — tela de toque", () => {
     await user.click(icone);
     expect(espiadaAberta()).toBe(false);
     expect(vi.mocked(toggleSidebar)).not.toHaveBeenCalled();
+  });
+});
+
+describe("BarraLateral — cápsula do canto e pé da barra (ADR 0005)", () => {
+  it("a cápsula tem o ícone, Configurações e os lugares de Notificações e Buscar, nessa ordem", () => {
+    render(<BarraLateral solta={false} />);
+    const canto = document.querySelector(".ds-canto") as HTMLElement;
+    const filhos = [...canto.children].map((el) => el.getAttribute("aria-label") ?? el.id);
+    expect(filhos).toEqual([
+      "Recolher sidebar",
+      "Configurações",
+      "derasu-lugar-notificacoes",
+      "derasu-lugar-buscar",
+    ]);
+    expect(within(canto).getByRole("link", { name: "Configurações" }).getAttribute("href")).toBe(
+      "/app/settings",
+    );
+  });
+
+  it("o pé tem os lugares de organização, idioma e tema, e a conta com nome e e-mail", () => {
+    render(<BarraLateral solta={false} />);
+    const pe = document.querySelector(".ds-pe") as HTMLElement;
+    expect([...pe.querySelectorAll(".ds-lugar")].map((el) => el.id)).toEqual([
+      "derasu-lugar-organizacao",
+      "derasu-lugar-idioma",
+      "derasu-lugar-tema",
+    ]);
+    const conta = screen.getByRole("button", { name: "Menu do usuário" });
+    expect(conta.textContent).toContain("Dona da Loja");
+    expect(conta.textContent).toContain("dona@exemplo.com");
+  });
+
+  it("solta e sem espiada, o pé sai do teclado; com a espiada, volta", async () => {
+    const user = usuario();
+    render(<BarraLateral solta />);
+    const pe = document.querySelector(".ds-pe") as HTMLElement;
+    expect(pe.hasAttribute("inert")).toBe(true);
+    await user.hover(screen.getByRole("button", { name: "Expandir sidebar" }));
+    expect(pe.hasAttribute("inert")).toBe(false);
+  });
+
+  it("o menu da conta: versão, nova versão só para o dono com versão nova, e Sair", async () => {
+    authRef.user = { ...authRef.user, is_platform_admin: true };
+    versaoRef.data = {
+      current_version: "v1.87.0",
+      is_owner: true,
+      update_available: true,
+      latest_version: "v1.88.0",
+    };
+    const user = usuario();
+    render(<BarraLateral solta={false} />);
+    await user.click(screen.getByRole("button", { name: "Menu do usuário" }));
+    const menu = await screen.findByRole("menu");
+    expect(menu.textContent).toContain("1.87.0");
+    expect(screen.getByTestId("porta-modo-administrador")).toBeTruthy();
+    const itens = screen.getAllByRole("menuitem").map((el) => el.textContent ?? "");
+    const novaVersao = itens.findIndex((txt) => txt.includes("1.88.0"));
+    const sair = itens.findIndex((txt) => txt.includes("Sair"));
+    expect(novaVersao).toBeGreaterThan(-1);
+    expect(sair).toBe(itens.length - 1);
+    expect(novaVersao).toBeLessThan(sair);
+    authRef.user = { ...authRef.user, is_platform_admin: false };
+    versaoRef.data = undefined;
+  });
+
+  it("sem versão nova, o menu não oferece atualizar", async () => {
+    versaoRef.data = { current_version: "v1.87.0", is_owner: true, update_available: false };
+    const user = usuario();
+    render(<BarraLateral solta={false} />);
+    await user.click(screen.getByRole("button", { name: "Menu do usuário" }));
+    await screen.findByRole("menu");
+    const itens = screen.getAllByRole("menuitem").map((el) => el.textContent ?? "");
+    expect(itens.some((txt) => txt.includes("Nova versão"))).toBe(false);
+    versaoRef.data = undefined;
   });
 });

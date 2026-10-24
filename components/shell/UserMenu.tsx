@@ -16,6 +16,7 @@ import { SeletorDeIdioma } from "@/components/shell/SeletorDeIdioma";
 import { useT } from "@/hooks/i18n/useT";
 import Link from "next/link";
 import { SignOut, ShieldCheck } from "@/lib/ui/icons";
+import { NoLugar } from "@/components/derasu/NoLugar";
 
 function initials(name: string | null, email: string): string {
   if (name && name.trim()) {
@@ -32,8 +33,13 @@ export function UserMenu() {
 
   return (
     <div className="flex items-center gap-2">
-      <SeletorDeIdioma />
-      <ThemeToggle />
+      {/* Derasu: no desktop, no pé da barra lateral (derasu/docs/adr/0005). */}
+      <NoLugar lugar="idioma">
+        <SeletorDeIdioma />
+      </NoLugar>
+      <NoLugar lugar="tema">
+        <ThemeToggle />
+      </NoLugar>
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <Button variant="ghost" size="icon" className="rounded-full" aria-label={t("Menu do usuário")}>
