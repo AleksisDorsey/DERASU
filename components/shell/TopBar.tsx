@@ -5,6 +5,7 @@ import { MobileSidebar } from "./MobileSidebar";
 import { TenantSwitcher } from "./TenantSwitcher";
 import { UserMenu } from "./UserMenu";
 import { SearchTrigger } from "./SearchTrigger";
+import { NoLugar } from "@/components/derasu/NoLugar";
 
 export function TopBar() {
   return (
@@ -14,13 +15,20 @@ export function TopBar() {
     <header className="ds-topo sticky top-0 z-20 flex h-14 items-center justify-between gap-2 px-3 md:gap-4 md:px-6">
       <div className="ds-capsulas-soltas flex min-w-0 items-center gap-2">
         <MobileSidebar />
-        <TenantSwitcher />
+        {/* Derasu: no desktop, desenhados na barra lateral (derasu/docs/adr/0005). */}
+        <NoLugar lugar="organizacao">
+          <TenantSwitcher />
+        </NoLugar>
       </div>
       <div className="ds-capsulas-soltas flex min-w-0 flex-1 justify-center md:max-w-md">
-        <SearchTrigger />
+        <NoLugar lugar="buscar">
+          <SearchTrigger />
+        </NoLugar>
       </div>
       <div className="ds-capsula flex shrink-0 items-center gap-2">
-        <AlertsBell />
+        <NoLugar lugar="notificacoes">
+          <AlertsBell />
+        </NoLugar>
         <AvisoDePropostaEmDestaque />
         <UserMenu />
       </div>

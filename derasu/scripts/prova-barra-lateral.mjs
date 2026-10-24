@@ -53,6 +53,12 @@ async function ir(page, rota) {
       timeout: 60_000,
     })
     .catch(() => {});
+  // No desktop, os controles do topo chegam à barra por portal depois da
+  // hidratação: mede só quando a busca já está na cápsula.
+  const largura = page.viewportSize()?.width ?? 0;
+  if (largura >= 768) {
+    await page.waitForSelector("#derasu-lugar-buscar > button", { timeout: 60_000 });
+  }
   await page.waitForTimeout(800);
 }
 
@@ -92,10 +98,40 @@ function estado(page) {
       main: r(document.querySelector("main")),
       topoPaddingEsquerda: topo ? getComputedStyle(topo).paddingLeft : null,
       primeiraCapsula: r(primeiraCapsula),
-      // A linha da marca: continua com 56px, e a marca centrada na linha do
-      // ícone (centro a 28px da janela).
+      // A linha da marca: continua o primeiro filho, com os 56px do `h-14`; a
+      // marca é desenhada na faixa logo abaixo da cápsula (ADR 0005).
       cabecalho: r(document.querySelector("aside.ds-barra-fixada > div")),
       marca: r(document.querySelector("aside.ds-barra-fixada > div > *")),
+      // A cápsula do canto e o que chegou a cada lugar (por portal, do topo).
+      canto: r(document.querySelector(".ds-canto")),
+      cantoItens: [
+        ...(document
+          .querySelector(".ds-canto")
+          ?.querySelectorAll(
+            ".ds-icone-barra, .ds-canto-item, [data-testid='alerts-bell'], #derasu-lugar-buscar > button",
+          ) ?? []),
+      ].map((el) => ({ nome: el.getAttribute("aria-label") ?? el.textContent?.trim(), ...r(el) })),
+      pe: r(document.querySelector(".ds-pe")),
+      lugares: Object.fromEntries(
+        ["notificacoes", "buscar", "organizacao", "idioma", "tema"].map((l) => {
+          const lugar = document.getElementById(`derasu-lugar-${l}`);
+          const filho = lugar?.firstElementChild;
+          return [
+            l,
+            filho
+              ? {
+                  testid: filho.getAttribute("data-testid"),
+                  rotulo: filho.getAttribute("aria-label"),
+                  ...r(filho),
+                }
+              : null,
+          ];
+        }),
+      ),
+      conta: r(document.querySelector(".ds-conta")),
+      topoComControleVisivel: [...(topo?.querySelectorAll("button, a") ?? [])].filter(
+        (el) => el.getBoundingClientRect().width > 0,
+      ).length,
       url: location.pathname,
     };
   });
@@ -123,8 +159,29 @@ try {
     await foto(
       page,
       `desktop_${tema}_fixada`,
-      `Desktop ${tema === "light" ? "claro" : "escuro"}: barra fixada, ícone no alto da lâmina`,
+      `Desktop ${tema === "light" ? "claro" : "escuro"}: barra fixada e encostada, com a cápsula do canto e o pé da barra`,
     );
+
+    // O MENU DA CONTA, aberto para cima a partir do pé da barra.
+    await page.getByRole("button", { name: "Menu do usuário" }).click();
+    await page.waitForSelector("[role='menu']");
+    await page.waitForTimeout(800);
+    m.menuDaConta = await page.evaluate(() =>
+      [
+        ...document.querySelectorAll(
+          "[role='menu'] [role='menuitem'], [role='menu'] [role='group'], [role='menu'] > div",
+        ),
+      ]
+        .map((el) => el.textContent?.trim())
+        .filter(Boolean),
+    );
+    await foto(
+      page,
+      `desktop_${tema}_menu_da_conta`,
+      `Desktop ${tema === "light" ? "claro" : "escuro"}: menu da conta, aberto para cima`,
+    );
+    await page.keyboard.press("Escape");
+    await page.waitForTimeout(500);
 
     if (tema === "light") {
       // SOLTA pelo clique.
@@ -135,7 +192,7 @@ try {
       await foto(
         page,
         "desktop_claro_solta",
-        "Barra solta: só o ícone, em cápsula de vidro; o topo começa depois dele",
+        "Barra solta: só a cápsula do canto, de vidro, sobre o conteúdo",
       );
 
       // ESPIADA pelo mouse.
@@ -216,7 +273,7 @@ try {
     await foto(
       page,
       "tablet_toque_inicial",
-      "Tablet de toque: sem lâmina fixada; o ícone em cápsula no topo",
+      "Tablet de toque: sem barra fixada; a cápsula do canto sobre o conteúdo",
     );
     await page.locator(".ds-icone-barra").tap();
     await page.waitForTimeout(700);
