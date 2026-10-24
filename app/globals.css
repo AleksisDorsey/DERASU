@@ -2613,9 +2613,11 @@ a:active > .ds-cartao {
 
 /* A MARCA desce para a faixa logo abaixo da cápsula. A linha dela continua o
    primeiro filho do painel, no alto e com os 56px do `h-14` (a prova
-   `logo-moldura-no-tema-escuro` mede as duas coisas): quem desce é o desenho,
-   por `translate`, e a navegação abre o espaço com a mesma altura. */
-[data-barra-lateral] .ds-barra-lateral > :first-child {
+   `logo-moldura-no-tema-escuro` mede as duas coisas): quem desce é o desenho
+   da marca, por `translate` nos FILHOS da linha — no `translate` da linha
+   inteira, a caixa dela também desceria (medido: y=56), e a prova a quer no
+   alto. A navegação abre o espaço com a mesma altura. */
+[data-barra-lateral] .ds-barra-lateral > :first-child > * {
   translate: 0 3.5rem;
 }
 [data-barra-lateral] .ds-barra-lateral > :first-child + * {

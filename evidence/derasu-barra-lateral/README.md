@@ -4,29 +4,37 @@ Gerada por `derasu/scripts/prova-barra-lateral.mjs` (ADR 0004). As medidas de ca
 estado (posição do ícone, presença da lâmina, deslocamento da espiada, folga do topo)
 estão em [`medidas.json`](medidas.json).
 
-## Desktop claro: barra fixada, ícone no alto da lâmina
+## Desktop claro: barra fixada e encostada, com a cápsula do canto e o pé da barra
 
-![Desktop claro: barra fixada, ícone no alto da lâmina](desktop_light_fixada.jpg)
+![Desktop claro: barra fixada e encostada, com a cápsula do canto e o pé da barra](desktop_light_fixada.jpg)
 
-## Barra solta: só o ícone, em cápsula de vidro; o topo começa depois dele
+## Desktop claro: menu da conta, aberto para cima
 
-![Barra solta: só o ícone, em cápsula de vidro; o topo começa depois dele](desktop_claro_solta.jpg)
+![Desktop claro: menu da conta, aberto para cima](desktop_light_menu_da_conta.jpg)
+
+## Barra solta: só a cápsula do canto, de vidro, sobre o conteúdo
+
+![Barra solta: só a cápsula do canto, de vidro, sobre o conteúdo](desktop_claro_solta.jpg)
 
 ## Espiada: a barra por cima do conteúdo, sem escurecer; o conteúdo não se move
 
 ![Espiada: a barra por cima do conteúdo, sem escurecer; o conteúdo não se move](desktop_claro_espiada.jpg)
 
-## Desktop escuro: barra fixada, ícone no alto da lâmina
+## Desktop escuro: barra fixada e encostada, com a cápsula do canto e o pé da barra
 
-![Desktop escuro: barra fixada, ícone no alto da lâmina](desktop_dark_fixada.jpg)
+![Desktop escuro: barra fixada e encostada, com a cápsula do canto e o pé da barra](desktop_dark_fixada.jpg)
+
+## Desktop escuro: menu da conta, aberto para cima
+
+![Desktop escuro: menu da conta, aberto para cima](desktop_dark_menu_da_conta.jpg)
 
 ## Desktop escuro: espiada
 
 ![Desktop escuro: espiada](desktop_escuro_espiada.jpg)
 
-## Tablet de toque: sem lâmina fixada; o ícone em cápsula no topo
+## Tablet de toque: sem barra fixada; a cápsula do canto sobre o conteúdo
 
-![Tablet de toque: sem lâmina fixada; o ícone em cápsula no topo](tablet_toque_inicial.jpg)
+![Tablet de toque: sem barra fixada; a cápsula do canto sobre o conteúdo](tablet_toque_inicial.jpg)
 
 ## Tablet de toque: o toque no ícone abre a barra por cima
 
